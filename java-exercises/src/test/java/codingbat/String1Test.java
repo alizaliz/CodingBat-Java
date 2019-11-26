@@ -100,4 +100,36 @@ public class String1Test{
         assertEquals("kit",testObject.firstHalf("kitten"));
         
     }
+
+    @Test
+    public void withoutEndTest(){
+        String1 testObject = new String1();
+        assertEquals("ell",testObject.withoutEnd("Hello"));
+        assertEquals("av",testObject.withoutEnd("java"));
+        assertEquals("odin",testObject.withoutEnd("coding"));
+        assertEquals("od",testObject.withoutEnd("code"));
+        assertEquals("",testObject.withoutEnd("ab"));
+        assertEquals("hocolate",testObject.withoutEnd("Chocolate!"));
+        assertEquals("itte",testObject.withoutEnd("Kitten"));
+        assertEquals("ooho",testObject.withoutEnd("woohoo"));
+    }
+
+    @Test
+    public void comboStringTest(){
+        String1 testObject = new String1();
+        assertEquals("hiHellohi",testObject.comboString("Hello","hi"));
+        assertEquals("hiHellohi",testObject.comboString("hi","Hello"));
+        assertEquals("baaab",testObject.comboString("aaa","b"));
+        assertEquals("baaab",testObject.comboString("b","aaa"));
+        assertEquals("aaa",testObject.comboString("aaa",""));
+        assertEquals("bb",testObject.comboString("","bb"));
+        assertEquals("aaa1234aaa",testObject.comboString("aaa","1234"));
+        assertEquals("bbaaabb",testObject.comboString("aaa","bb"));
+        assertEquals("abba",testObject.comboString("a","bb"));
+        assertEquals("abba",testObject.comboString("bb","a"));
+        assertEquals("abxyzab",testObject.comboString("xyz","ab"));
+        
+        
+        
+    }
 }
