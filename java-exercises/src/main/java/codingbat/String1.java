@@ -124,4 +124,48 @@ public final class String1 {
     return a + b + a;
   }
   
+  /**
+   * Given 2 strings, return their concatenation, except omit the first char of each. The strings will be at least length 1.
+   * 
+   * nonStart("Hello", "There") → "ellohere"
+   * nonStart("java", "code") → "avaode"
+   * nonStart("shotl", "java") → "hotlava"
+   */
+  public String nonStart(String a, String b) {
+    return a.substring(1) + b.substring(1);
+  }
+  
+  /**
+   * Given a string, return a "rotated left 2" version where the first 2 chars are moved to the end. The string length will be at least 2.
+   * 
+   * left2("Hello") → "lloHe"
+   * left2("java") → "vaja"
+   * left2("Hi") → "Hi"
+   */
+  public String left2(String str) {
+    return str.substring(2) + str.substring(0,2);
+  }
+  
+  /**
+   * Given a string, return a "rotated right 2" version where the last 2 chars are moved to the start. The string length will be at least 2.
+   * 
+   * right2("Hello") → "loHel"
+   * right2("java") → "vaja"
+   * right2("Hi") → "Hi"
+   */
+  public String right2(String str) {
+    return str.substring(str.length() -2 ) + str.substring(0, str.length()-2);
+  }
+  
+  /**
+   * Given a string, return a string length 1 from its front, unless front is false, in which case return a string length 1 from its back. The string will be non-empty.
+   * 
+   * theEnd("Hello", true) → "H"
+   * theEnd("Hello", false) → "o"
+   * theEnd("oh", true) → "o"
+   */
+  public String theEnd(String str, boolean front) {
+    return front ? str.substring(0,1) : str.substring(str.length()-1);
+  }
+  
 }

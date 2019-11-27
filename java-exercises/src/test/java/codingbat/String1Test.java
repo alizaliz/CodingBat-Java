@@ -128,8 +128,60 @@ public class String1Test{
         assertEquals("abba",testObject.comboString("a","bb"));
         assertEquals("abba",testObject.comboString("bb","a"));
         assertEquals("abxyzab",testObject.comboString("xyz","ab"));
-        
-        
-        
+    }
+
+    @Test
+    public void nonStartTest(){
+        String1 testObject = new String1();
+        assertEquals("ellohere",testObject.nonStart("Hello","There"));
+        assertEquals("avaode",testObject.nonStart("java","code"));
+        assertEquals("hotlava",testObject.nonStart("shotl","java"));
+        assertEquals("by",testObject.nonStart("ab","xy"));
+        assertEquals("b",testObject.nonStart("ab","x"));
+        assertEquals("c",testObject.nonStart("x","ac"));
+        assertEquals("",testObject.nonStart("a","x"));
+        assertEquals("itat",testObject.nonStart("kit","kat"));
+        assertEquals("artart",testObject.nonStart("mart","dart"));
+    }
+
+    @Test
+    public void left2Test(){
+        String1 testObject = new String1();
+        assertEquals("lloHe",testObject.left2("Hello"));
+        assertEquals("vaja",testObject.left2("java"));
+        assertEquals("Hi",testObject.left2("Hi"));
+        assertEquals("deco",testObject.left2("code"));
+        assertEquals("tca",testObject.left2("cat"));
+        assertEquals("34512",testObject.left2("12345"));
+        assertEquals("ocolateCh",testObject.left2("Chocolate"));
+        assertEquals("icksbr",testObject.left2("bricks"));
+    }
+
+    @Test
+    public void right2Test(){
+        String1 testObject = new String1();
+        assertEquals("loHel",testObject.right2("Hello"));
+        assertEquals("vaja",testObject.right2("java"));
+        assertEquals("Hi",testObject.right2("Hi"));
+        assertEquals("deco",testObject.right2("code"));
+        assertEquals("atc",testObject.right2("cat"));
+        assertEquals("45123",testObject.right2("12345"));
+        assertEquals("teChocola",testObject.right2("Chocolate"));
+        assertEquals("ksbric",testObject.right2("bricks"));
+    }
+    
+    @Test
+    public void theEndTest(){
+        String1 testObject = new String1();
+        assertEquals("H",testObject.theEnd("Hello",true));
+        assertEquals("o",testObject.theEnd("Hello",false));
+        assertEquals("o",testObject.theEnd("oh",true));
+        assertEquals("h",testObject.theEnd("oh",false));
+        assertEquals("x",testObject.theEnd("x",true));
+        assertEquals("x",testObject.theEnd("x",false));
+        assertEquals("j",testObject.theEnd("java",true));
+        assertEquals("e",testObject.theEnd("Chocolate",false));
+        assertEquals("1",testObject.theEnd("1234",true));
+        assertEquals("e",testObject.theEnd("code",false));
     }
 }
