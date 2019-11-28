@@ -184,4 +184,52 @@ public class String1Test{
         assertEquals("1",testObject.theEnd("1234",true));
         assertEquals("e",testObject.theEnd("code",false));
     }
+
+    @Test
+    public void withoutEnd2Test(){
+        String1 testObject = new String1();
+        assertEquals("ell",testObject.withoutEnd2("Hello"));
+        assertEquals("b",testObject.withoutEnd2("abc"));
+        assertEquals("",testObject.withoutEnd2("ab"));
+        assertEquals("",testObject.withoutEnd2("a"));
+        assertEquals("",testObject.withoutEnd2(""));
+        assertEquals("old",testObject.withoutEnd2("coldy"));
+        assertEquals("ava cod",testObject.withoutEnd2("java code"));
+    }
+
+    @Test
+    public void middleTwoTest(){
+        String1 testObject = new String1();
+        assertEquals("ri",testObject.middleTwo("string"));
+        assertEquals("od",testObject.middleTwo("code"));
+        assertEquals("ct",testObject.middleTwo("Practice"));
+        assertEquals("ab",testObject.middleTwo("ab"));
+        assertEquals("45",testObject.middleTwo("0123456789"));
+    }
+
+    @Test
+    public void endsLyTest(){
+        String1 testObject = new String1();
+        assertTrue(testObject.endsLy("oddly"));
+        assertFalse(testObject.endsLy("y"));
+        assertFalse(testObject.endsLy("oddy"));
+        assertFalse(testObject.endsLy("oddl"));
+        assertFalse(testObject.endsLy("olydd"));
+        assertTrue(testObject.endsLy("ly"));
+        assertFalse(testObject.endsLy(""));
+        assertFalse(testObject.endsLy("falsey"));
+        assertTrue(testObject.endsLy("evenly"));
+    }
+
+    @Test
+    public void nTwiceTest(){
+        String1 testObject = new String1();
+        assertEquals("Helo",testObject.nTwice("Hello", 2));
+        assertEquals("Choate",testObject.nTwice("Chocolate", 3));
+        assertEquals("Ce",testObject.nTwice("Chocolate", 1));
+        assertEquals("",testObject.nTwice("Chocolate", 0));
+        assertEquals("Hellello",testObject.nTwice("Hello", 4));
+        assertEquals("CodeCode",testObject.nTwice("Code", 4));
+        assertEquals("Code",testObject.nTwice("Code", 2));
+    }
 }

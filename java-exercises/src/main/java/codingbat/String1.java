@@ -167,5 +167,62 @@ public final class String1 {
   public String theEnd(String str, boolean front) {
     return front ? str.substring(0,1) : str.substring(str.length()-1);
   }
+
+  /**
+   * Given a string, return a version without both the first and last char of the string. The string may be any length, including 0.
+   * 
+   * withouEnd2("Hello") → "ell"
+   * withouEnd2("abc") → "b"
+   * withouEnd2("ab") → ""
+   */
+  public String withoutEnd2(String str) {
+    
+    // Check edge case
+    if(str.length() <=2 )
+    {
+      return "";
+    }
+    
+    return str.substring(1,str.length()-1);
+  }
+
+  /**
+   * Given a string of even length, return a string made of the middle two chars, so the string "string" yields "ri". The string length will be at least 2.
+   * 
+   * middleTwo("string") → "ri"
+   * middleTwo("code") → "od"
+   * middleTwo("Practice") → "ct"
+   */
+  public String middleTwo(String str) {
+    return str.substring(str.length()/2-1, str.length()/2+1);
+  }
+  
+  /**
+   * Given a string, return true if it ends in "ly".
+   * 
+   * endsLy("oddly") → true
+   * endsLy("y") → false
+   * endsLy("oddy") → false
+   */
+  public boolean endsLy(String str) {
+
+    //Check edge case
+    if(str.length() < 2){
+      return false;
+    }
+
+    return str.substring(str.length()-2).equals("ly");
+  }
+  
+  /**
+   * Given a string and an int n, return a string made of the first and last n chars from the string. The string length will be at least n.
+   * 
+   * nTwice("Hello", 2) → "Helo"
+   * nTwice("Chocolate", 3) → "Choate"
+   * nTwice("Chocolate", 1) → "Ce"
+   */
+  public String nTwice(String str, int n) {
+    return str.substring(0,n) + str.substring(str.length()-n);
+  }
   
 }
