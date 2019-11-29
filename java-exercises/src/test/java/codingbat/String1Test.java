@@ -232,4 +232,37 @@ public class String1Test{
         assertEquals("CodeCode",testObject.nTwice("Code", 4));
         assertEquals("Code",testObject.nTwice("Code", 2));
     }
+
+    @Test
+    public void twoCharTest(){
+        String1 testObject = new String1();
+        assertEquals("ja",testObject.twoChar("java", 0));
+        assertEquals("va",testObject.twoChar("java", 2));
+        assertEquals("ja",testObject.twoChar("java", 3));
+        assertEquals("ja",testObject.twoChar("java", 4));
+        assertEquals("ja",testObject.twoChar("java", -1));
+        assertEquals("He",testObject.twoChar("Hello", 0));
+        assertEquals("el",testObject.twoChar("Hello", 1));
+        assertEquals("He",testObject.twoChar("Hello", 99));
+        assertEquals("lo",testObject.twoChar("Hello", 3));
+        assertEquals("He",testObject.twoChar("Hello", 24));
+        assertEquals("He",testObject.twoChar("Hello", 5));
+        assertEquals("He",testObject.twoChar("Hello", -7));
+        assertEquals("He",testObject.twoChar("Hello", 6));
+        assertEquals("He",testObject.twoChar("Hello", -1));
+        assertEquals("ya",testObject.twoChar("yay", 0));
+    }
+
+    @Test
+    public void middleThreeTest(){
+        String1 testObject = new String1();
+        assertEquals("and",testObject.middleThree("Candy"));
+        assertEquals("and",testObject.middleThree("and"));
+        assertEquals("lvi",testObject.middleThree("solving"));
+        assertEquals("yet",testObject.middleThree("Hi yet Hi"));
+        assertEquals("yet",testObject.middleThree("java yet java"));
+        assertEquals("col",testObject.middleThree("Chocolate"));
+        assertEquals("xyz",testObject.middleThree("XabcxyzabcX"));
+    }
+
 }
