@@ -265,4 +265,56 @@ public class String1Test{
         assertEquals("xyz",testObject.middleThree("XabcxyzabcX"));
     }
 
+    @Test
+    public void hasBadTest(){
+        String1 testObject = new String1();
+        assertTrue(testObject.hasBad("badxx"));
+        assertTrue(testObject.hasBad("xbadxx"));
+        assertFalse(testObject.hasBad("xxbadxx"));
+        assertFalse(testObject.hasBad("code"));
+        assertTrue(testObject.hasBad("bad"));
+        assertFalse(testObject.hasBad("ba"));
+        assertFalse(testObject.hasBad("xba"));
+        assertTrue(testObject.hasBad("xbad"));
+        assertFalse(testObject.hasBad(""));
+        assertTrue(testObject.hasBad("badyy"));
+    }
+
+    @Test
+    public void atFirstTest(){
+        String1 testObject = new String1();
+        assertEquals("he",testObject.atFirst("hello"));
+        assertEquals("hi",testObject.atFirst("hi"));
+        assertEquals("h@",testObject.atFirst("h"));
+        assertEquals("@@",testObject.atFirst(""));
+        assertEquals("ki",testObject.atFirst("kitten"));
+        assertEquals("ja",testObject.atFirst("java"));
+        assertEquals("j@",testObject.atFirst("j"));
+    }
+
+    @Test
+    public void lastCharsTest(){
+        String1 testObject = new String1();
+        assertEquals("ls",testObject.lastChars("last", "chars"));
+        assertEquals("ya",testObject.lastChars("yo", "java"));
+        assertEquals("h@",testObject.lastChars("hi", ""));
+        assertEquals("@o",testObject.lastChars("", "hello"));
+        assertEquals("@@",testObject.lastChars("", ""));
+        assertEquals("ki",testObject.lastChars("kitten", "hi"));
+        assertEquals("kp",testObject.lastChars("k", "zip"));
+        assertEquals("k@",testObject.lastChars("kitten", ""));
+        assertEquals("kp",testObject.lastChars("kitten", "zip"));
+    }
+
+    @Test
+    public void conCatTest(){
+        String1 testObject = new String1();
+        assertEquals("abcat",testObject.conCat("abc", "cat"));
+        assertEquals("dogcat",testObject.conCat("dog", "cat"));
+        assertEquals("abc",testObject.conCat("abc", ""));
+        assertEquals("cat",testObject.conCat("", "cat"));
+        assertEquals("pig",testObject.conCat("pig", "g"));
+        assertEquals("pigdoggy",testObject.conCat("pig", "doggy"));
+    }
+
 }
