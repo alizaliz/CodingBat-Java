@@ -330,4 +330,39 @@ public final class String1 {
       return a + b ;
     }
     
+    /**
+     * Given a string of any length, return a new string where the last 2 chars, if present, are swapped, so "coding" yields "codign".
+     * 
+     * lastTwo("coding") → "codign"
+     * lastTwo("cat") → "cta"
+     * lastTwo("ab") → "ba"
+     */
+    public String lastTwo(String str) {
+      if(str.length() >= 2)
+      {
+        return str.substring(0,str.length()-2) + str.charAt(str.length()-1) + str.charAt(str.length()-2);
+      }
+      return str;
+    }
+    
+    /**
+     * Given a string, if the string begins with "red" or "blue" return that color string, otherwise return the empty string.
+     * 
+     * seeColor("redxx") → "red"
+     * seeColor("xxred") → ""
+     * seeColor("blueTimes") → "blue"
+     */
+    public String seeColor(String str) {
+
+      if(str.length() > 3 && str.substring(0,4).contains("blue"))
+      {
+        return "blue";
+      }
+      else if (str.length() >= 3 && str.substring(0,3).contains("red"))
+      {
+        return "red";
+      }
+      return "";
+    }
+    
 }

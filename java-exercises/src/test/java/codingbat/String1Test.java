@@ -317,4 +317,29 @@ public class String1Test{
         assertEquals("pigdoggy",testObject.conCat("pig", "doggy"));
     }
 
+    @Test
+    public void lastTwoTest(){
+        String1 testObject = new String1();
+        assertEquals("codign",testObject.lastTwo("coding"));
+        assertEquals("cta",testObject.lastTwo("cat"));
+        assertEquals("ba",testObject.lastTwo("ab"));
+        assertEquals("a",testObject.lastTwo("a"));
+        assertEquals("",testObject.lastTwo(""));
+    }
+
+    @Test
+    public void seeColorTest(){
+        String1 testObject = new String1();
+        assertEquals("red",testObject.seeColor("redxx"));
+        assertEquals("",testObject.seeColor("xxred"));
+        assertEquals("blue",testObject.seeColor("blueTimes"));
+        assertEquals("",testObject.seeColor("NoColor"));
+        assertEquals("red",testObject.seeColor("red"));
+        assertEquals("",testObject.seeColor("re"));
+        assertEquals("",testObject.seeColor("blu"));
+        assertEquals("blue",testObject.seeColor("blue"));
+        assertEquals("",testObject.seeColor("a"));
+        assertEquals("",testObject.seeColor(""));
+        assertEquals("",testObject.seeColor("xyzred"));
+    }
 }
