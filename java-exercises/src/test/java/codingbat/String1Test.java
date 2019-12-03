@@ -342,4 +342,31 @@ public class String1Test{
         assertEquals("",testObject.seeColor(""));
         assertEquals("",testObject.seeColor("xyzred"));
     }
+
+    @Test
+    public void frontAgainTest(){
+        String1 testObject = new String1();
+        assertTrue(testObject.frontAgain("edited"));
+        assertFalse(testObject.frontAgain("edit"));
+        assertTrue(testObject.frontAgain("ed"));
+        assertTrue(testObject.frontAgain("jj"));
+        assertTrue(testObject.frontAgain("jjj"));
+        assertTrue(testObject.frontAgain("jjjj"));
+        assertFalse(testObject.frontAgain("jjjk"));
+        assertFalse(testObject.frontAgain("x"));
+        assertFalse(testObject.frontAgain(""));
+        assertFalse(testObject.frontAgain("java"));
+        assertTrue(testObject.frontAgain("javaja"));
+    }
+
+    @Test
+    public void minCatTest(){
+        String1 testObject = new String1();
+        assertEquals("loHi",testObject.minCat("Hello", "Hi"));
+        assertEquals("ellojava",testObject.minCat("Hello", "java"));
+        assertEquals("javaello",testObject.minCat("java", "Hello"));
+        assertEquals("cx",testObject.minCat("abc", "x"));
+        assertEquals("xc",testObject.minCat("x", "abc"));
+        assertEquals("",testObject.minCat("abc", ""));
+    }
 }

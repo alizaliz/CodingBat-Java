@@ -364,5 +364,37 @@ public final class String1 {
       }
       return "";
     }
+
+    /**
+     * Given a string, return true if the first 2 chars in the string also appear at the end of the string, such as with "edited".
+     * 
+     * frontAgain("edited") → true
+     * frontAgain("edit") → false
+     * frontAgain("ed") → true
+     */
+    public boolean frontAgain(String str) {
+      if(str.length() < 2)
+      {
+        return false;
+      }
+      return str.substring(0,2).equals(str.substring(str.length()-2));
+    }
+    
+    /**
+     * Given two strings, append them together (known as "concatenation") and return the result. However, 
+     * if the strings are different lengths, omit chars from the longer string so it is the same length as the shorter string. So "Hello" and "Hi" yield "loHi". The strings may be any length.
+     * 
+     * minCat("Hello", "Hi") → "loHi"
+     * minCat("Hello", "java") → "ellojava"
+     * minCat("java", "Hello") → "javaello"
+     */
+    public String minCat(String a, String b) {
+      if(a.length() == b.length())
+      {
+        return a + b;
+      }
+      int min = Math.min(a.length(), b.length());
+      return a.substring(a.length()-min) + b.substring(b.length()-min);
+    }
     
 }
