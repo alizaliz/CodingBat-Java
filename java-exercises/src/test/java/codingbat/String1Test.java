@@ -369,4 +369,107 @@ public class String1Test{
         assertEquals("xc",testObject.minCat("x", "abc"));
         assertEquals("",testObject.minCat("abc", ""));
     }
+
+    @Test
+    public void extraFrontTest(){
+        String1 testObject = new String1();
+        assertEquals("HeHeHe",testObject.extraFront("Hello"));
+        assertEquals("ababab",testObject.extraFront("ab"));
+        assertEquals("HHH",testObject.extraFront("H"));
+        assertEquals("",testObject.extraFront(""));
+        assertEquals("CaCaCa",testObject.extraFront("Candy"));
+        assertEquals("CoCoCo",testObject.extraFront("Code"));
+    }
+
+    @Test
+    public void without2Test(){
+        String1 testObject = new String1();
+        assertEquals("lloHe",testObject.without2("HelloHe"));
+        assertEquals("HelloHi",testObject.without2("HelloHi"));
+        assertEquals("",testObject.without2("Hi"));
+        assertEquals("Chocolate",testObject.without2("Chocolate"));
+        assertEquals("x",testObject.without2("xxx"));
+        assertEquals("",testObject.without2("xx"));
+        assertEquals("x",testObject.without2("x"));
+        assertEquals("",testObject.without2(""));
+        assertEquals("Fruits",testObject.without2("Fruits"));
+    }
+
+    @Test
+    public void deFrontTest(){
+        String1 testObject = new String1();
+        assertEquals("llo",testObject.deFront("Hello"));
+        assertEquals("va",testObject.deFront("java"));
+        assertEquals("aay",testObject.deFront("away"));
+        assertEquals("ay",testObject.deFront("axy"));
+        assertEquals("abc",testObject.deFront("abc"));
+        assertEquals("by",testObject.deFront("xby"));
+        assertEquals("ab",testObject.deFront("ab"));
+        assertEquals("a",testObject.deFront("ax"));
+        assertEquals("ab",testObject.deFront("axb"));
+        assertEquals("aa",testObject.deFront("aaa"));
+        assertEquals("bc",testObject.deFront("xbc"));
+        assertEquals("bb",testObject.deFront("bbb"));
+        assertEquals("zz",testObject.deFront("bazz"));
+        assertEquals("",testObject.deFront("ba"));
+        assertEquals("abxyz",testObject.deFront("abxyz"));
+        assertEquals("",testObject.deFront("hi"));
+        assertEquals("s",testObject.deFront("his"));
+        assertEquals("",testObject.deFront("xz"));
+        assertEquals("z",testObject.deFront("zzz"));
+    }
+    
+    @Test
+    public void startWordTest(){
+        String1 testObject = new String1();
+        assertEquals("hi",testObject.startWord("hippo", "hi"));
+        assertEquals("hip",testObject.startWord("hippo", "xip"));
+        assertEquals("h",testObject.startWord("hippo", "i"));
+        assertEquals("",testObject.startWord("hippo", "ix"));
+        assertEquals("",testObject.startWord("h", "ix"));
+        assertEquals("",testObject.startWord("", "i"));
+        assertEquals("hi",testObject.startWord("hip", "zi"));
+        assertEquals("hip",testObject.startWord("hip", "zip"));
+        assertEquals("",testObject.startWord("hip", "zig"));
+        assertEquals("h",testObject.startWord("h", "z"));
+        assertEquals("hippo",testObject.startWord("hippo", "xippo"));
+        assertEquals("",testObject.startWord("hippo", "xyz"));
+        assertEquals("hip",testObject.startWord("hippo", "hip"));
+        assertEquals("kit",testObject.startWord("kitten", "cit"));
+        assertEquals("kit",testObject.startWord("kit", "cit"));
+    }
+
+    @Test
+    public void withoutXTest(){
+        String1 testObject = new String1();
+        assertEquals("Hi",testObject.withoutX("xHix"));
+        assertEquals("Hi",testObject.withoutX("xHi"));
+        assertEquals("Hxi",testObject.withoutX("Hxix"));
+        assertEquals("Hi",testObject.withoutX("Hi"));
+        assertEquals("xHi",testObject.withoutX("xxHi"));
+        assertEquals("Hi",testObject.withoutX("Hix"));
+        assertEquals("axb",testObject.withoutX("xaxbx"));
+        assertEquals("",testObject.withoutX("xx"));
+        assertEquals("",testObject.withoutX("x"));
+        assertEquals("",testObject.withoutX(""));
+        assertEquals("Hello",testObject.withoutX("Hello"));
+        assertEquals("Hexllo",testObject.withoutX("Hexllo"));
+    }
+
+    @Test
+    public void withoutX2Test(){
+        String1 testObject = new String1();
+        assertEquals("Hi",testObject.withoutX2("xHi"));
+        assertEquals("Hi",testObject.withoutX2("Hi"));
+        assertEquals("Hi",testObject.withoutX2("Hxi"));
+        assertEquals("Hi",testObject.withoutX2("xxHi"));
+        assertEquals("Hix",testObject.withoutX2("Hix"));
+        assertEquals("axb",testObject.withoutX2("xaxb"));
+        assertEquals("",testObject.withoutX2("xx"));
+        assertEquals("",testObject.withoutX2("x"));
+        assertEquals("",testObject.withoutX2(""));
+        assertEquals("Hello",testObject.withoutX2("Hello"));
+        assertEquals("Hexllo",testObject.withoutX2("Hexllo"));
+        assertEquals("Hxllo",testObject.withoutX2("xHxllo"));
+    }
 }
