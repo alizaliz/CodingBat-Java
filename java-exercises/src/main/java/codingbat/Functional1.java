@@ -80,8 +80,53 @@ import java.util.List;
         nums.replaceAll(n -> (n+1)*10);
         return nums;
     }
+
+    /**
+     * Given a list of non-negative integers, return an integer list of the rightmost digits. (Note: use %)
+     * 
+     * rightDigit([1, 22, 93]) → [1, 2, 3]
+     * rightDigit([16, 8, 886, 8, 1]) → [6, 8, 6, 8, 1]
+     * rightDigit([10, 0]) → [0, 0]
+     */
+    public List<Integer> rightDigit(List<Integer> nums) {
+        nums.replaceAll(n -> n%10);
+        return nums;
+    }
+    
+    /**
+     * Given a list of strings, return a list where each string is converted to lower case (Note: String toLowerCase() method).
+     * 
+     * lower(["Hello", "Hi"]) → ["hello", "hi"]
+     * lower(["AAA", "BBB", "ccc"]) → ["aaa", "bbb", "ccc"]
+     * lower(["KitteN", "ChocolaTE"]) → ["kitten", "chocolate"] 
+    */
+    public List<String> lower(List<String> strings) {
+        strings.replaceAll(s -> s.toLowerCase());
+        return strings;
+    }
+
+    /**
+     * Given a list of strings, return a list where each string has all its "x" removed.
+     * 
+     * noX(["ax", "bb", "cx"]) → ["a", "bb", "c"]
+     * noX(["xxax", "xbxbx", "xxcx"]) → ["a", "bb", "c"]
+     * noX(["x"]) → [""]
+    */
+    public List<String> noX(List<String> strings) {
+        strings.replaceAll(s -> removeX(s));
+        return strings;
+    }
       
+    public String removeX(String s){
+        String sX = "";
+        for(int i = 0 ; i < s.length() ; i++){
+            if(s.charAt(i) != 'x')
+            {
+            sX = sX + s.charAt(i);
+            }
+        }
+        
+        return sX;
+    }
       
-      
-     
  }

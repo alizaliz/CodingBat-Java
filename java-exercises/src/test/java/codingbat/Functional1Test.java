@@ -78,4 +78,40 @@ public class Functional1Test {
         assertEquals(Arrays.asList(70, -20, 130, 240, 50, 20, 200, 120, 30, 40, 30),testObject.math1(Arrays.asList(6, -3, 12, 23, 4, 1, 19, 11, 2, 3, 2)));
     }
 
+    @Test
+    public void rightDigitTest(){
+        Functional1 testObject = new Functional1();
+        assertEquals(Arrays.asList(1, 2, 3),testObject.rightDigit(Arrays.asList(1, 22, 93)));
+        assertEquals(Arrays.asList(6, 8, 6, 8, 1),testObject.rightDigit(Arrays.asList(16, 8, 886, 8, 1)));
+        assertEquals(Arrays.asList(0, 0),testObject.rightDigit(Arrays.asList(10, 0)));
+        assertEquals(Arrays.asList(),testObject.rightDigit(Arrays.asList()));
+        assertEquals(Arrays.asList(5, 0),testObject.rightDigit(Arrays.asList(5, 10)));
+        assertEquals(Arrays.asList(5, 0, 0, 0, 0),testObject.rightDigit(Arrays.asList(5, 50, 500, 5000, 5000)));
+        assertEquals(Arrays.asList(6, 3, 2, 3, 4, 1, 9, 9, 2, 3, 2),testObject.rightDigit(Arrays.asList(6, 23, 12, 23, 4, 1, 19, 1119, 2, 3, 2)));
+    }
+
+    @Test
+    public void lowerTest(){
+        Functional1 testObject = new Functional1();
+        assertEquals(Arrays.asList("hello", "hi"),testObject.lower(Arrays.asList("Hello", "Hi")));
+        assertEquals(Arrays.asList("aaa", "bbb", "ccc"),testObject.lower(Arrays.asList("AAA", "BBB", "ccc")));
+        assertEquals(Arrays.asList("kitten", "chocolate"),testObject.lower(Arrays.asList("KitteN", "ChocolaTE")));
+        assertEquals(Arrays.asList(),testObject.lower(Arrays.asList()));
+        assertEquals(Arrays.asList("empty", ""),testObject.lower(Arrays.asList("EMPTY", "")));
+        assertEquals(Arrays.asList("aax", "byb", "ycc", "zzz"),testObject.lower(Arrays.asList("aaX", "bYb", "Ycc", "ZZZ")));
+    }
+
+    @Test
+    public void noXTest(){
+        Functional1 testObject = new Functional1();
+        assertEquals(Arrays.asList("a", "bb", "c"),testObject.noX(Arrays.asList("ax", "bb", "cx")));
+        assertEquals(Arrays.asList("a", "bb", "c"),testObject.noX(Arrays.asList("xxax", "xbxbx", "xxcx")));
+        assertEquals(Arrays.asList(""),testObject.noX(Arrays.asList("x")));
+        assertEquals(Arrays.asList(""),testObject.noX(Arrays.asList("")));
+        assertEquals(Arrays.asList(),testObject.noX(Arrays.asList()));
+        assertEquals(Arrays.asList("the", "tai"),testObject.noX(Arrays.asList("the", "taxi")));
+        assertEquals(Arrays.asList("the", "tai"),testObject.noX(Arrays.asList("the", "xxtxaxixxx")));
+        assertEquals(Arrays.asList("this", "is", "the", ""),testObject.noX(Arrays.asList("this", "is", "the", "x")));
+    }
+
 }
