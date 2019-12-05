@@ -1,41 +1,48 @@
 package codingbat;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
+
+import org.junit.Before;
 
 /**
  * Test cases for String1 exercises
  */
 public class String1Test{
     
+    private String1 string1testObject;
+
+    @Before
+    public void setUp() {
+        string1testObject = new String1();
+    }
+
     @Test
     public void helloNameTest() {
-        String1 testObject = new String1();
-        assertEquals("Hello Bob!",testObject.helloName("Bob"));
-        assertEquals("Hello Alice!",testObject.helloName("Alice"));
-        assertEquals("Hello X!",testObject.helloName("X"));
-        assertEquals("Hello Dolly!",testObject.helloName("Dolly"));
-        assertEquals("Hello Alpha!",testObject.helloName("Alpha"));
-        assertEquals("Hello Omega!",testObject.helloName("Omega"));
-        assertEquals("Hello Goodbye!",testObject.helloName("Goodbye"));
-        assertEquals("Hello ho ho ho!",testObject.helloName("ho ho ho"));
-        assertEquals("Hello xyz!",testObject.helloName("xyz"));
-        assertEquals("Hello Hello!",testObject.helloName("Hello"));
+        assertEquals("Hello Bob!",string1testObject.helloName("Bob"));
+        assertEquals("Hello Alice!",string1testObject.helloName("Alice"));
+        assertEquals("Hello X!",string1testObject.helloName("X"));
+        assertEquals("Hello Dolly!",string1testObject.helloName("Dolly"));
+        assertEquals("Hello Alpha!",string1testObject.helloName("Alpha"));
+        assertEquals("Hello Omega!",string1testObject.helloName("Omega"));
+        assertEquals("Hello Goodbye!",string1testObject.helloName("Goodbye"));
+        assertEquals("Hello ho ho ho!",string1testObject.helloName("ho ho ho"));
+        assertEquals("Hello xyz!",string1testObject.helloName("xyz"));
+        assertEquals("Hello Hello!",string1testObject.helloName("Hello"));
 
     }
 
     @Test
-    public void makeAbbaTest()
-    {
-        String1 testObject = new String1();
-        assertEquals("HiByeByeHi",testObject.makeAbba("Hi", "Bye"));
-        assertEquals("YoAliceAliceYo",testObject.makeAbba("Yo", "Alice"));
-        assertEquals("WhatUpUpWhat",testObject.makeAbba("What", "Up"));
-        assertEquals("aaabbbbbbaaa",testObject.makeAbba("aaa", "bbb"));
-        assertEquals("xyyx",testObject.makeAbba("x", "y"));
-        assertEquals("xx",testObject.makeAbba("x", ""));
-        assertEquals("yy",testObject.makeAbba("", "y"));
-        assertEquals("BoYaYaBo",testObject.makeAbba("Bo", "Ya"));
-        assertEquals("YaYaYaYa",testObject.makeAbba("Ya", "Ya"));
+    public void makeAbbaTest() {
+        assertEquals("HiByeByeHi",string1testObject.makeAbba("Hi", "Bye"));
+        assertEquals("YoAliceAliceYo",string1testObject.makeAbba("Yo", "Alice"));
+        assertEquals("WhatUpUpWhat",string1testObject.makeAbba("What", "Up"));
+        assertEquals("aaabbbbbbaaa",string1testObject.makeAbba("aaa", "bbb"));
+        assertEquals("xyyx",string1testObject.makeAbba("x", "y"));
+        assertEquals("xx",string1testObject.makeAbba("x", ""));
+        assertEquals("yy",string1testObject.makeAbba("", "y"));
+        assertEquals("BoYaYaBo",string1testObject.makeAbba("Bo", "Ya"));
+        assertEquals("YaYaYaYa",string1testObject.makeAbba("Ya", "Ya"));
     }
 
     @Test
@@ -52,424 +59,390 @@ public class String1Test{
     }
 
     @Test
-    public void makeOutWordTest()
-    {
-        String1 testObject = new String1();
-        assertEquals("<<Yay>>",testObject.makeOutWord("<<>>", "Yay"));
-        assertEquals("<<WooHoo>>",testObject.makeOutWord("<<>>", "WooHoo"));
-        assertEquals("[[word]]",testObject.makeOutWord("[[]]", "word"));
-        assertEquals("HHHellooo",testObject.makeOutWord("HHoo", "Hello"));
-        assertEquals("abYAYyz",testObject.makeOutWord("abyz", "YAY"));
+    public void makeOutWordTest() {
+        assertEquals("<<Yay>>",string1testObject.makeOutWord("<<>>", "Yay"));
+        assertEquals("<<WooHoo>>",string1testObject.makeOutWord("<<>>", "WooHoo"));
+        assertEquals("[[word]]",string1testObject.makeOutWord("[[]]", "word"));
+        assertEquals("HHHellooo",string1testObject.makeOutWord("HHoo", "Hello"));
+        assertEquals("abYAYyz",string1testObject.makeOutWord("abyz", "YAY"));
     }
 
     @Test
-    public void extraEndTest()
-    {
-        String1 testObject = new String1();
-        assertEquals("lololo",testObject.extraEnd("Hello"));
-        assertEquals("ababab",testObject.extraEnd("ab"));
-        assertEquals("HiHiHi",testObject.extraEnd("Hi"));
-        assertEquals("dydydy",testObject.extraEnd("Candy"));
-        assertEquals("dedede",testObject.extraEnd("Code"));
+    public void extraEndTest() {
+        assertEquals("lololo",string1testObject.extraEnd("Hello"));
+        assertEquals("ababab",string1testObject.extraEnd("ab"));
+        assertEquals("HiHiHi",string1testObject.extraEnd("Hi"));
+        assertEquals("dydydy",string1testObject.extraEnd("Candy"));
+        assertEquals("dedede",string1testObject.extraEnd("Code"));
     }
 
     @Test
-    public void firstTwoTest()
-    {
-        String1 testObject = new String1();
-        assertEquals("He",testObject.firstTwo("Hello"));
-        assertEquals("ab",testObject.firstTwo("abcdefg"));
-        assertEquals("ab",testObject.firstTwo("ab"));
-        assertEquals("a",testObject.firstTwo("a"));
-        assertEquals("",testObject.firstTwo(""));
-        assertEquals("Ki",testObject.firstTwo("Kitten"));
-        assertEquals("hi",testObject.firstTwo("hi"));
-        assertEquals("hi",testObject.firstTwo("hiya"));
+    public void firstTwoTest() {
+        assertEquals("He",string1testObject.firstTwo("Hello"));
+        assertEquals("ab",string1testObject.firstTwo("abcdefg"));
+        assertEquals("ab",string1testObject.firstTwo("ab"));
+        assertEquals("a",string1testObject.firstTwo("a"));
+        assertEquals("",string1testObject.firstTwo(""));
+        assertEquals("Ki",string1testObject.firstTwo("Kitten"));
+        assertEquals("hi",string1testObject.firstTwo("hi"));
+        assertEquals("hi",string1testObject.firstTwo("hiya"));
     }
     
     @Test
-    public void firstHalfTest()
-    {
-        String1 testObject = new String1();
-        assertEquals("Woo",testObject.firstHalf("WooHoo"));
-        assertEquals("Hello",testObject.firstHalf("HelloThere"));
-        assertEquals("abc",testObject.firstHalf("abcdef"));
-        assertEquals("a",testObject.firstHalf("ab"));
-        assertEquals("",testObject.firstHalf(""));
-        assertEquals("01234",testObject.firstHalf("0123456789"));
-        assertEquals("kit",testObject.firstHalf("kitten"));
+    public void firstHalfTest() {
+        assertEquals("Woo",string1testObject.firstHalf("WooHoo"));
+        assertEquals("Hello",string1testObject.firstHalf("HelloThere"));
+        assertEquals("abc",string1testObject.firstHalf("abcdef"));
+        assertEquals("a",string1testObject.firstHalf("ab"));
+        assertEquals("",string1testObject.firstHalf(""));
+        assertEquals("01234",string1testObject.firstHalf("0123456789"));
+        assertEquals("kit",string1testObject.firstHalf("kitten"));
         
     }
 
     @Test
     public void withoutEndTest(){
-        String1 testObject = new String1();
-        assertEquals("ell",testObject.withoutEnd("Hello"));
-        assertEquals("av",testObject.withoutEnd("java"));
-        assertEquals("odin",testObject.withoutEnd("coding"));
-        assertEquals("od",testObject.withoutEnd("code"));
-        assertEquals("",testObject.withoutEnd("ab"));
-        assertEquals("hocolate",testObject.withoutEnd("Chocolate!"));
-        assertEquals("itte",testObject.withoutEnd("Kitten"));
-        assertEquals("ooho",testObject.withoutEnd("woohoo"));
+        assertEquals("ell",string1testObject.withoutEnd("Hello"));
+        assertEquals("av",string1testObject.withoutEnd("java"));
+        assertEquals("odin",string1testObject.withoutEnd("coding"));
+        assertEquals("od",string1testObject.withoutEnd("code"));
+        assertEquals("",string1testObject.withoutEnd("ab"));
+        assertEquals("hocolate",string1testObject.withoutEnd("Chocolate!"));
+        assertEquals("itte",string1testObject.withoutEnd("Kitten"));
+        assertEquals("ooho",string1testObject.withoutEnd("woohoo"));
     }
 
     @Test
     public void comboStringTest(){
-        String1 testObject = new String1();
-        assertEquals("hiHellohi",testObject.comboString("Hello","hi"));
-        assertEquals("hiHellohi",testObject.comboString("hi","Hello"));
-        assertEquals("baaab",testObject.comboString("aaa","b"));
-        assertEquals("baaab",testObject.comboString("b","aaa"));
-        assertEquals("aaa",testObject.comboString("aaa",""));
-        assertEquals("bb",testObject.comboString("","bb"));
-        assertEquals("aaa1234aaa",testObject.comboString("aaa","1234"));
-        assertEquals("bbaaabb",testObject.comboString("aaa","bb"));
-        assertEquals("abba",testObject.comboString("a","bb"));
-        assertEquals("abba",testObject.comboString("bb","a"));
-        assertEquals("abxyzab",testObject.comboString("xyz","ab"));
+        assertEquals("hiHellohi",string1testObject.comboString("Hello","hi"));
+        assertEquals("hiHellohi",string1testObject.comboString("hi","Hello"));
+        assertEquals("baaab",string1testObject.comboString("aaa","b"));
+        assertEquals("baaab",string1testObject.comboString("b","aaa"));
+        assertEquals("aaa",string1testObject.comboString("aaa",""));
+        assertEquals("bb",string1testObject.comboString("","bb"));
+        assertEquals("aaa1234aaa",string1testObject.comboString("aaa","1234"));
+        assertEquals("bbaaabb",string1testObject.comboString("aaa","bb"));
+        assertEquals("abba",string1testObject.comboString("a","bb"));
+        assertEquals("abba",string1testObject.comboString("bb","a"));
+        assertEquals("abxyzab",string1testObject.comboString("xyz","ab"));
     }
 
     @Test
     public void nonStartTest(){
-        String1 testObject = new String1();
-        assertEquals("ellohere",testObject.nonStart("Hello","There"));
-        assertEquals("avaode",testObject.nonStart("java","code"));
-        assertEquals("hotlava",testObject.nonStart("shotl","java"));
-        assertEquals("by",testObject.nonStart("ab","xy"));
-        assertEquals("b",testObject.nonStart("ab","x"));
-        assertEquals("c",testObject.nonStart("x","ac"));
-        assertEquals("",testObject.nonStart("a","x"));
-        assertEquals("itat",testObject.nonStart("kit","kat"));
-        assertEquals("artart",testObject.nonStart("mart","dart"));
+        assertEquals("ellohere",string1testObject.nonStart("Hello","There"));
+        assertEquals("avaode",string1testObject.nonStart("java","code"));
+        assertEquals("hotlava",string1testObject.nonStart("shotl","java"));
+        assertEquals("by",string1testObject.nonStart("ab","xy"));
+        assertEquals("b",string1testObject.nonStart("ab","x"));
+        assertEquals("c",string1testObject.nonStart("x","ac"));
+        assertEquals("",string1testObject.nonStart("a","x"));
+        assertEquals("itat",string1testObject.nonStart("kit","kat"));
+        assertEquals("artart",string1testObject.nonStart("mart","dart"));
     }
 
     @Test
     public void left2Test(){
-        String1 testObject = new String1();
-        assertEquals("lloHe",testObject.left2("Hello"));
-        assertEquals("vaja",testObject.left2("java"));
-        assertEquals("Hi",testObject.left2("Hi"));
-        assertEquals("deco",testObject.left2("code"));
-        assertEquals("tca",testObject.left2("cat"));
-        assertEquals("34512",testObject.left2("12345"));
-        assertEquals("ocolateCh",testObject.left2("Chocolate"));
-        assertEquals("icksbr",testObject.left2("bricks"));
+        assertEquals("lloHe",string1testObject.left2("Hello"));
+        assertEquals("vaja",string1testObject.left2("java"));
+        assertEquals("Hi",string1testObject.left2("Hi"));
+        assertEquals("deco",string1testObject.left2("code"));
+        assertEquals("tca",string1testObject.left2("cat"));
+        assertEquals("34512",string1testObject.left2("12345"));
+        assertEquals("ocolateCh",string1testObject.left2("Chocolate"));
+        assertEquals("icksbr",string1testObject.left2("bricks"));
     }
 
     @Test
     public void right2Test(){
-        String1 testObject = new String1();
-        assertEquals("loHel",testObject.right2("Hello"));
-        assertEquals("vaja",testObject.right2("java"));
-        assertEquals("Hi",testObject.right2("Hi"));
-        assertEquals("deco",testObject.right2("code"));
-        assertEquals("atc",testObject.right2("cat"));
-        assertEquals("45123",testObject.right2("12345"));
-        assertEquals("teChocola",testObject.right2("Chocolate"));
-        assertEquals("ksbric",testObject.right2("bricks"));
+        assertEquals("loHel",string1testObject.right2("Hello"));
+        assertEquals("vaja",string1testObject.right2("java"));
+        assertEquals("Hi",string1testObject.right2("Hi"));
+        assertEquals("deco",string1testObject.right2("code"));
+        assertEquals("atc",string1testObject.right2("cat"));
+        assertEquals("45123",string1testObject.right2("12345"));
+        assertEquals("teChocola",string1testObject.right2("Chocolate"));
+        assertEquals("ksbric",string1testObject.right2("bricks"));
     }
     
     @Test
     public void theEndTest(){
-        String1 testObject = new String1();
-        assertEquals("H",testObject.theEnd("Hello",true));
-        assertEquals("o",testObject.theEnd("Hello",false));
-        assertEquals("o",testObject.theEnd("oh",true));
-        assertEquals("h",testObject.theEnd("oh",false));
-        assertEquals("x",testObject.theEnd("x",true));
-        assertEquals("x",testObject.theEnd("x",false));
-        assertEquals("j",testObject.theEnd("java",true));
-        assertEquals("e",testObject.theEnd("Chocolate",false));
-        assertEquals("1",testObject.theEnd("1234",true));
-        assertEquals("e",testObject.theEnd("code",false));
+        assertEquals("H",string1testObject.theEnd("Hello",true));
+        assertEquals("o",string1testObject.theEnd("Hello",false));
+        assertEquals("o",string1testObject.theEnd("oh",true));
+        assertEquals("h",string1testObject.theEnd("oh",false));
+        assertEquals("x",string1testObject.theEnd("x",true));
+        assertEquals("x",string1testObject.theEnd("x",false));
+        assertEquals("j",string1testObject.theEnd("java",true));
+        assertEquals("e",string1testObject.theEnd("Chocolate",false));
+        assertEquals("1",string1testObject.theEnd("1234",true));
+        assertEquals("e",string1testObject.theEnd("code",false));
     }
 
     @Test
     public void withoutEnd2Test(){
-        String1 testObject = new String1();
-        assertEquals("ell",testObject.withoutEnd2("Hello"));
-        assertEquals("b",testObject.withoutEnd2("abc"));
-        assertEquals("",testObject.withoutEnd2("ab"));
-        assertEquals("",testObject.withoutEnd2("a"));
-        assertEquals("",testObject.withoutEnd2(""));
-        assertEquals("old",testObject.withoutEnd2("coldy"));
-        assertEquals("ava cod",testObject.withoutEnd2("java code"));
+        assertEquals("ell",string1testObject.withoutEnd2("Hello"));
+        assertEquals("b",string1testObject.withoutEnd2("abc"));
+        assertEquals("",string1testObject.withoutEnd2("ab"));
+        assertEquals("",string1testObject.withoutEnd2("a"));
+        assertEquals("",string1testObject.withoutEnd2(""));
+        assertEquals("old",string1testObject.withoutEnd2("coldy"));
+        assertEquals("ava cod",string1testObject.withoutEnd2("java code"));
     }
 
     @Test
     public void middleTwoTest(){
-        String1 testObject = new String1();
-        assertEquals("ri",testObject.middleTwo("string"));
-        assertEquals("od",testObject.middleTwo("code"));
-        assertEquals("ct",testObject.middleTwo("Practice"));
-        assertEquals("ab",testObject.middleTwo("ab"));
-        assertEquals("45",testObject.middleTwo("0123456789"));
+        assertEquals("ri",string1testObject.middleTwo("string"));
+        assertEquals("od",string1testObject.middleTwo("code"));
+        assertEquals("ct",string1testObject.middleTwo("Practice"));
+        assertEquals("ab",string1testObject.middleTwo("ab"));
+        assertEquals("45",string1testObject.middleTwo("0123456789"));
     }
 
     @Test
     public void endsLyTest(){
-        String1 testObject = new String1();
-        assertTrue(testObject.endsLy("oddly"));
-        assertFalse(testObject.endsLy("y"));
-        assertFalse(testObject.endsLy("oddy"));
-        assertFalse(testObject.endsLy("oddl"));
-        assertFalse(testObject.endsLy("olydd"));
-        assertTrue(testObject.endsLy("ly"));
-        assertFalse(testObject.endsLy(""));
-        assertFalse(testObject.endsLy("falsey"));
-        assertTrue(testObject.endsLy("evenly"));
+        assertTrue(string1testObject.endsLy("oddly"));
+        assertFalse(string1testObject.endsLy("y"));
+        assertFalse(string1testObject.endsLy("oddy"));
+        assertFalse(string1testObject.endsLy("oddl"));
+        assertFalse(string1testObject.endsLy("olydd"));
+        assertTrue(string1testObject.endsLy("ly"));
+        assertFalse(string1testObject.endsLy(""));
+        assertFalse(string1testObject.endsLy("falsey"));
+        assertTrue(string1testObject.endsLy("evenly"));
     }
 
     @Test
     public void nTwiceTest(){
-        String1 testObject = new String1();
-        assertEquals("Helo",testObject.nTwice("Hello", 2));
-        assertEquals("Choate",testObject.nTwice("Chocolate", 3));
-        assertEquals("Ce",testObject.nTwice("Chocolate", 1));
-        assertEquals("",testObject.nTwice("Chocolate", 0));
-        assertEquals("Hellello",testObject.nTwice("Hello", 4));
-        assertEquals("CodeCode",testObject.nTwice("Code", 4));
-        assertEquals("Code",testObject.nTwice("Code", 2));
+        assertEquals("Helo",string1testObject.nTwice("Hello", 2));
+        assertEquals("Choate",string1testObject.nTwice("Chocolate", 3));
+        assertEquals("Ce",string1testObject.nTwice("Chocolate", 1));
+        assertEquals("",string1testObject.nTwice("Chocolate", 0));
+        assertEquals("Hellello",string1testObject.nTwice("Hello", 4));
+        assertEquals("CodeCode",string1testObject.nTwice("Code", 4));
+        assertEquals("Code",string1testObject.nTwice("Code", 2));
     }
 
     @Test
     public void twoCharTest(){
-        String1 testObject = new String1();
-        assertEquals("ja",testObject.twoChar("java", 0));
-        assertEquals("va",testObject.twoChar("java", 2));
-        assertEquals("ja",testObject.twoChar("java", 3));
-        assertEquals("ja",testObject.twoChar("java", 4));
-        assertEquals("ja",testObject.twoChar("java", -1));
-        assertEquals("He",testObject.twoChar("Hello", 0));
-        assertEquals("el",testObject.twoChar("Hello", 1));
-        assertEquals("He",testObject.twoChar("Hello", 99));
-        assertEquals("lo",testObject.twoChar("Hello", 3));
-        assertEquals("He",testObject.twoChar("Hello", 24));
-        assertEquals("He",testObject.twoChar("Hello", 5));
-        assertEquals("He",testObject.twoChar("Hello", -7));
-        assertEquals("He",testObject.twoChar("Hello", 6));
-        assertEquals("He",testObject.twoChar("Hello", -1));
-        assertEquals("ya",testObject.twoChar("yay", 0));
+        assertEquals("ja",string1testObject.twoChar("java", 0));
+        assertEquals("va",string1testObject.twoChar("java", 2));
+        assertEquals("ja",string1testObject.twoChar("java", 3));
+        assertEquals("ja",string1testObject.twoChar("java", 4));
+        assertEquals("ja",string1testObject.twoChar("java", -1));
+        assertEquals("He",string1testObject.twoChar("Hello", 0));
+        assertEquals("el",string1testObject.twoChar("Hello", 1));
+        assertEquals("He",string1testObject.twoChar("Hello", 99));
+        assertEquals("lo",string1testObject.twoChar("Hello", 3));
+        assertEquals("He",string1testObject.twoChar("Hello", 24));
+        assertEquals("He",string1testObject.twoChar("Hello", 5));
+        assertEquals("He",string1testObject.twoChar("Hello", -7));
+        assertEquals("He",string1testObject.twoChar("Hello", 6));
+        assertEquals("He",string1testObject.twoChar("Hello", -1));
+        assertEquals("ya",string1testObject.twoChar("yay", 0));
     }
 
     @Test
     public void middleThreeTest(){
-        String1 testObject = new String1();
-        assertEquals("and",testObject.middleThree("Candy"));
-        assertEquals("and",testObject.middleThree("and"));
-        assertEquals("lvi",testObject.middleThree("solving"));
-        assertEquals("yet",testObject.middleThree("Hi yet Hi"));
-        assertEquals("yet",testObject.middleThree("java yet java"));
-        assertEquals("col",testObject.middleThree("Chocolate"));
-        assertEquals("xyz",testObject.middleThree("XabcxyzabcX"));
+        assertEquals("and",string1testObject.middleThree("Candy"));
+        assertEquals("and",string1testObject.middleThree("and"));
+        assertEquals("lvi",string1testObject.middleThree("solving"));
+        assertEquals("yet",string1testObject.middleThree("Hi yet Hi"));
+        assertEquals("yet",string1testObject.middleThree("java yet java"));
+        assertEquals("col",string1testObject.middleThree("Chocolate"));
+        assertEquals("xyz",string1testObject.middleThree("XabcxyzabcX"));
     }
 
     @Test
     public void hasBadTest(){
-        String1 testObject = new String1();
-        assertTrue(testObject.hasBad("badxx"));
-        assertTrue(testObject.hasBad("xbadxx"));
-        assertFalse(testObject.hasBad("xxbadxx"));
-        assertFalse(testObject.hasBad("code"));
-        assertTrue(testObject.hasBad("bad"));
-        assertFalse(testObject.hasBad("ba"));
-        assertFalse(testObject.hasBad("xba"));
-        assertTrue(testObject.hasBad("xbad"));
-        assertFalse(testObject.hasBad(""));
-        assertTrue(testObject.hasBad("badyy"));
+        assertTrue(string1testObject.hasBad("badxx"));
+        assertTrue(string1testObject.hasBad("xbadxx"));
+        assertFalse(string1testObject.hasBad("xxbadxx"));
+        assertFalse(string1testObject.hasBad("code"));
+        assertTrue(string1testObject.hasBad("bad"));
+        assertFalse(string1testObject.hasBad("ba"));
+        assertFalse(string1testObject.hasBad("xba"));
+        assertTrue(string1testObject.hasBad("xbad"));
+        assertFalse(string1testObject.hasBad(""));
+        assertTrue(string1testObject.hasBad("badyy"));
     }
 
     @Test
     public void atFirstTest(){
-        String1 testObject = new String1();
-        assertEquals("he",testObject.atFirst("hello"));
-        assertEquals("hi",testObject.atFirst("hi"));
-        assertEquals("h@",testObject.atFirst("h"));
-        assertEquals("@@",testObject.atFirst(""));
-        assertEquals("ki",testObject.atFirst("kitten"));
-        assertEquals("ja",testObject.atFirst("java"));
-        assertEquals("j@",testObject.atFirst("j"));
+        assertEquals("he",string1testObject.atFirst("hello"));
+        assertEquals("hi",string1testObject.atFirst("hi"));
+        assertEquals("h@",string1testObject.atFirst("h"));
+        assertEquals("@@",string1testObject.atFirst(""));
+        assertEquals("ki",string1testObject.atFirst("kitten"));
+        assertEquals("ja",string1testObject.atFirst("java"));
+        assertEquals("j@",string1testObject.atFirst("j"));
     }
 
     @Test
     public void lastCharsTest(){
-        String1 testObject = new String1();
-        assertEquals("ls",testObject.lastChars("last", "chars"));
-        assertEquals("ya",testObject.lastChars("yo", "java"));
-        assertEquals("h@",testObject.lastChars("hi", ""));
-        assertEquals("@o",testObject.lastChars("", "hello"));
-        assertEquals("@@",testObject.lastChars("", ""));
-        assertEquals("ki",testObject.lastChars("kitten", "hi"));
-        assertEquals("kp",testObject.lastChars("k", "zip"));
-        assertEquals("k@",testObject.lastChars("kitten", ""));
-        assertEquals("kp",testObject.lastChars("kitten", "zip"));
+        assertEquals("ls",string1testObject.lastChars("last", "chars"));
+        assertEquals("ya",string1testObject.lastChars("yo", "java"));
+        assertEquals("h@",string1testObject.lastChars("hi", ""));
+        assertEquals("@o",string1testObject.lastChars("", "hello"));
+        assertEquals("@@",string1testObject.lastChars("", ""));
+        assertEquals("ki",string1testObject.lastChars("kitten", "hi"));
+        assertEquals("kp",string1testObject.lastChars("k", "zip"));
+        assertEquals("k@",string1testObject.lastChars("kitten", ""));
+        assertEquals("kp",string1testObject.lastChars("kitten", "zip"));
     }
 
     @Test
     public void conCatTest(){
-        String1 testObject = new String1();
-        assertEquals("abcat",testObject.conCat("abc", "cat"));
-        assertEquals("dogcat",testObject.conCat("dog", "cat"));
-        assertEquals("abc",testObject.conCat("abc", ""));
-        assertEquals("cat",testObject.conCat("", "cat"));
-        assertEquals("pig",testObject.conCat("pig", "g"));
-        assertEquals("pigdoggy",testObject.conCat("pig", "doggy"));
+        assertEquals("abcat",string1testObject.conCat("abc", "cat"));
+        assertEquals("dogcat",string1testObject.conCat("dog", "cat"));
+        assertEquals("abc",string1testObject.conCat("abc", ""));
+        assertEquals("cat",string1testObject.conCat("", "cat"));
+        assertEquals("pig",string1testObject.conCat("pig", "g"));
+        assertEquals("pigdoggy",string1testObject.conCat("pig", "doggy"));
     }
 
     @Test
     public void lastTwoTest(){
-        String1 testObject = new String1();
-        assertEquals("codign",testObject.lastTwo("coding"));
-        assertEquals("cta",testObject.lastTwo("cat"));
-        assertEquals("ba",testObject.lastTwo("ab"));
-        assertEquals("a",testObject.lastTwo("a"));
-        assertEquals("",testObject.lastTwo(""));
+        assertEquals("codign",string1testObject.lastTwo("coding"));
+        assertEquals("cta",string1testObject.lastTwo("cat"));
+        assertEquals("ba",string1testObject.lastTwo("ab"));
+        assertEquals("a",string1testObject.lastTwo("a"));
+        assertEquals("",string1testObject.lastTwo(""));
     }
 
     @Test
     public void seeColorTest(){
-        String1 testObject = new String1();
-        assertEquals("red",testObject.seeColor("redxx"));
-        assertEquals("",testObject.seeColor("xxred"));
-        assertEquals("blue",testObject.seeColor("blueTimes"));
-        assertEquals("",testObject.seeColor("NoColor"));
-        assertEquals("red",testObject.seeColor("red"));
-        assertEquals("",testObject.seeColor("re"));
-        assertEquals("",testObject.seeColor("blu"));
-        assertEquals("blue",testObject.seeColor("blue"));
-        assertEquals("",testObject.seeColor("a"));
-        assertEquals("",testObject.seeColor(""));
-        assertEquals("",testObject.seeColor("xyzred"));
+        assertEquals("red",string1testObject.seeColor("redxx"));
+        assertEquals("",string1testObject.seeColor("xxred"));
+        assertEquals("blue",string1testObject.seeColor("blueTimes"));
+        assertEquals("",string1testObject.seeColor("NoColor"));
+        assertEquals("red",string1testObject.seeColor("red"));
+        assertEquals("",string1testObject.seeColor("re"));
+        assertEquals("",string1testObject.seeColor("blu"));
+        assertEquals("blue",string1testObject.seeColor("blue"));
+        assertEquals("",string1testObject.seeColor("a"));
+        assertEquals("",string1testObject.seeColor(""));
+        assertEquals("",string1testObject.seeColor("xyzred"));
     }
 
     @Test
     public void frontAgainTest(){
-        String1 testObject = new String1();
-        assertTrue(testObject.frontAgain("edited"));
-        assertFalse(testObject.frontAgain("edit"));
-        assertTrue(testObject.frontAgain("ed"));
-        assertTrue(testObject.frontAgain("jj"));
-        assertTrue(testObject.frontAgain("jjj"));
-        assertTrue(testObject.frontAgain("jjjj"));
-        assertFalse(testObject.frontAgain("jjjk"));
-        assertFalse(testObject.frontAgain("x"));
-        assertFalse(testObject.frontAgain(""));
-        assertFalse(testObject.frontAgain("java"));
-        assertTrue(testObject.frontAgain("javaja"));
+        assertTrue(string1testObject.frontAgain("edited"));
+        assertFalse(string1testObject.frontAgain("edit"));
+        assertTrue(string1testObject.frontAgain("ed"));
+        assertTrue(string1testObject.frontAgain("jj"));
+        assertTrue(string1testObject.frontAgain("jjj"));
+        assertTrue(string1testObject.frontAgain("jjjj"));
+        assertFalse(string1testObject.frontAgain("jjjk"));
+        assertFalse(string1testObject.frontAgain("x"));
+        assertFalse(string1testObject.frontAgain(""));
+        assertFalse(string1testObject.frontAgain("java"));
+        assertTrue(string1testObject.frontAgain("javaja"));
     }
 
     @Test
     public void minCatTest(){
-        String1 testObject = new String1();
-        assertEquals("loHi",testObject.minCat("Hello", "Hi"));
-        assertEquals("ellojava",testObject.minCat("Hello", "java"));
-        assertEquals("javaello",testObject.minCat("java", "Hello"));
-        assertEquals("cx",testObject.minCat("abc", "x"));
-        assertEquals("xc",testObject.minCat("x", "abc"));
-        assertEquals("",testObject.minCat("abc", ""));
+        assertEquals("loHi",string1testObject.minCat("Hello", "Hi"));
+        assertEquals("ellojava",string1testObject.minCat("Hello", "java"));
+        assertEquals("javaello",string1testObject.minCat("java", "Hello"));
+        assertEquals("cx",string1testObject.minCat("abc", "x"));
+        assertEquals("xc",string1testObject.minCat("x", "abc"));
+        assertEquals("",string1testObject.minCat("abc", ""));
     }
 
     @Test
     public void extraFrontTest(){
-        String1 testObject = new String1();
-        assertEquals("HeHeHe",testObject.extraFront("Hello"));
-        assertEquals("ababab",testObject.extraFront("ab"));
-        assertEquals("HHH",testObject.extraFront("H"));
-        assertEquals("",testObject.extraFront(""));
-        assertEquals("CaCaCa",testObject.extraFront("Candy"));
-        assertEquals("CoCoCo",testObject.extraFront("Code"));
+        assertEquals("HeHeHe",string1testObject.extraFront("Hello"));
+        assertEquals("ababab",string1testObject.extraFront("ab"));
+        assertEquals("HHH",string1testObject.extraFront("H"));
+        assertEquals("",string1testObject.extraFront(""));
+        assertEquals("CaCaCa",string1testObject.extraFront("Candy"));
+        assertEquals("CoCoCo",string1testObject.extraFront("Code"));
     }
 
     @Test
     public void without2Test(){
-        String1 testObject = new String1();
-        assertEquals("lloHe",testObject.without2("HelloHe"));
-        assertEquals("HelloHi",testObject.without2("HelloHi"));
-        assertEquals("",testObject.without2("Hi"));
-        assertEquals("Chocolate",testObject.without2("Chocolate"));
-        assertEquals("x",testObject.without2("xxx"));
-        assertEquals("",testObject.without2("xx"));
-        assertEquals("x",testObject.without2("x"));
-        assertEquals("",testObject.without2(""));
-        assertEquals("Fruits",testObject.without2("Fruits"));
+        assertEquals("lloHe",string1testObject.without2("HelloHe"));
+        assertEquals("HelloHi",string1testObject.without2("HelloHi"));
+        assertEquals("",string1testObject.without2("Hi"));
+        assertEquals("Chocolate",string1testObject.without2("Chocolate"));
+        assertEquals("x",string1testObject.without2("xxx"));
+        assertEquals("",string1testObject.without2("xx"));
+        assertEquals("x",string1testObject.without2("x"));
+        assertEquals("",string1testObject.without2(""));
+        assertEquals("Fruits",string1testObject.without2("Fruits"));
     }
 
     @Test
     public void deFrontTest(){
-        String1 testObject = new String1();
-        assertEquals("llo",testObject.deFront("Hello"));
-        assertEquals("va",testObject.deFront("java"));
-        assertEquals("aay",testObject.deFront("away"));
-        assertEquals("ay",testObject.deFront("axy"));
-        assertEquals("abc",testObject.deFront("abc"));
-        assertEquals("by",testObject.deFront("xby"));
-        assertEquals("ab",testObject.deFront("ab"));
-        assertEquals("a",testObject.deFront("ax"));
-        assertEquals("ab",testObject.deFront("axb"));
-        assertEquals("aa",testObject.deFront("aaa"));
-        assertEquals("bc",testObject.deFront("xbc"));
-        assertEquals("bb",testObject.deFront("bbb"));
-        assertEquals("zz",testObject.deFront("bazz"));
-        assertEquals("",testObject.deFront("ba"));
-        assertEquals("abxyz",testObject.deFront("abxyz"));
-        assertEquals("",testObject.deFront("hi"));
-        assertEquals("s",testObject.deFront("his"));
-        assertEquals("",testObject.deFront("xz"));
-        assertEquals("z",testObject.deFront("zzz"));
+        assertEquals("llo",string1testObject.deFront("Hello"));
+        assertEquals("va",string1testObject.deFront("java"));
+        assertEquals("aay",string1testObject.deFront("away"));
+        assertEquals("ay",string1testObject.deFront("axy"));
+        assertEquals("abc",string1testObject.deFront("abc"));
+        assertEquals("by",string1testObject.deFront("xby"));
+        assertEquals("ab",string1testObject.deFront("ab"));
+        assertEquals("a",string1testObject.deFront("ax"));
+        assertEquals("ab",string1testObject.deFront("axb"));
+        assertEquals("aa",string1testObject.deFront("aaa"));
+        assertEquals("bc",string1testObject.deFront("xbc"));
+        assertEquals("bb",string1testObject.deFront("bbb"));
+        assertEquals("zz",string1testObject.deFront("bazz"));
+        assertEquals("",string1testObject.deFront("ba"));
+        assertEquals("abxyz",string1testObject.deFront("abxyz"));
+        assertEquals("",string1testObject.deFront("hi"));
+        assertEquals("s",string1testObject.deFront("his"));
+        assertEquals("",string1testObject.deFront("xz"));
+        assertEquals("z",string1testObject.deFront("zzz"));
     }
     
     @Test
     public void startWordTest(){
-        String1 testObject = new String1();
-        assertEquals("hi",testObject.startWord("hippo", "hi"));
-        assertEquals("hip",testObject.startWord("hippo", "xip"));
-        assertEquals("h",testObject.startWord("hippo", "i"));
-        assertEquals("",testObject.startWord("hippo", "ix"));
-        assertEquals("",testObject.startWord("h", "ix"));
-        assertEquals("",testObject.startWord("", "i"));
-        assertEquals("hi",testObject.startWord("hip", "zi"));
-        assertEquals("hip",testObject.startWord("hip", "zip"));
-        assertEquals("",testObject.startWord("hip", "zig"));
-        assertEquals("h",testObject.startWord("h", "z"));
-        assertEquals("hippo",testObject.startWord("hippo", "xippo"));
-        assertEquals("",testObject.startWord("hippo", "xyz"));
-        assertEquals("hip",testObject.startWord("hippo", "hip"));
-        assertEquals("kit",testObject.startWord("kitten", "cit"));
-        assertEquals("kit",testObject.startWord("kit", "cit"));
+        assertEquals("hi",string1testObject.startWord("hippo", "hi"));
+        assertEquals("hip",string1testObject.startWord("hippo", "xip"));
+        assertEquals("h",string1testObject.startWord("hippo", "i"));
+        assertEquals("",string1testObject.startWord("hippo", "ix"));
+        assertEquals("",string1testObject.startWord("h", "ix"));
+        assertEquals("",string1testObject.startWord("", "i"));
+        assertEquals("hi",string1testObject.startWord("hip", "zi"));
+        assertEquals("hip",string1testObject.startWord("hip", "zip"));
+        assertEquals("",string1testObject.startWord("hip", "zig"));
+        assertEquals("h",string1testObject.startWord("h", "z"));
+        assertEquals("hippo",string1testObject.startWord("hippo", "xippo"));
+        assertEquals("",string1testObject.startWord("hippo", "xyz"));
+        assertEquals("hip",string1testObject.startWord("hippo", "hip"));
+        assertEquals("kit",string1testObject.startWord("kitten", "cit"));
+        assertEquals("kit",string1testObject.startWord("kit", "cit"));
     }
 
     @Test
     public void withoutXTest(){
-        String1 testObject = new String1();
-        assertEquals("Hi",testObject.withoutX("xHix"));
-        assertEquals("Hi",testObject.withoutX("xHi"));
-        assertEquals("Hxi",testObject.withoutX("Hxix"));
-        assertEquals("Hi",testObject.withoutX("Hi"));
-        assertEquals("xHi",testObject.withoutX("xxHi"));
-        assertEquals("Hi",testObject.withoutX("Hix"));
-        assertEquals("axb",testObject.withoutX("xaxbx"));
-        assertEquals("",testObject.withoutX("xx"));
-        assertEquals("",testObject.withoutX("x"));
-        assertEquals("",testObject.withoutX(""));
-        assertEquals("Hello",testObject.withoutX("Hello"));
-        assertEquals("Hexllo",testObject.withoutX("Hexllo"));
+        assertEquals("Hi",string1testObject.withoutX("xHix"));
+        assertEquals("Hi",string1testObject.withoutX("xHi"));
+        assertEquals("Hxi",string1testObject.withoutX("Hxix"));
+        assertEquals("Hi",string1testObject.withoutX("Hi"));
+        assertEquals("xHi",string1testObject.withoutX("xxHi"));
+        assertEquals("Hi",string1testObject.withoutX("Hix"));
+        assertEquals("axb",string1testObject.withoutX("xaxbx"));
+        assertEquals("",string1testObject.withoutX("xx"));
+        assertEquals("",string1testObject.withoutX("x"));
+        assertEquals("",string1testObject.withoutX(""));
+        assertEquals("Hello",string1testObject.withoutX("Hello"));
+        assertEquals("Hexllo",string1testObject.withoutX("Hexllo"));
     }
 
     @Test
     public void withoutX2Test(){
-        String1 testObject = new String1();
-        assertEquals("Hi",testObject.withoutX2("xHi"));
-        assertEquals("Hi",testObject.withoutX2("Hi"));
-        assertEquals("Hi",testObject.withoutX2("Hxi"));
-        assertEquals("Hi",testObject.withoutX2("xxHi"));
-        assertEquals("Hix",testObject.withoutX2("Hix"));
-        assertEquals("axb",testObject.withoutX2("xaxb"));
-        assertEquals("",testObject.withoutX2("xx"));
-        assertEquals("",testObject.withoutX2("x"));
-        assertEquals("",testObject.withoutX2(""));
-        assertEquals("Hello",testObject.withoutX2("Hello"));
-        assertEquals("Hexllo",testObject.withoutX2("Hexllo"));
-        assertEquals("Hxllo",testObject.withoutX2("xHxllo"));
+        assertEquals("Hi",string1testObject.withoutX2("xHi"));
+        assertEquals("Hi",string1testObject.withoutX2("Hi"));
+        assertEquals("Hi",string1testObject.withoutX2("Hxi"));
+        assertEquals("Hi",string1testObject.withoutX2("xxHi"));
+        assertEquals("Hix",string1testObject.withoutX2("Hix"));
+        assertEquals("axb",string1testObject.withoutX2("xaxb"));
+        assertEquals("",string1testObject.withoutX2("xx"));
+        assertEquals("",string1testObject.withoutX2("x"));
+        assertEquals("",string1testObject.withoutX2(""));
+        assertEquals("Hello",string1testObject.withoutX2("Hello"));
+        assertEquals("Hexllo",string1testObject.withoutX2("Hexllo"));
+        assertEquals("Hxllo",string1testObject.withoutX2("xHxllo"));
     }
 }
