@@ -17,8 +17,7 @@ public final class Map1 {
      * mapBully({"a": "candy"}) → {"a": "", "b": "candy"}
      * mapBully({"a": "candy", "b": "carrot", "c": "meh"}) → {"a": "", "b": "candy", "c": "meh"}
      */
-    public Map<String, String> mapBully(Map<String, String> map) 
-    {
+    public Map<String, String> mapBully(Map<String, String> map) {
         Map<String, String> bulliedMap = new HashMap<String, String>(map);
         if(bulliedMap.get("a") != null )
         {
@@ -27,5 +26,24 @@ public final class Map1 {
         }
         return bulliedMap;
     }
+
+    /**
+     * Modify and return the given map as follows: if the key "a" has a value, set the key "b" to have that same value. 
+     * In all cases remove the key "c", leaving the rest of the map unchanged.
+     * 
+     * mapShare({"a": "aaa", "b": "bbb", "c": "ccc"}) → {"a": "aaa", "b": "aaa"}
+     * mapShare({"b": "xyz", "c": "ccc"}) → {"b": "xyz"}
+     * mapShare({"a": "aaa", "c": "meh", "d": "hi"}) → {"a": "aaa", "b": "aaa", "d": "hi"}
+    */
+    public Map<String, String> mapShare(Map<String, String> map) {
+        Map<String, String> shareMap = new HashMap<String, String>(map);
+        if(shareMap.get("a") != null)
+        {
+            shareMap.put("b",shareMap.get("a"));
+        }
+        shareMap.remove("c");
+        return shareMap;
+    }
+      
 
 }

@@ -28,4 +28,13 @@ public class Map1Test {
         assertEquals( Map.of("a", "", "b", "sparkle", "c", "meh") , map1TestObject.mapBully(Map.of("a", "sparkle", "c", "meh")));
     }
 
+    @Test
+    public void mapShareTest(){
+        assertEquals( Map.of("a", "aaa", "b", "aaa") , map1TestObject.mapShare(Map.of("a", "aaa", "b", "bbb", "c", "ccc")));
+        assertEquals( Map.of("b", "xyz") , map1TestObject.mapShare(Map.of("b", "xyz", "c", "ccc")));
+        assertEquals( Map.of("a", "aaa", "b", "aaa", "d", "hi") , map1TestObject.mapShare(Map.of("a", "aaa", "c", "meh", "d", "hi")));
+        assertEquals( Map.of("a", "xyz", "b", "xyz", "z", "zzz") , map1TestObject.mapShare(Map.of("a", "xyz", "b", "1234", "c", "yo", "z", "zzz")));
+        assertEquals( Map.of("a", "xyz", "b", "1234", "c", "yo", "d", "ddd", "e", "everything") , map1TestObject.mapShare(Map.of("a", "xyz", "b", "1234", "c", "yo", "d", "ddd", "e", "everything")));
+    }
+
 }
