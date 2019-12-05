@@ -1,5 +1,6 @@
 package codingbat;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -18,12 +19,13 @@ public final class Map1 {
      */
     public Map<String, String> mapBully(Map<String, String> map) 
     {
-        if(map.get("a") != null )
+        Map<String, String> bulliedMap = new HashMap<String, String>(map);
+        if(bulliedMap.get("a") != null )
         {
-            map.put("b" , map.get("a"));
-            map.put("a", "");
+            bulliedMap.put("b" , bulliedMap.get("a"));
+            bulliedMap.put("a", "");
         }
-        return map;
+        return bulliedMap;
     }
 
 }
