@@ -37,4 +37,14 @@ public class Map1Test {
         assertEquals( Map.of("a", "xyz", "b", "1234", "c", "yo", "d", "ddd", "e", "everything") , map1TestObject.mapShare(Map.of("a", "xyz", "b", "1234", "c", "yo", "d", "ddd", "e", "everything")));
     }
 
+    @Test
+    public void mapABTest(){
+        assertEquals( Map.of("a", "Hi", "ab", "HiThere", "b", "There") , map1TestObject.mapAB(Map.of("a", "Hi", "b", "There")));
+        assertEquals( Map.of("a", "Hi") , map1TestObject.mapAB(Map.of("a", "Hi")));
+        assertEquals( Map.of("b", "There") , map1TestObject.mapAB(Map.of("b", "There")));
+        assertEquals( Map.of("c", "meh") , map1TestObject.mapAB(Map.of("c", "meh")));
+        assertEquals( Map.of("a", "aaa", "ab", "nope", "b", "bbb", "c", "ccc") , map1TestObject.mapAB(Map.of("a", "aaa", "ab", "nope", "b", "bbb", "c", "ccc")));
+        assertEquals( Map.of("ab", "nope", "b", "bbb", "c", "ccc") , map1TestObject.mapAB(Map.of("ab", "nope", "b", "bbb", "c", "ccc")));
+    }
+
 }

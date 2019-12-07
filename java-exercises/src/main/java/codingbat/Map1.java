@@ -45,5 +45,21 @@ public final class Map1 {
         return shareMap;
     }
       
-
+    /**
+     * Modify and return the given map as follows: for this problem the map may or may not contain the "a" and "b" keys. 
+     * If both keys are present, append their 2 string values together and store the result under the key "ab".
+     * 
+     * mapAB({"a": "Hi", "b": "There"}) → {"a": "Hi", "ab": "HiThere", "b": "There"}
+     * mapAB({"a": "Hi"}) → {"a": "Hi"}
+     * mapAB({"b": "There"}) → {"b": "There"}
+     */
+    public Map<String, String> mapAB(Map<String, String> map) {
+        Map<String, String> abMap = new HashMap<String, String>(map);
+        if(abMap.get("a") != null && abMap.get("b") != null)
+        {
+            abMap.put("ab", abMap.get("a") + abMap.get("b"));
+        }
+        return abMap;
+    }
+       
 }
