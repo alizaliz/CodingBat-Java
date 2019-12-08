@@ -47,4 +47,13 @@ public class Map1Test {
         assertEquals( Map.of("ab", "nope", "b", "bbb", "c", "ccc") , map1TestObject.mapAB(Map.of("ab", "nope", "b", "bbb", "c", "ccc")));
     }
 
+    @Test
+    public void topping1Test(){
+        assertEquals( Map.of("bread", "butter", "ice cream", "cherry") , map1TestObject.topping1(Map.of("ice cream", "peanuts")));
+        assertEquals( Map.of("bread", "butter") , map1TestObject.topping1(Map.of()));
+        assertEquals( Map.of("bread", "butter", "pancake", "syrup") , map1TestObject.topping1(Map.of("pancake", "syrup")));
+        assertEquals( Map.of("bread", "dirt", "ice cream", "strawberries") , map1TestObject.topping1(Map.of("bread", "dirt", "ice cream", "strawberries")));
+        assertEquals( Map.of("bread", "jam", "ice cream", "strawberries", "salad", "oil") , map1TestObject.topping1(Map.of("bread", "jam", "ice cream", "strawberries", "salad", "oil")));
+    }
+    
 }
