@@ -79,5 +79,26 @@ public final class Map1 {
         }
         return topping1Map;
     }
+
+    /**
+     * Given a map of food keys and their topping values, modify and return the map as follows: if the key "ice cream" has a value, 
+     * set that as the value for the key "yogurt" also. If the key "spinach" has a value, change that value to "nuts".
+     * 
+     * topping2({"ice cream": "cherry"}) → {"yogurt": "cherry", "ice cream": "cherry"}
+     * topping2({"spinach": "dirt", "ice cream": "cherry"}) → {"yogurt": "cherry", "spinach": "nuts", "ice cream": "cherry"}
+     * topping2({"yogurt": "salt"}) → {"yogurt": "salt"}
+     */
+    public Map<String, String> topping2(Map<String, String> map) {
+        Map<String, String> topping2Map = new HashMap<String, String>(map);
+        if( topping2Map.get("ice cream") != null)
+        {
+            topping2Map.put("yogurt",topping2Map.get("ice cream"));
+        }
+        if( topping2Map.get("spinach") != null)
+        {
+            topping2Map.put("spinach","nuts");
+        }
+        return topping2Map;
+    }
       
 }   
