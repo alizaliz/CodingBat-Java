@@ -76,5 +76,15 @@ public class Map1Test {
         assertEquals( Map.of("spinach", "pepper", "salad", "pepper", "fries", "salt") , map1TestObject.topping3(Map.of("salad", "pepper", "fries", "salt")));
     }
 
-    
+    @Test
+    public void mapAB2Test(){
+        assertEquals( Map.of("c", "cake") , map1TestObject.mapAB(Map.of("a", "aaa", "b", "aaa", "c", "cake")));
+        assertEquals( Map.of("a", "aaa", "b", "bbb") , map1TestObject.mapAB(Map.of("a", "aaa", "b", "bbb")));
+        assertEquals( Map.of("a", "aaa", "b", "bbb", "c", "aaa") , map1TestObject.mapAB(Map.of("a", "aaa", "b", "bbb", "c", "aaa")));
+        assertEquals( Map.of("a", "aaa") , map1TestObject.mapAB(Map.of("a", "aaa")));
+        assertEquals( Map.of("b", "bbb") , map1TestObject.mapAB(Map.of("b", "bbb")));
+        assertEquals( Map.of("c", "ccc") , map1TestObject.mapAB(Map.of("a", "", "b", "", "c", "ccc")));
+        assertEquals( Map.of() , map1TestObject.mapAB(Map.of()));
+        assertEquals( Map.of("a", "a", "b", "b", "z", "zebra") , map1TestObject.mapAB(Map.of("a", "a", "b", "b", "z", "zebra")));
+    }
 }

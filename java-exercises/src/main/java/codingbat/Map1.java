@@ -52,7 +52,7 @@ public final class Map1 {
      * mapAB({"a": "Hi", "b": "There"}) → {"a": "Hi", "ab": "HiThere", "b": "There"}
      * mapAB({"a": "Hi"}) → {"a": "Hi"}
      * mapAB({"b": "There"}) → {"b": "There"}
-     */
+    */
     public Map<String, String> mapAB(Map<String, String> map) {
         Map<String, String> abMap = new HashMap<String, String>(map);
         if(abMap.get("a") != null && abMap.get("b") != null)
@@ -69,7 +69,7 @@ public final class Map1 {
      * topping1({"ice cream": "peanuts"}) → {"bread": "butter", "ice cream": "cherry"}
      * topping1({}) → {"bread": "butter"}
      * topping1({"pancake": "syrup"}) → {"bread": "butter", "pancake": "syrup"}
-     */
+    */
     public Map<String, String> topping1(Map<String, String> map) {
         Map<String, String> topping1Map = new HashMap<String, String>(map);
         topping1Map.put("bread","butter");
@@ -87,7 +87,7 @@ public final class Map1 {
      * topping2({"ice cream": "cherry"}) → {"yogurt": "cherry", "ice cream": "cherry"}
      * topping2({"spinach": "dirt", "ice cream": "cherry"}) → {"yogurt": "cherry", "spinach": "nuts", "ice cream": "cherry"}
      * topping2({"yogurt": "salt"}) → {"yogurt": "salt"}
-     */
+    */
     public Map<String, String> topping2(Map<String, String> map) {
         Map<String, String> topping2Map = new HashMap<String, String>(map);
         if( topping2Map.get("ice cream") != null)
@@ -109,7 +109,7 @@ public final class Map1 {
      * topping3({"potato": "butter"}) → {"potato": "butter", "fries": "butter"}
      * topping3({"salad": "oil", "potato": "ketchup"}) → {"spinach": "oil", "salad": "oil", "potato": "ketchup", "fries": "ketchup"}
      * 
-     */
+    */
     public Map<String, String> topping3(Map<String, String> map) {
         Map<String, String> topping3Map = new HashMap<String, String>(map);
         if(topping3Map.get("potato")!=null)
@@ -121,6 +121,24 @@ public final class Map1 {
             topping3Map.put("spinach",topping3Map.get("salad"));
         }
         return map;
+    }
+
+    /**
+     * Modify and return the given map as follows: if the keys "a" and "b" are both in the map and have equal values, remove them both.
+     * 
+     * mapAB2({"a": "aaa", "b": "aaa", "c": "cake"}) → {"c": "cake"}
+     * mapAB2({"a": "aaa", "b": "bbb"}) → {"a": "aaa", "b": "bbb"}
+     * mapAB2({"a": "aaa", "b": "bbb", "c": "aaa"}) → {"a": "aaa", "b": "bbb", "c": "aaa"}
+    */
+    public Map<String, String> mapAB2(Map<String, String> map) {
+        Map<String, String> AB2Map = new HashMap<String, String>(map);
+        if(AB2Map.containsKey("a") && AB2Map.containsKey("b"))
+          if(AB2Map.get("a").equals(AB2Map.get("b")))
+          {
+            AB2Map.remove("a");
+            AB2Map.remove("b");
+          }
+        return AB2Map;
     }
       
 }   
