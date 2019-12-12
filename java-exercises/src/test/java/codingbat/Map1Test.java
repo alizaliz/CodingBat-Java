@@ -78,13 +78,28 @@ public class Map1Test {
 
     @Test
     public void mapAB2Test(){
-        assertEquals( Map.of("c", "cake") , map1TestObject.mapAB(Map.of("a", "aaa", "b", "aaa", "c", "cake")));
-        assertEquals( Map.of("a", "aaa", "b", "bbb") , map1TestObject.mapAB(Map.of("a", "aaa", "b", "bbb")));
-        assertEquals( Map.of("a", "aaa", "b", "bbb", "c", "aaa") , map1TestObject.mapAB(Map.of("a", "aaa", "b", "bbb", "c", "aaa")));
-        assertEquals( Map.of("a", "aaa") , map1TestObject.mapAB(Map.of("a", "aaa")));
-        assertEquals( Map.of("b", "bbb") , map1TestObject.mapAB(Map.of("b", "bbb")));
-        assertEquals( Map.of("c", "ccc") , map1TestObject.mapAB(Map.of("a", "", "b", "", "c", "ccc")));
-        assertEquals( Map.of() , map1TestObject.mapAB(Map.of()));
-        assertEquals( Map.of("a", "a", "b", "b", "z", "zebra") , map1TestObject.mapAB(Map.of("a", "a", "b", "b", "z", "zebra")));
+        assertEquals( Map.of("c", "cake") , map1TestObject.mapAB2(Map.of("a", "aaa", "b", "aaa", "c", "cake")));
+        assertEquals( Map.of("a", "aaa", "b", "bbb") , map1TestObject.mapAB2(Map.of("a", "aaa", "b", "bbb")));
+        assertEquals( Map.of("a", "aaa", "b", "bbb", "c", "aaa") , map1TestObject.mapAB2(Map.of("a", "aaa", "b", "bbb", "c", "aaa")));
+        assertEquals( Map.of("a", "aaa") , map1TestObject.mapAB2(Map.of("a", "aaa")));
+        assertEquals( Map.of("b", "bbb") , map1TestObject.mapAB2(Map.of("b", "bbb")));
+        assertEquals( Map.of("c", "ccc") , map1TestObject.mapAB2(Map.of("a", "", "b", "", "c", "ccc")));
+        assertEquals( Map.of() , map1TestObject.mapAB2(Map.of()));
+        assertEquals( Map.of("a", "a", "b", "b", "z", "zebra") , map1TestObject.mapAB2(Map.of("a", "a", "b", "b", "z", "zebra")));
     }
+
+    @Test
+    public void mapAB3Test(){
+        assertEquals( Map.of("a", "aaa", "b", "aaa", "c", "cake") , map1TestObject.mapAB3(Map.of("a", "aaa", "c", "cake")));
+        assertEquals( Map.of("a", "bbb", "b", "bbb", "c", "cake") , map1TestObject.mapAB3(Map.of("b", "bbb", "c", "cake")));
+        assertEquals( Map.of("a", "aaa", "b", "bbb", "c", "cake") , map1TestObject.mapAB3(Map.of("a", "aaa", "b", "bbb", "c", "cake")));
+        assertEquals( Map.of("ccc", "ccc") , map1TestObject.mapAB3(Map.of("ccc", "ccc")));
+        assertEquals( Map.of("c", "a", "d", "b") , map1TestObject.mapAB3(Map.of("c", "a", "d", "b")));
+        assertEquals( Map.of() , map1TestObject.mapAB3(Map.of()));
+        assertEquals( Map.of("a", "", "b", "") , map1TestObject.mapAB3(Map.of("a", "")));
+        assertEquals( Map.of("a", "", "b", "") , map1TestObject.mapAB3(Map.of("b", "")));
+        assertEquals( Map.of("a", "", "b", "") , map1TestObject.mapAB3(Map.of("a", "", "b", "")));
+        assertEquals( Map.of("aa", "aa", "a", "apple", "b", "apple", "z", "zzz") , map1TestObject.mapAB3(Map.of("aa", "aa", "a", "apple", "z", "zzz")));
+    }
+
 }
