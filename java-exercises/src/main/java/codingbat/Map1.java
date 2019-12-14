@@ -122,7 +122,7 @@ public final class Map1 {
         if (topping3Map.get("salad") != null) {
             topping3Map.put("spinach", topping3Map.get("salad"));
         }
-        return map;
+        return topping3Map;
     }
 
     /**
