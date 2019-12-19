@@ -47,4 +47,17 @@ public final class Logic2Test {
         assertTrue(logic2testObject.makeBricks(20, 4, 39));
     }
 
+    @Test
+    public void LoneSumTest() {
+        assertEquals(6, logic2testObject.loneSum(1, 2, 3));
+        assertEquals(2, logic2testObject.loneSum(3, 2, 3));
+        assertEquals(0, logic2testObject.loneSum(3, 3, 3));
+        assertEquals(9, logic2testObject.loneSum(9, 2, 2));
+        assertEquals(9, logic2testObject.loneSum(2, 2, 9));
+        assertEquals(9, logic2testObject.loneSum(2, 9, 2));
+        assertEquals(14, logic2testObject.loneSum(2, 9, 3));
+        assertEquals(9, logic2testObject.loneSum(4, 2, 3));
+        assertEquals(3, logic2testObject.loneSum(1, 3, 1));
+    }
+
 }
