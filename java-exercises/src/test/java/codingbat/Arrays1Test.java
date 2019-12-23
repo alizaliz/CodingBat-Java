@@ -30,4 +30,17 @@ public final class Arrays1Test {
         assertTrue(arrays1testObject.firstLast6(new int[] { 1, 2, 3, 4, 6 }));
         assertFalse(arrays1testObject.firstLast6(new int[] { 1, 2, 3, 4 }));
     }
+
+    @Test
+    public void sameFirstLastTest() {
+        assertFalse(arrays1testObject.sameFirstLast(new int[] { 1, 2, 3 }));
+        assertTrue(arrays1testObject.sameFirstLast(new int[] { 1, 2, 3, 1 }));
+        assertTrue(arrays1testObject.sameFirstLast(new int[] { 1, 2, 1 }));
+        assertTrue(arrays1testObject.sameFirstLast(new int[] { 7 }));
+        assertFalse(arrays1testObject.sameFirstLast(new int[] {}));
+        assertTrue(arrays1testObject.sameFirstLast(new int[] { 1, 2, 3, 4, 5, 1 }));
+        assertFalse(arrays1testObject.sameFirstLast(new int[] { 1, 2, 3, 4, 5, 13 }));
+        assertTrue(arrays1testObject.sameFirstLast(new int[] { 13, 2, 3, 4, 5, 13 }));
+        assertTrue(arrays1testObject.sameFirstLast(new int[] { 7, 7 }));
+    }
 }
