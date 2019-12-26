@@ -57,4 +57,14 @@ public final class Arrays1Test {
         assertTrue(arrays1testObject.commonEnd(new int[] { 1, 2, 3 }, new int[] { 1 }));
         assertFalse(arrays1testObject.commonEnd(new int[] { 1, 2, 3 }, new int[] { 2 }));
     }
+
+    @Test
+    public void sum3() {
+        assertEquals(6, arrays1testObject.sum3(new int[] { 1, 2, 3 }));
+        assertEquals(18, arrays1testObject.sum3(new int[] { 5, 11, 2 }));
+        assertEquals(7, arrays1testObject.sum3(new int[] { 7, 0, 0 }));
+        assertEquals(4, arrays1testObject.sum3(new int[] { 1, 2, 1 }));
+        assertEquals(3, arrays1testObject.sum3(new int[] { 1, 1, 1 }));
+        assertEquals(11, arrays1testObject.sum3(new int[] { 2, 7, 2 }));
+    }
 }
