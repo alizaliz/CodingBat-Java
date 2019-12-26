@@ -45,7 +45,16 @@ public final class Arrays1Test {
     }
 
     @Test
-    public void makePiTest(){
-        assertArrayEquals(new int[] {3,1,4}, arrays1testObject.makePi());
+    public void makePiTest() {
+        assertArrayEquals(new int[] { 3, 1, 4 }, arrays1testObject.makePi());
+    }
+
+    @Test
+    public void commonEndTest() {
+        assertTrue(arrays1testObject.commonEnd(new int[] { 1, 2, 3 }, new int[] { 7, 3 }));
+        assertFalse(arrays1testObject.commonEnd(new int[] { 1, 2, 3 }, new int[] { 7, 3, 2 }));
+        assertTrue(arrays1testObject.commonEnd(new int[] { 1, 2, 3 }, new int[] { 1, 3 }));
+        assertTrue(arrays1testObject.commonEnd(new int[] { 1, 2, 3 }, new int[] { 1 }));
+        assertFalse(arrays1testObject.commonEnd(new int[] { 1, 2, 3 }, new int[] { 2 }));
     }
 }
