@@ -43,4 +43,9 @@ public final class Arrays1Test {
         assertTrue(arrays1testObject.sameFirstLast(new int[] { 13, 2, 3, 4, 5, 13 }));
         assertTrue(arrays1testObject.sameFirstLast(new int[] { 7, 7 }));
     }
+
+    @Test
+    public void makePiTest(){
+        assertArrayEquals(new int[] {3,1,4}, arrays1testObject.makePi());
+    }
 }
