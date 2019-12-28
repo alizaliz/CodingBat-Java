@@ -76,4 +76,16 @@ public final class Arrays1Test {
         assertArrayEquals(new int[] { 2, 1, 1 }, arrays1testObject.rotateLeft3(new int[] { 1, 2, 1 }));
         assertArrayEquals(new int[] { 0, 1, 0 }, arrays1testObject.rotateLeft3(new int[] { 0, 0, 1 }));
     }
+
+    @Test
+    public void reverse3Test() {
+        assertArrayEquals(new int[] { 3, 2, 1 }, arrays1testObject.reverse3(new int[] { 1, 2, 3 }));
+        assertArrayEquals(new int[] { 9, 11, 5 }, arrays1testObject.reverse3(new int[] { 5, 11, 9 }));
+        assertArrayEquals(new int[] { 0, 0, 7 }, arrays1testObject.reverse3(new int[] { 7, 0, 0 }));
+        assertArrayEquals(new int[] { 2, 1, 2 }, arrays1testObject.reverse3(new int[] { 2, 1, 2 }));
+        assertArrayEquals(new int[] { 1, 2, 1 }, arrays1testObject.reverse3(new int[] { 1, 2, 1 }));
+        assertArrayEquals(new int[] { 3, 11, 2 }, arrays1testObject.reverse3(new int[] { 2, 11, 3 }));
+        assertArrayEquals(new int[] { 5, 6, 0 }, arrays1testObject.reverse3(new int[] { 0, 6, 5 }));
+        assertArrayEquals(new int[] { 3, 2, 7 }, arrays1testObject.reverse3(new int[] { 7, 2, 3 }));
+    }
 }
