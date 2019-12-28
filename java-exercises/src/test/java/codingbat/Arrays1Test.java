@@ -67,4 +67,13 @@ public final class Arrays1Test {
         assertEquals(3, arrays1testObject.sum3(new int[] { 1, 1, 1 }));
         assertEquals(11, arrays1testObject.sum3(new int[] { 2, 7, 2 }));
     }
+
+    @Test
+    public void rotateLeft3() {
+        assertArrayEquals(new int[] { 2, 3, 1 }, arrays1testObject.rotateLeft3(new int[] { 1, 2, 3 }));
+        assertArrayEquals(new int[] { 11, 9, 5 }, arrays1testObject.rotateLeft3(new int[] { 5, 11, 9 }));
+        assertArrayEquals(new int[] { 0, 0, 7 }, arrays1testObject.rotateLeft3(new int[] { 7, 0, 0 }));
+        assertArrayEquals(new int[] { 2, 1, 1 }, arrays1testObject.rotateLeft3(new int[] { 1, 2, 1 }));
+        assertArrayEquals(new int[] { 0, 1, 0 }, arrays1testObject.rotateLeft3(new int[] { 0, 0, 1 }));
+    }
 }
