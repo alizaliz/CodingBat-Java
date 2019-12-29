@@ -88,4 +88,16 @@ public final class Arrays1Test {
         assertArrayEquals(new int[] { 5, 6, 0 }, arrays1testObject.reverse3(new int[] { 0, 6, 5 }));
         assertArrayEquals(new int[] { 3, 2, 7 }, arrays1testObject.reverse3(new int[] { 7, 2, 3 }));
     }
+
+    @Test
+    public void maxEnd3Test() {
+        assertArrayEquals(new int[] { 3, 3, 3 }, arrays1testObject.maxEnd3(new int[] { 1, 2, 3 }));
+        assertArrayEquals(new int[] { 11, 11, 11 }, arrays1testObject.maxEnd3(new int[] { 11, 5, 9 }));
+        assertArrayEquals(new int[] { 3, 3, 3 }, arrays1testObject.maxEnd3(new int[] { 2, 11, 3 }));
+        assertArrayEquals(new int[] { 11, 11, 11 }, arrays1testObject.maxEnd3(new int[] { 11, 3, 3 }));
+        assertArrayEquals(new int[] { 11, 11, 11 }, arrays1testObject.maxEnd3(new int[] { 3, 11, 11 }));
+        assertArrayEquals(new int[] { 2, 2, 2 }, arrays1testObject.maxEnd3(new int[] { 2, 2, 2 }));
+        assertArrayEquals(new int[] { 2, 2, 2 }, arrays1testObject.maxEnd3(new int[] { 2, 11, 2 }));
+        assertArrayEquals(new int[] { 1, 1, 1 }, arrays1testObject.maxEnd3(new int[] { 0, 0, 1 }));
+    }
 }
