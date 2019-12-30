@@ -155,19 +155,37 @@ public final class Arrays1 {
     }
 
     /**
-     * Given 2 int arrays, a and b, each length 3, return a new array length 2 containing their middle elements.
+     * Given 2 int arrays, a and b, each length 3, return a new array length 2
+     * containing their middle elements.
      * 
-     * middleWay([1, 2, 3], [4, 5, 6]) → [2, 5]
-     * middleWay([7, 7, 7], [3, 8, 0]) → [7, 8]
-     * middleWay([5, 2, 9], [1, 4, 5]) → [2, 4]
+     * middleWay([1, 2, 3], [4, 5, 6]) → [2, 5] middleWay([7, 7, 7], [3, 8, 0]) →
+     * [7, 8] middleWay([5, 2, 9], [1, 4, 5]) → [2, 4]
      */
     public int[] middleWay(int[] a, int[] b) {
         int[] mids = new int[2];
-        
+
         mids[0] = a[1];
         mids[1] = b[1];
-        
+
         return mids;
-      }
-      
+    }
+
+    /**
+     * Given an array of ints, return a new array length 2 containing the first and
+     * last elements from the original array. The original array will be length 1 or
+     * more.
+     * 
+     * makeEnds([1, 2, 3]) → [1, 3] makeEnds([1, 2, 3, 4]) → [1, 4] makeEnds([7, 4,
+     * 6, 2]) → [7, 2]
+     */
+    public int[] makeEnds(int[] nums) {
+
+        int[] ends = new int[2];
+
+        ends[0] = nums[0];
+        ends[1] = nums[nums.length - 1];
+
+        return ends;
+    }
+
 }

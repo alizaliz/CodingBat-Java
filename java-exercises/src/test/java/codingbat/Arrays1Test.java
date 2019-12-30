@@ -128,4 +128,16 @@ public final class Arrays1Test {
         assertArrayEquals(new int[] { 2, 1 },
                 arrays1testObject.middleWay(new int[] { 1, 2, 3 }, new int[] { 4, 1, 1 }));
     }
+
+    @Test
+    public void makeEnds() {
+        assertArrayEquals(new int[] { 1, 3 }, arrays1testObject.makeEnds(new int[] { 1, 2, 3 }));
+        assertArrayEquals(new int[] { 1, 4 }, arrays1testObject.makeEnds(new int[] { 1, 2, 3, 4 }));
+        assertArrayEquals(new int[] { 7, 2 }, arrays1testObject.makeEnds(new int[] { 7, 4, 6, 2 }));
+        assertArrayEquals(new int[] { 1, 3 }, arrays1testObject.makeEnds(new int[] { 1, 2, 2, 2, 2, 2, 2, 3 }));
+        assertArrayEquals(new int[] { 7, 4 }, arrays1testObject.makeEnds(new int[] { 7, 4 }));
+        assertArrayEquals(new int[] { 7, 7 }, arrays1testObject.makeEnds(new int[] { 7 }));
+        assertArrayEquals(new int[] { 5, 9 }, arrays1testObject.makeEnds(new int[] { 5, 2, 9 }));
+        assertArrayEquals(new int[] { 2, 1 }, arrays1testObject.makeEnds(new int[] { 2, 3, 4, 1 }));
+    }
 }
