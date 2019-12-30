@@ -100,4 +100,16 @@ public final class Arrays1Test {
         assertArrayEquals(new int[] { 2, 2, 2 }, arrays1testObject.maxEnd3(new int[] { 2, 11, 2 }));
         assertArrayEquals(new int[] { 1, 1, 1 }, arrays1testObject.maxEnd3(new int[] { 0, 0, 1 }));
     }
+
+    @Test
+    public void sum2Test() {
+        assertEquals(3, arrays1testObject.sum2(new int[] { 1, 2, 3 }));
+        assertEquals(2, arrays1testObject.sum2(new int[] { 1, 1 }));
+        assertEquals(2, arrays1testObject.sum2(new int[] { 1, 1, 1, 1 }));
+        assertEquals(3, arrays1testObject.sum2(new int[] { 1, 2 }));
+        assertEquals(1, arrays1testObject.sum2(new int[] { 1 }));
+        assertEquals(0, arrays1testObject.sum2(new int[] {}));
+        assertEquals(9, arrays1testObject.sum2(new int[] { 4, 5, 6 }));
+        assertEquals(4, arrays1testObject.sum2(new int[] { 4 }));
+    }
 }
