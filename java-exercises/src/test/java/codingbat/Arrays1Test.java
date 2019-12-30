@@ -112,4 +112,20 @@ public final class Arrays1Test {
         assertEquals(9, arrays1testObject.sum2(new int[] { 4, 5, 6 }));
         assertEquals(4, arrays1testObject.sum2(new int[] { 4 }));
     }
+
+    @Test
+    public void middleWayTest() {
+        assertArrayEquals(new int[] { 2, 5 },
+                arrays1testObject.middleWay(new int[] { 1, 2, 3 }, new int[] { 4, 5, 6 }));
+        assertArrayEquals(new int[] { 7, 8 },
+                arrays1testObject.middleWay(new int[] { 7, 7, 7 }, new int[] { 3, 8, 0 }));
+        assertArrayEquals(new int[] { 2, 4 },
+                arrays1testObject.middleWay(new int[] { 5, 2, 9 }, new int[] { 1, 4, 5 }));
+        assertArrayEquals(new int[] { 9, 8 },
+                arrays1testObject.middleWay(new int[] { 1, 9, 7 }, new int[] { 4, 8, 8 }));
+        assertArrayEquals(new int[] { 2, 1 },
+                arrays1testObject.middleWay(new int[] { 1, 2, 3 }, new int[] { 3, 1, 4 }));
+        assertArrayEquals(new int[] { 2, 1 },
+                arrays1testObject.middleWay(new int[] { 1, 2, 3 }, new int[] { 4, 1, 1 }));
+    }
 }
