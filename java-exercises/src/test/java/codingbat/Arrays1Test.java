@@ -140,4 +140,46 @@ public final class Arrays1Test {
         assertArrayEquals(new int[] { 5, 9 }, arrays1testObject.makeEnds(new int[] { 5, 2, 9 }));
         assertArrayEquals(new int[] { 2, 1 }, arrays1testObject.makeEnds(new int[] { 2, 3, 4, 1 }));
     }
+
+    @Test
+    public void has23Test() {
+        assertTrue(arrays1testObject.has23(new int[] { 2, 5 }));
+        assertTrue(arrays1testObject.has23(new int[] { 4, 3 }));
+        assertFalse(arrays1testObject.has23(new int[] { 4, 5 }));
+        assertTrue(arrays1testObject.has23(new int[] { 2, 2 }));
+        assertTrue(arrays1testObject.has23(new int[] { 3, 2 }));
+        assertTrue(arrays1testObject.has23(new int[] { 3, 3 }));
+        assertFalse(arrays1testObject.has23(new int[] { 7, 7 }));
+        assertTrue(arrays1testObject.has23(new int[] { 3, 9 }));
+        assertFalse(arrays1testObject.has23(new int[] { 9, 5 }));
+    }
+
+    @Test
+    public void no23Test() {
+        assertTrue(arrays1testObject.no23(new int[] { 4, 5 }));
+        assertFalse(arrays1testObject.no23(new int[] { 4, 2 }));
+        assertFalse(arrays1testObject.no23(new int[] { 3, 5 }));
+        assertTrue(arrays1testObject.no23(new int[] { 1, 9 }));
+        assertFalse(arrays1testObject.no23(new int[] { 2, 9 }));
+        assertFalse(arrays1testObject.no23(new int[] { 1, 3 }));
+        assertTrue(arrays1testObject.no23(new int[] { 1, 1 }));
+        assertFalse(arrays1testObject.no23(new int[] { 2, 2 }));
+        assertFalse(arrays1testObject.no23(new int[] { 3, 3 }));
+        assertTrue(arrays1testObject.no23(new int[] { 7, 8 }));
+        assertTrue(arrays1testObject.no23(new int[] { 8, 7 }));
+    }
+
+    @Test
+    public void makeLastTest() {
+        assertArrayEquals(new int[] { 0, 0, 0, 0, 0, 6 }, arrays1testObject.makeLast(new int[] { 4, 5, 6 }));
+        assertArrayEquals(new int[] { 0, 0, 0, 2 }, arrays1testObject.makeLast(new int[] { 1, 2 }));
+        assertArrayEquals(new int[] { 0, 3 }, arrays1testObject.makeLast(new int[] { 3 }));
+        assertArrayEquals(new int[] { 0, 0 }, arrays1testObject.makeLast(new int[] { 0 }));
+        assertArrayEquals(new int[] { 0, 0, 0, 0, 0, 7 }, arrays1testObject.makeLast(new int[] { 7, 7, 7 }));
+        assertArrayEquals(new int[] { 0, 0, 0, 0, 0, 4 }, arrays1testObject.makeLast(new int[] { 3, 1, 4 }));
+        assertArrayEquals(new int[] { 0, 0, 0, 0, 0, 0, 0, 4 }, arrays1testObject.makeLast(new int[] { 1, 2, 3, 4 }));
+        assertArrayEquals(new int[] { 0, 0, 0, 0, 0, 0, 0, 0 }, arrays1testObject.makeLast(new int[] { 1, 2, 3, 0 }));
+        assertArrayEquals(new int[] { 0, 0, 0, 4 }, arrays1testObject.makeLast(new int[] { 2, 4 }));
+    }
+
 }
