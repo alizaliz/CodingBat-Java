@@ -196,4 +196,14 @@ public final class Arrays1Test {
         assertFalse(arrays1testObject.double23(new int[] {}));
         assertFalse(arrays1testObject.double23(new int[] { 3, 4 }));
     }
+
+    @Test
+    public void fix23Test() {
+        assertArrayEquals(new int[] { 1, 2, 0 }, arrays1testObject.fix23(new int[] { 1, 2, 3 }));
+        assertArrayEquals(new int[] { 2, 0, 5 }, arrays1testObject.fix23(new int[] { 2, 3, 5 }));
+        assertArrayEquals(new int[] { 1, 2, 1 }, arrays1testObject.fix23(new int[] { 1, 2, 1 }));
+        assertArrayEquals(new int[] { 3, 2, 1 }, arrays1testObject.fix23(new int[] { 3, 2, 1 }));
+        assertArrayEquals(new int[] { 2, 2, 0 }, arrays1testObject.fix23(new int[] { 2, 2, 3 }));
+        assertArrayEquals(new int[] { 2, 0, 3 }, arrays1testObject.fix23(new int[] { 2, 3, 3 }));
+    }
 }
