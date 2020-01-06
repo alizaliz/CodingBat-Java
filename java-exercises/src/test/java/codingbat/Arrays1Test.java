@@ -1,6 +1,8 @@
 package codingbat;
 
 import org.junit.Test;
+import org.junit.runner.notification.RunListener.ThreadSafe;
+
 import static org.junit.Assert.*;
 
 import org.junit.Before;
@@ -182,4 +184,16 @@ public final class Arrays1Test {
         assertArrayEquals(new int[] { 0, 0, 0, 4 }, arrays1testObject.makeLast(new int[] { 2, 4 }));
     }
 
+    @Test
+    public void double23Test() {
+        assertTrue(arrays1testObject.double23(new int[] { 2, 2 }));
+        assertTrue(arrays1testObject.double23(new int[] { 3, 3 }));
+        assertFalse(arrays1testObject.double23(new int[] { 2, 3 }));
+        assertFalse(arrays1testObject.double23(new int[] { 3, 2 }));
+        assertFalse(arrays1testObject.double23(new int[] { 4, 5 }));
+        assertFalse(arrays1testObject.double23(new int[] { 2 }));
+        assertFalse(arrays1testObject.double23(new int[] { 3 }));
+        assertFalse(arrays1testObject.double23(new int[] {}));
+        assertFalse(arrays1testObject.double23(new int[] { 3, 4 }));
+    }
 }
