@@ -206,4 +206,18 @@ public final class Arrays1Test {
         assertArrayEquals(new int[] { 2, 2, 0 }, arrays1testObject.fix23(new int[] { 2, 2, 3 }));
         assertArrayEquals(new int[] { 2, 0, 3 }, arrays1testObject.fix23(new int[] { 2, 3, 3 }));
     }
+
+    @Test
+    public void start1Test() {
+        assertEquals(2, arrays1testObject.start1(new int[] { 1, 2, 3 }, new int[] { 1, 3 }));
+        assertEquals(1, arrays1testObject.start1(new int[] { 7, 2, 3 }, new int[] { 1 }));
+        assertEquals(1, arrays1testObject.start1(new int[] { 1, 2 }, new int[] {}));
+        assertEquals(1, arrays1testObject.start1(new int[] {}, new int[] { 1, 2 }));
+        assertEquals(0, arrays1testObject.start1(new int[] { 7 }, new int[] {}));
+        assertEquals(1, arrays1testObject.start1(new int[] { 7 }, new int[] { 1 }));
+        assertEquals(2, arrays1testObject.start1(new int[] { 1 }, new int[] { 1 }));
+        assertEquals(0, arrays1testObject.start1(new int[] { 7 }, new int[] { 8 }));
+        assertEquals(0, arrays1testObject.start1(new int[] {}, new int[] {}));
+        assertEquals(2, arrays1testObject.start1(new int[] { 1, 3 }, new int[] { 1 }));
+    }
 }
