@@ -231,4 +231,13 @@ public final class Arrays1Test {
         assertArrayEquals(new int[] { 1, 3 }, arrays1testObject.biggerTwo(new int[] { 1, 3 }, new int[] { 2, 2 }));
         assertArrayEquals(new int[] { 6, 7 }, arrays1testObject.biggerTwo(new int[] { 6, 7 }, new int[] { 3, 1 }));
     }
+
+    @Test
+    public void makeMIddleTest() {
+        assertArrayEquals(new int[] { 2, 3 }, arrays1testObject.makeMiddle(new int[] { 1, 2, 3, 4 }));
+        assertArrayEquals(new int[] { 2, 3 }, arrays1testObject.makeMiddle(new int[] { 7, 1, 2, 3, 4, 9 }));
+        assertArrayEquals(new int[] { 1, 2 }, arrays1testObject.makeMiddle(new int[] { 1, 2 }));
+        assertArrayEquals(new int[] { 2, 4 }, arrays1testObject.makeMiddle(new int[] { 5, 2, 4, 7 }));
+        assertArrayEquals(new int[] { 4, 3 }, arrays1testObject.makeMiddle(new int[] { 9, 0, 4, 3, 9, 1 }));
+    }
 }
