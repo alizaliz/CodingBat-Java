@@ -220,4 +220,15 @@ public final class Arrays1Test {
         assertEquals(0, arrays1testObject.start1(new int[] {}, new int[] {}));
         assertEquals(2, arrays1testObject.start1(new int[] { 1, 3 }, new int[] { 1 }));
     }
+
+    @Test
+    public void biggerTwoTest() {
+        assertArrayEquals(new int[] { 3, 4 }, arrays1testObject.biggerTwo(new int[] { 1, 2 }, new int[] { 3, 4 }));
+        assertArrayEquals(new int[] { 3, 4 }, arrays1testObject.biggerTwo(new int[] { 3, 4 }, new int[] { 1, 2 }));
+        assertArrayEquals(new int[] { 1, 2 }, arrays1testObject.biggerTwo(new int[] { 1, 1 }, new int[] { 1, 2 }));
+        assertArrayEquals(new int[] { 2, 1 }, arrays1testObject.biggerTwo(new int[] { 2, 1 }, new int[] { 1, 1 }));
+        assertArrayEquals(new int[] { 2, 2 }, arrays1testObject.biggerTwo(new int[] { 2, 2 }, new int[] { 1, 3 }));
+        assertArrayEquals(new int[] { 1, 3 }, arrays1testObject.biggerTwo(new int[] { 1, 3 }, new int[] { 2, 2 }));
+        assertArrayEquals(new int[] { 6, 7 }, arrays1testObject.biggerTwo(new int[] { 6, 7 }, new int[] { 3, 1 }));
+    }
 }
