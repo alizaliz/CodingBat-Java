@@ -247,4 +247,14 @@ public final class Arrays1Test {
         assertArrayEquals(new int[] { 4, 4, 2, 2 }, arrays1testObject.plusTwo(new int[] { 4, 4 }, new int[] { 2, 2 }));
         assertArrayEquals(new int[] { 9, 2, 3, 4 }, arrays1testObject.plusTwo(new int[] { 9, 2 }, new int[] { 3, 4 }));
     }
+
+    @Test
+    public void swapEndsTest() {
+        assertArrayEquals(new int[] { 4, 2, 3, 1 }, arrays1testObject.swapEnds(new int[] { 1, 2, 3, 4 }));
+        assertArrayEquals(new int[] { 3, 2, 1 }, arrays1testObject.swapEnds(new int[] { 1, 2, 3 }));
+        assertArrayEquals(new int[] { 5, 6, 7, 9, 8 }, arrays1testObject.swapEnds(new int[] { 8, 6, 7, 9, 5 }));
+        assertArrayEquals(new int[] { 9, 1, 4, 1, 5, 3 }, arrays1testObject.swapEnds(new int[] { 3, 1, 4, 1, 5, 9 }));
+        assertArrayEquals(new int[] { 2, 1 }, arrays1testObject.swapEnds(new int[] { 1, 2 }));
+        assertArrayEquals(new int[] { 1 }, arrays1testObject.swapEnds(new int[] { 1 }));
+    }
 }
