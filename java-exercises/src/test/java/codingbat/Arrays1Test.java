@@ -240,4 +240,11 @@ public final class Arrays1Test {
         assertArrayEquals(new int[] { 2, 4 }, arrays1testObject.makeMiddle(new int[] { 5, 2, 4, 7 }));
         assertArrayEquals(new int[] { 4, 3 }, arrays1testObject.makeMiddle(new int[] { 9, 0, 4, 3, 9, 1 }));
     }
+
+    @Test
+    public void plusTwoTest() {
+        assertArrayEquals(new int[] { 1, 2, 3, 4 }, arrays1testObject.plusTwo(new int[] { 1, 2 }, new int[] { 3, 4 }));
+        assertArrayEquals(new int[] { 4, 4, 2, 2 }, arrays1testObject.plusTwo(new int[] { 4, 4 }, new int[] { 2, 2 }));
+        assertArrayEquals(new int[] { 9, 2, 3, 4 }, arrays1testObject.plusTwo(new int[] { 9, 2 }, new int[] { 3, 4 }));
+    }
 }
