@@ -278,4 +278,16 @@ public final class Arrays1Test {
         assertEquals(9, arrays1testObject.maxTriple(new int[] { 5, 1, 7, 3, 7, 8, 9 }));
         assertEquals(5, arrays1testObject.maxTriple(new int[] { 2, 2, 5, 1, 1 }));
     }
+
+    @Test
+    public void frontPieceTest() {
+        assertArrayEquals(new int[] { 1, 2 }, arrays1testObject.frontPiece(new int[] { 1, 2, 3 }));
+        assertArrayEquals(new int[] { 1, 2 }, arrays1testObject.frontPiece(new int[] { 1, 2 }));
+        assertArrayEquals(new int[] { 1 }, arrays1testObject.frontPiece(new int[] { 1 }));
+        assertArrayEquals(new int[] {}, arrays1testObject.frontPiece(new int[] {}));
+        assertArrayEquals(new int[] { 6, 5 }, arrays1testObject.frontPiece(new int[] { 6, 5, 0 }));
+        assertArrayEquals(new int[] { 6, 5 }, arrays1testObject.frontPiece(new int[] { 6, 5 }));
+        assertArrayEquals(new int[] { 3, 1 }, arrays1testObject.frontPiece(new int[] { 3, 1, 4, 1, 5 }));
+        assertArrayEquals(new int[] { 6 }, arrays1testObject.frontPiece(new int[] { 6 }));
+    }
 }
