@@ -328,4 +328,15 @@ public final class Arrays1Test {
         assertArrayEquals(new int[] { 7, 1 }, arrays1testObject.make2(new int[] { 7 }, new int[] { 1, 2, 3 }));
         assertArrayEquals(new int[] { 5, 4 }, arrays1testObject.make2(new int[] { 5, 4 }, new int[] { 2, 3, 7 }));
     }
+
+    @Test
+    public void front11Test() {
+        assertArrayEquals(new int[] { 1, 7 }, arrays1testObject.front11(new int[] { 1, 2, 3 }, new int[] { 7, 9, 8 }));
+        assertArrayEquals(new int[] { 1, 2 }, arrays1testObject.front11(new int[] { 1 }, new int[] { 2 }));
+        assertArrayEquals(new int[] { 1 }, arrays1testObject.front11(new int[] { 1, 7 }, new int[] {}));
+        assertArrayEquals(new int[] { 2 }, arrays1testObject.front11(new int[] {}, new int[] { 2, 8 }));
+        assertArrayEquals(new int[] {}, arrays1testObject.front11(new int[] {}, new int[] {}));
+        assertArrayEquals(new int[] { 3, 1 }, arrays1testObject.front11(new int[] { 3 }, new int[] { 1, 4, 1, 9 }));
+        assertArrayEquals(new int[] { 1 }, arrays1testObject.front11(new int[] { 1, 4, 1, 9 }, new int[] {}));
+    }
 }
