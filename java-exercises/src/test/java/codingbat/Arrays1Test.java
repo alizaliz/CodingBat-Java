@@ -257,4 +257,11 @@ public final class Arrays1Test {
         assertArrayEquals(new int[] { 2, 1 }, arrays1testObject.swapEnds(new int[] { 1, 2 }));
         assertArrayEquals(new int[] { 1 }, arrays1testObject.swapEnds(new int[] { 1 }));
     }
+
+    @Test
+    public void middleThreeTest() {
+        assertArrayEquals(new int[] { 2, 3, 4 }, arrays1testObject.midThree(new int[] { 1, 2, 3, 4, 5 }));
+        assertArrayEquals(new int[] { 7, 5, 3 }, arrays1testObject.midThree(new int[] { 8, 6, 7, 5, 3, 0, 9 }));
+        assertArrayEquals(new int[] { 1, 2, 3 }, arrays1testObject.midThree(new int[] { 1, 2, 3 }));
+    }
 }
