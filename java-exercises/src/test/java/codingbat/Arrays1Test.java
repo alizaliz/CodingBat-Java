@@ -264,4 +264,18 @@ public final class Arrays1Test {
         assertArrayEquals(new int[] { 7, 5, 3 }, arrays1testObject.midThree(new int[] { 8, 6, 7, 5, 3, 0, 9 }));
         assertArrayEquals(new int[] { 1, 2, 3 }, arrays1testObject.midThree(new int[] { 1, 2, 3 }));
     }
+
+    @Test
+    public void maxTripleTest() {
+        assertEquals(3, arrays1testObject.maxTriple(new int[] { 1, 2, 3 }));
+        assertEquals(5, arrays1testObject.maxTriple(new int[] { 1, 5, 3 }));
+        assertEquals(5, arrays1testObject.maxTriple(new int[] { 5, 2, 3 }));
+        assertEquals(3, arrays1testObject.maxTriple(new int[] { 1, 2, 3, 1, 1 }));
+        assertEquals(5, arrays1testObject.maxTriple(new int[] { 1, 7, 3, 1, 5 }));
+        assertEquals(5, arrays1testObject.maxTriple(new int[] { 5, 1, 3, 7, 1 }));
+        assertEquals(5, arrays1testObject.maxTriple(new int[] { 5, 1, 7, 3, 7, 8, 1 }));
+        assertEquals(9, arrays1testObject.maxTriple(new int[] { 5, 1, 7, 9, 7, 8, 1 }));
+        assertEquals(9, arrays1testObject.maxTriple(new int[] { 5, 1, 7, 3, 7, 8, 9 }));
+        assertEquals(5, arrays1testObject.maxTriple(new int[] { 2, 2, 5, 1, 1 }));
+    }
 }
