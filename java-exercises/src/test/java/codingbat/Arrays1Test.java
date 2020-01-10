@@ -290,4 +290,27 @@ public final class Arrays1Test {
         assertArrayEquals(new int[] { 3, 1 }, arrays1testObject.frontPiece(new int[] { 3, 1, 4, 1, 5 }));
         assertArrayEquals(new int[] { 6 }, arrays1testObject.frontPiece(new int[] { 6 }));
     }
+
+    @Test
+    public void unlucky1Test() {
+        assertTrue(arrays1testObject.unlucky1(new int[] { 1, 3, 4, 5 }));
+        assertTrue(arrays1testObject.unlucky1(new int[] { 2, 1, 3, 4, 5 }));
+        assertFalse(arrays1testObject.unlucky1(new int[] { 1, 1, 1 }));
+        assertTrue(arrays1testObject.unlucky1(new int[] { 1, 3, 1 }));
+        assertTrue(arrays1testObject.unlucky1(new int[] { 1, 1, 3 }));
+        assertFalse(arrays1testObject.unlucky1(new int[] { 1, 2, 3 }));
+        assertFalse(arrays1testObject.unlucky1(new int[] { 3, 3, 3 }));
+        assertTrue(arrays1testObject.unlucky1(new int[] { 1, 3 }));
+        assertFalse(arrays1testObject.unlucky1(new int[] { 1, 4 }));
+        assertFalse(arrays1testObject.unlucky1(new int[] { 1 }));
+        assertFalse(arrays1testObject.unlucky1(new int[] {}));
+        assertFalse(arrays1testObject.unlucky1(new int[] { 1, 1, 1, 3, 1 }));
+        assertTrue(arrays1testObject.unlucky1(new int[] { 1, 1, 3, 1, 1 }));
+        assertTrue(arrays1testObject.unlucky1(new int[] { 1, 1, 1, 1, 3 }));
+        assertFalse(arrays1testObject.unlucky1(new int[] { 1, 4, 1, 5 }));
+        assertFalse(arrays1testObject.unlucky1(new int[] { 1, 1, 2, 3 }));
+        assertFalse(arrays1testObject.unlucky1(new int[] { 2, 3, 2, 1 }));
+        assertTrue(arrays1testObject.unlucky1(new int[] { 2, 3, 1, 3 }));
+        assertTrue(arrays1testObject.unlucky1(new int[] { 1, 2, 3, 4, 1, 3 }));
+    }
 }
