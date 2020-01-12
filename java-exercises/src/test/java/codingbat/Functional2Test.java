@@ -21,7 +21,7 @@ public class Functional2Test {
     @Test
     public void noNegTest() {
         assertEquals(Arrays.asList(1), functional2TestObject.noNeg(Arrays.asList(1, -2)));
-        assertEquals(Arrays.asList(2, 2), functional2TestObject.noNeg(Arrays.asList(-3, -3, 3, 3)));
+        assertEquals(Arrays.asList(3, 3), functional2TestObject.noNeg(Arrays.asList(-3, -3, 3, 3)));
         assertEquals(Arrays.asList(), functional2TestObject.noNeg(Arrays.asList(-1, -1, -1)));
         assertEquals(Arrays.asList(), functional2TestObject.noNeg(Arrays.asList()));
         assertEquals(Arrays.asList(0, 1, 2), functional2TestObject.noNeg(Arrays.asList(0, 1, 2)));
