@@ -53,4 +53,15 @@ public class Functional2Test {
         assertEquals(Arrays.asList(21), functional2TestObject.noTeen(Arrays.asList(15, 17, 19, 21, 19)));
         assertEquals(Arrays.asList(-16, 2, 3, 25), functional2TestObject.noTeen(Arrays.asList(-16, 2, 15, 3, 16, 25)));
     }
+
+    @Test
+    public void noZTest() {
+        assertEquals(Arrays.asList("aaa", "bbb"), functional2TestObject.noZ(Arrays.asList("aaa", "bbb", "aza")));
+        assertEquals(Arrays.asList("hi"), functional2TestObject.noZ(Arrays.asList("hziz", "hzello", "hi")));
+        assertEquals(Arrays.asList("hello", "are"),
+                functional2TestObject.noZ(Arrays.asList("hello", "howz", "are", "youz")));
+        assertEquals(Arrays.asList(), functional2TestObject.noZ(Arrays.asList()));
+        assertEquals(Arrays.asList(""), functional2TestObject.noZ(Arrays.asList("")));
+        assertEquals(Arrays.asList("x", "y"), functional2TestObject.noZ(Arrays.asList("x", "y", "z")));
+    }
 }
