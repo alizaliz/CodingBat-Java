@@ -41,4 +41,16 @@ public class Functional2Test {
         assertEquals(Arrays.asList(), functional2TestObject.no9(Arrays.asList(9)));
         assertEquals(Arrays.asList(0, 0), functional2TestObject.no9(Arrays.asList(0, 9, 0)));
     }
+
+    @Test
+    public void noTeenTest() {
+        assertEquals(Arrays.asList(12, 20), functional2TestObject.noTeen(Arrays.asList(12, 13, 19, 20)));
+        assertEquals(Arrays.asList(1, 1), functional2TestObject.noTeen(Arrays.asList(1, 14, 1)));
+        assertEquals(Arrays.asList(), functional2TestObject.noTeen(Arrays.asList(15)));
+        assertEquals(Arrays.asList(-15), functional2TestObject.noTeen(Arrays.asList(-15)));
+        assertEquals(Arrays.asList(), functional2TestObject.noTeen(Arrays.asList()));
+        assertEquals(Arrays.asList(0, 1, 2, -3), functional2TestObject.noTeen(Arrays.asList(0, 1, 2, -3)));
+        assertEquals(Arrays.asList(21), functional2TestObject.noTeen(Arrays.asList(15, 17, 19, 21, 19)));
+        assertEquals(Arrays.asList(-16, 2, 3, 25), functional2TestObject.noTeen(Arrays.asList(-16, 2, 15, 3, 16, 25)));
+    }
 }
