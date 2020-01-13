@@ -78,4 +78,20 @@ public class Functional2Test {
         assertEquals(Arrays.asList("bbb", "***", "333"),
                 functional2TestObject.noLong(Arrays.asList("aaaa", "bbb", "***", "333")));
     }
+
+    @Test
+    public void no34Test() {
+        assertEquals(Arrays.asList("a", "bb"), functional2TestObject.no34(Arrays.asList("a", "bb", "ccc")));
+        assertEquals(Arrays.asList("a", "bb"), functional2TestObject.no34(Arrays.asList("a", "bb", "ccc", "dddd")));
+        assertEquals(Arrays.asList("apple"), functional2TestObject.no34(Arrays.asList("ccc", "dddd", "apple")));
+        assertEquals(Arrays.asList(), functional2TestObject.no34(Arrays.asList("this", "not", "too", "long")));
+        assertEquals(Arrays.asList("a", "xx"), functional2TestObject.no34(Arrays.asList("a", "bbb", "cccc", "xx")));
+        assertEquals(Arrays.asList("xxxxxxx"), functional2TestObject.no34(Arrays.asList("dddd", "ddd", "xxxxxxx")));
+        assertEquals(Arrays.asList(), functional2TestObject.no34(Arrays.asList()));
+        assertEquals(Arrays.asList(""), functional2TestObject.no34(Arrays.asList("")));
+        assertEquals(Arrays.asList("empty", "", "empty"),
+                functional2TestObject.no34(Arrays.asList("empty", "", "empty")));
+        assertEquals(Arrays.asList("a"), functional2TestObject.no34(Arrays.asList("a")));
+        assertEquals(Arrays.asList("*****"), functional2TestObject.no34(Arrays.asList("aaaa", "bbb", "*****", "333")));
+    }
 }
