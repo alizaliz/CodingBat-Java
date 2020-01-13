@@ -29,4 +29,16 @@ public class Functional2Test {
         assertEquals(Arrays.asList(3, 1, 5),
                 functional2TestObject.noNeg(Arrays.asList(-1, 3, 1, -1, -10, -100, -111, 5)));
     }
+
+    @Test
+    public void no9Test() {
+        assertEquals(Arrays.asList(1, 2), functional2TestObject.no9(Arrays.asList(1, 2, 19)));
+        assertEquals(Arrays.asList(3), functional2TestObject.no9(Arrays.asList(9, 19, 29, 3)));
+        assertEquals(Arrays.asList(1, 2, 3), functional2TestObject.no9(Arrays.asList(1, 2, 3)));
+        assertEquals(Arrays.asList(45, 90, 28, 13, 0),
+                functional2TestObject.no9(Arrays.asList(45, 99, 90, 28, 13, 999, 0)));
+        assertEquals(Arrays.asList(), functional2TestObject.no9(Arrays.asList()));
+        assertEquals(Arrays.asList(), functional2TestObject.no9(Arrays.asList(9)));
+        assertEquals(Arrays.asList(0, 0), functional2TestObject.no9(Arrays.asList(0, 9, 0)));
+    }
 }
