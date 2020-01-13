@@ -48,16 +48,29 @@ public final class Functional2 {
     }
 
     /**
-     * Given a list of strings, return a list of the strings, omitting any string that contains a "z". (Note: the str.contains(x) method returns a boolean)
+     * Given a list of strings, return a list of the strings, omitting any string
+     * that contains a "z". (Note: the str.contains(x) method returns a boolean)
      * 
-     * noZ(["aaa", "bbb", "aza"]) → ["aaa", "bbb"]
-     * noZ(["hziz", "hzello", "hi"]) → ["hi"]
-     * noZ(["hello", "howz", "are", "youz"]) → ["hello", "are"]
+     * noZ(["aaa", "bbb", "aza"]) → ["aaa", "bbb"] noZ(["hziz", "hzello", "hi"]) →
+     * ["hi"] noZ(["hello", "howz", "are", "youz"]) → ["hello", "are"]
      */
     public List<String> noZ(List<String> strings) {
         List<String> ret = new ArrayList<String>(strings);
-        ret.removeIf( n -> n.contains("z"));
+        ret.removeIf(n -> n.contains("z"));
         return ret;
-      }
-      
+    }
+
+    /**
+     * Given a list of strings, return a list of the strings, omitting any string
+     * length 4 or more.
+     * 
+     * noLong(["this", "not", "too", "long"]) → ["not", "too"] noLong(["a", "bbb",
+     * "cccc"]) → ["a", "bbb"] noLong(["cccc", "cccc", "cccc"]) → []
+     */
+    public List<String> noLong(List<String> strings) {
+        List<String> ret = new ArrayList<String>(strings);
+        ret.removeIf(n -> n.length() >= 4);
+        return ret;
+    }
+
 }

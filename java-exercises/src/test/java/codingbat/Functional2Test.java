@@ -64,4 +64,18 @@ public class Functional2Test {
         assertEquals(Arrays.asList(""), functional2TestObject.noZ(Arrays.asList("")));
         assertEquals(Arrays.asList("x", "y"), functional2TestObject.noZ(Arrays.asList("x", "y", "z")));
     }
+
+    @Test
+    public void noLongTest() {
+        assertEquals(Arrays.asList("not", "too"),
+                functional2TestObject.noLong(Arrays.asList("this", "not", "too", "long")));
+        assertEquals(Arrays.asList("a", "bbb"), functional2TestObject.noLong(Arrays.asList("a", "bbb", "cccc")));
+        assertEquals(Arrays.asList(), functional2TestObject.noLong(Arrays.asList("cccc", "cccc", "cccc")));
+        assertEquals(Arrays.asList(), functional2TestObject.noLong(Arrays.asList()));
+        assertEquals(Arrays.asList(""), functional2TestObject.noLong(Arrays.asList("")));
+        assertEquals(Arrays.asList(""), functional2TestObject.noLong(Arrays.asList("empty", "", "empty")));
+        assertEquals(Arrays.asList("a"), functional2TestObject.noLong(Arrays.asList("a")));
+        assertEquals(Arrays.asList("bbb", "***", "333"),
+                functional2TestObject.noLong(Arrays.asList("aaaa", "bbb", "***", "333")));
+    }
 }
