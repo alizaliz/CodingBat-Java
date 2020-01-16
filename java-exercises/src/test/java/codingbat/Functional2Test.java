@@ -119,4 +119,18 @@ public class Functional2Test {
         assertEquals(Arrays.asList(4, 6, 10, 14), functional2TestObject.two2(Arrays.asList(2, 3, 5, 7, 11)));
         assertEquals(Arrays.asList(6, 8, 198, 0), functional2TestObject.two2(Arrays.asList(3, 1, 4, 1, 6, 99, 0)));
     }
+
+    @Test
+    public void square56Test(){
+        assertEquals(Arrays.asList(19, 11), functional2TestObject.square56(Arrays.asList(3, 1, 4)));
+        assertEquals(Arrays.asList(11), functional2TestObject.square56(Arrays.asList(1)));
+        assertEquals(Arrays.asList(14), functional2TestObject.square56(Arrays.asList(2)));
+        assertEquals(Arrays.asList(19), functional2TestObject.square56(Arrays.asList(3)));
+        assertEquals(Arrays.asList(), functional2TestObject.square56(Arrays.asList(4)));
+        assertEquals(Arrays.asList(), functional2TestObject.square56(Arrays.asList(5)));
+        assertEquals(Arrays.asList(), functional2TestObject.square56(Arrays.asList(6)));
+        assertEquals(Arrays.asList(59), functional2TestObject.square56(Arrays.asList(7)));
+        assertEquals(Arrays.asList(11, 14, 19, 59), functional2TestObject.square56(Arrays.asList(1, 2, 3, 4, 5, 6, 7)));
+        assertEquals(Arrays.asList(19, 11, 11, 91), functional2TestObject.square56(Arrays.asList(3, -1, -4, 1, 5, 9)));
+    }
 }
