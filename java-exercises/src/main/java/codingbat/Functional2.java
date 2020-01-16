@@ -101,4 +101,17 @@ public final class Functional2 {
         return ret;
     }
 
+    /**
+     * Given a list of non-negative integers, return a list of those numbers
+     * multiplied by 2, omitting any of the resulting numbers that end in 2.
+     * 
+     * two2([1, 2, 3]) → [4, 6] two2([2, 6, 11]) → [4] two2([0]) → [0]
+     */
+    public List<Integer> two2(List<Integer> nums) {
+        List<Integer> ret = new ArrayList<Integer>(nums);
+        ret.replaceAll(n -> n * 2);
+        ret.removeIf(n -> n % 10 == 2);
+        return ret;
+    }
+
 }

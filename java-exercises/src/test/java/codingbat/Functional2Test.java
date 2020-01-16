@@ -96,16 +96,27 @@ public class Functional2Test {
     }
 
     @Test
-    public void noYYTest(){
-        assertEquals(Arrays.asList("ay", "by", "cy"), functional2TestObject.noYY(Arrays.asList("a", "b", "c")));	
+    public void noYYTest() {
+        assertEquals(Arrays.asList("ay", "by", "cy"), functional2TestObject.noYY(Arrays.asList("a", "b", "c")));
         assertEquals(Arrays.asList("ay", "by"), functional2TestObject.noYY(Arrays.asList("a", "b", "cy")));
         assertEquals(Arrays.asList("xxy", "yay", "zzy"), functional2TestObject.noYY(Arrays.asList("xx", "ya", "zz")));
         assertEquals(Arrays.asList("xxy", "zzy"), functional2TestObject.noYY(Arrays.asList("xx", "yay", "zz")));
         assertEquals(Arrays.asList("zzzy"), functional2TestObject.noYY(Arrays.asList("yyx", "y", "zzz")));
-        assertEquals(Arrays.asList("helloy", "therey"), functional2TestObject.noYY(Arrays.asList("hello", "there")));	
+        assertEquals(Arrays.asList("helloy", "therey"), functional2TestObject.noYY(Arrays.asList("hello", "there")));
         assertEquals(Arrays.asList("yay"), functional2TestObject.noYY(Arrays.asList("ya")));
         assertEquals(Arrays.asList(), functional2TestObject.noYY(Arrays.asList()));
         assertEquals(Arrays.asList("y"), functional2TestObject.noYY(Arrays.asList("")));
         assertEquals(Arrays.asList("xxy", "zzy"), functional2TestObject.noYY(Arrays.asList("xx", "yy", "zz")));
+    }
+
+    @Test
+    public void two2Test() {
+        assertEquals(Arrays.asList(4, 6), functional2TestObject.two2(Arrays.asList(1, 2, 3)));
+        assertEquals(Arrays.asList(4), functional2TestObject.two2(Arrays.asList(2, 6, 11)));
+        assertEquals(Arrays.asList(0), functional2TestObject.two2(Arrays.asList(0)));
+        assertEquals(Arrays.asList(), functional2TestObject.two2(Arrays.asList()));
+        assertEquals(Arrays.asList(), functional2TestObject.two2(Arrays.asList(1, 11, 111, 16)));
+        assertEquals(Arrays.asList(4, 6, 10, 14), functional2TestObject.two2(Arrays.asList(2, 3, 5, 7, 11)));
+        assertEquals(Arrays.asList(6, 8, 198, 0), functional2TestObject.two2(Arrays.asList(3, 1, 4, 1, 6, 99, 0)));
     }
 }
