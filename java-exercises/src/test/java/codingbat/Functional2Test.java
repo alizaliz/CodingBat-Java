@@ -94,4 +94,18 @@ public class Functional2Test {
         assertEquals(Arrays.asList("a"), functional2TestObject.no34(Arrays.asList("a")));
         assertEquals(Arrays.asList("*****"), functional2TestObject.no34(Arrays.asList("aaaa", "bbb", "*****", "333")));
     }
+
+    @Test
+    public void noYYTest(){
+        assertEquals(Arrays.asList("ay", "by", "cy"), functional2TestObject.noYY(Arrays.asList("a", "b", "c")));	
+        assertEquals(Arrays.asList("ay", "by"), functional2TestObject.noYY(Arrays.asList("a", "b", "cy")));
+        assertEquals(Arrays.asList("xxy", "yay", "zzy"), functional2TestObject.noYY(Arrays.asList("xx", "ya", "zz")));
+        assertEquals(Arrays.asList("xxy", "zzy"), functional2TestObject.noYY(Arrays.asList("xx", "yay", "zz")));
+        assertEquals(Arrays.asList("zzzy"), functional2TestObject.noYY(Arrays.asList("yyx", "y", "zzz")));
+        assertEquals(Arrays.asList("helloy", "therey"), functional2TestObject.noYY(Arrays.asList("hello", "there")));	
+        assertEquals(Arrays.asList("yay"), functional2TestObject.noYY(Arrays.asList("ya")));
+        assertEquals(Arrays.asList(), functional2TestObject.noYY(Arrays.asList()));
+        assertEquals(Arrays.asList("y"), functional2TestObject.noYY(Arrays.asList("")));
+        assertEquals(Arrays.asList("xxy", "zzy"), functional2TestObject.noYY(Arrays.asList("xx", "yy", "zz")));
+    }
 }
