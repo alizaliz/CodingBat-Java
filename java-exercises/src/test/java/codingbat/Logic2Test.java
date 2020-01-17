@@ -5,6 +5,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 
+/**
+ * Test cases for Logic2 exercises
+ */
 public final class Logic2Test {
 
     private Logic2 logic2testObject;

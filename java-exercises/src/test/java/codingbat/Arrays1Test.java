@@ -6,6 +6,9 @@ import static org.junit.Assert.*;
 
 import org.junit.Before;
 
+/**
+ * Test cases for Arrays1 exercises
+ */
 public final class Arrays1Test {
 
     private Arrays1 arrays1testObject;

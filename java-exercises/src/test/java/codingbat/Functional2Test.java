@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 import java.util.Arrays;
 
 /**
- * Test cases for Functional1 exercises
+ * Test cases for Functional2 exercises
  */
 public class Functional2Test {
 
