@@ -38,4 +38,17 @@ public class Map2Test {
         assertEquals(Map.of(), map2TestObject.wordLen(new String[] {}));
         assertEquals(Map.of("z", 1), map2TestObject.wordLen(new String[] { "z" }));
     }
+
+    @Test
+    public void pairsTest() {
+        assertEquals(Map.of("b", "g", "c", "e"), map2TestObject.pairs(new String[] { "code", "bug" }));
+        assertEquals(Map.of("m", "n"), map2TestObject.pairs(new String[] { "man", "moon", "main" }));
+        assertEquals(Map.of("g", "d", "m", "n", "n", "t"),
+                map2TestObject.pairs(new String[] { "man", "moon", "good", "night" }));
+        assertEquals(Map.of(), map2TestObject.pairs(new String[] {}));
+        assertEquals(Map.of("a", "a", "b", "b"), map2TestObject.pairs(new String[] { "a", "b" }));
+        assertEquals(Map.of("a", "d", "c", "s"), map2TestObject.pairs(new String[] { "are", "codes", "and", "cods" }));
+        assertEquals(Map.of("a", "e", "b", "a", "c", "e", "t", "a"),
+                map2TestObject.pairs(new String[] { "apple", "banana", "tea", "coffee" }));
+    }
 }
