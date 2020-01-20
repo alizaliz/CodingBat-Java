@@ -51,4 +51,24 @@ public class Map2Test {
         assertEquals(Map.of("a", "e", "b", "a", "c", "e", "t", "a"),
                 map2TestObject.pairs(new String[] { "apple", "banana", "tea", "coffee" }));
     }
+
+    @Test
+    public void wordCountTest() {
+        assertEquals(Map.of("a", 2, "b", 2, "c", 1),
+                map2TestObject.wordCount(new String[] { "a", "b", "a", "c", "b" }));
+        assertEquals(Map.of("a", 1, "b", 1, "c", 1), map2TestObject.wordCount(new String[] { "c", "b", "a" }));
+        assertEquals(Map.of("c", 4), map2TestObject.wordCount(new String[] { "c", "c", "c", "c" }));
+        assertEquals(Map.of(), map2TestObject.wordCount(new String[] {}));
+        assertEquals(Map.of("", 1, "and", 1, "this", 2),
+                map2TestObject.wordCount(new String[] { "this", "and", "this", "" }));
+        assertEquals(Map.of("x", 2, "X", 1, "y", 1, "Y", 1),
+                map2TestObject.wordCount(new String[] { "x", "y", "x", "Y", "X" }));
+        assertEquals(Map.of("0", 1, "1", 1, "123", 2),
+                map2TestObject.wordCount(new String[] { "123", "0", "123", "1" }));
+        assertEquals(Map.of("a", 4, "b", 5, "d", 3, "e", 1, "f", 1, "one", 1, "x", 2, "z", 2, "two", 2),
+                map2TestObject.wordCount(new String[] { "d", "a", "e", "d", "a", "d", "b", "b", "z", "a", "a", "b", "z",
+                        "x", "b", "f", "x", "two", "b", "one", "two" }));
+        assertEquals(Map.of("banana", 2, "apple", 3, "tea", 1, "coffee", 1), map2TestObject
+                .wordCount(new String[] { "apple", "banana", "apple", "apple", "tea", "coffee", "banana" }));
+    }
 }
