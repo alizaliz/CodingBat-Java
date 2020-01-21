@@ -71,4 +71,15 @@ public class Map2Test {
         assertEquals(Map.of("banana", 2, "apple", 3, "tea", 1, "coffee", 1), map2TestObject
                 .wordCount(new String[] { "apple", "banana", "apple", "apple", "tea", "coffee", "banana" }));
     }
+
+    @Test
+    public void firstCharTest() {
+        assertEquals(Map.of("s", "saltsoda", "t", "teatoast"),
+                map2TestObject.firstChar(new String[] { "salt", "tea", "soda", "toast" }));
+        assertEquals(Map.of("a", "aaaAA", "b", "bb", "c", "cccCC", "d", "d"),
+                map2TestObject.firstChar(new String[] { "aa", "bb", "cc", "aAA", "cCC", "d" }));
+        assertEquals(Map.of(), map2TestObject.firstChar(new String[] {}));
+        assertEquals(Map.of("a", "appleaardvark", "b", "bellsbellsbells", "s", "saltsun", "z", "zen"), map2TestObject
+                .firstChar(new String[] { "apple", "bells", "salt", "aardvark", "bells", "sun", "zen", "bells" }));
+    }
 }
