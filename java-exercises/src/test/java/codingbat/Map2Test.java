@@ -104,4 +104,19 @@ public class Map2Test {
                 assertEquals("xxyyzzxx", map2TestObject
                                 .wordAppend(new String[] { "xx", "xx", "yy", "xx", "zz", "yy", "zz", "xx" }));
         }
+
+        @Test
+        public void wordMultipleTest() {
+                assertEquals(Map.of("a", true, "b", true, "c", false),
+                                map2TestObject.wordMultiple(new String[] { "a", "b", "a", "c", "b" }));
+                assertEquals(Map.of("a", false, "b", false, "c", false),
+                                map2TestObject.wordMultiple(new String[] { "c", "b", "a" }));
+                assertEquals(Map.of("c", true), map2TestObject.wordMultiple(new String[] { "c", "c", "c", "c" }));
+                assertEquals(Map.of(), map2TestObject.wordMultiple(new String[] {}));
+                assertEquals(Map.of("and", false, "this", true),
+                                map2TestObject.wordMultiple(new String[] { "this", "and", "this" }));
+                assertEquals(Map.of("a", true, "b", true, "d", true, "e", false, "x", false, "z", true),
+                                map2TestObject.wordMultiple(new String[] { "d", "a", "e", "d", "a", "d", "b", "b", "z",
+                                                "a", "a", "b", "z", "x" }));
+        }
 }
