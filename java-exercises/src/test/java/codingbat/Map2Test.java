@@ -119,4 +119,26 @@ public class Map2Test {
                                 map2TestObject.wordMultiple(new String[] { "d", "a", "e", "d", "a", "d", "b", "b", "z",
                                                 "a", "a", "b", "z", "x" }));
         }
+
+        @Test
+        public void allSwapTest() {
+                assertEquals(new String[] { "ac", "ab" }, map2TestObject.allSwap(new String[] { "ab", "ac" }));
+                assertEquals(new String[] { "ay", "by", "cy", "cx", "bx", "ax", "azz", "aaa" }, map2TestObject
+                                .allSwap(new String[] { "ax", "bx", "cx", "cy", "by", "ay", "aaa", "azz" }));
+                assertEquals(new String[] { "ay", "by", "ax", "bx", "aj", "ai", "by", "bx" }, map2TestObject
+                                .allSwap(new String[] { "ax", "bx", "ay", "by", "ai", "aj", "bx", "by" }));
+                assertEquals(new String[] { "ay", "bx", "cy", "ax", "cx", "abb", "aaa" },
+                                map2TestObject.allSwap(new String[] { "ax", "bx", "cx", "ay", "cy", "aaa", "abb" }));
+                assertEquals(new String[] { "every", "does", "ice", "easy", "it", "eaten" },
+                                map2TestObject.allSwap(new String[] { "easy", "does", "it", "every", "ice", "eaten" }));
+                assertEquals(new String[] { "lily", "over", "water", "swims", "of", "list", "words", "wait" },
+                                map2TestObject.allSwap(new String[] { "list", "of", "words", "swims", "over", "lily",
+                                                "water", "wait" }));
+                assertEquals(new String[] { "42", "8", "16", "15", "23", "4" },
+                                map2TestObject.allSwap(new String[] { "4", "8", "15", "16", "23", "42" }));
+                assertEquals(new String[] { "aaa" }, map2TestObject.allSwap(new String[] { "aaa" }));
+                assertEquals(new String[] {}, map2TestObject.allSwap(new String[] {}));
+                assertEquals(new String[] { "a", "b", "c", "xx", "yy", "zz" },
+                                map2TestObject.allSwap(new String[] { "a", "b", "c", "xx", "yy", "zz" }));
+        }
 }
