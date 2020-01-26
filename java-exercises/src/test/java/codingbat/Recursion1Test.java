@@ -30,4 +30,17 @@ public class Recursion1Test {
         assertEquals(479001600, recursion1TestObject.factorial(12));
     }
 
+    @Test
+    public void bunnyEarsTest() {
+        assertEquals(0, recursion1TestObject.bunnyEars(0));
+        assertEquals(2, recursion1TestObject.bunnyEars(1));
+        assertEquals(4, recursion1TestObject.bunnyEars(2));
+        assertEquals(6, recursion1TestObject.bunnyEars(3));
+        assertEquals(8, recursion1TestObject.bunnyEars(4));
+        assertEquals(10, recursion1TestObject.bunnyEars(5));
+        assertEquals(24, recursion1TestObject.bunnyEars(12));
+        assertEquals(100, recursion1TestObject.bunnyEars(50));
+        assertEquals(468, recursion1TestObject.bunnyEars(234));
+    }
+
 }
