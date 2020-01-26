@@ -54,4 +54,16 @@ public class Recursion1Test {
         assertEquals(8, recursion1TestObject.fibonacci(6));
         assertEquals(13, recursion1TestObject.fibonacci(7));
     }
+
+    @Test
+    public void bunnyEars2Test() {
+        assertEquals(0, recursion1TestObject.bunnyEars2(0));
+        assertEquals(2, recursion1TestObject.bunnyEars2(1));
+        assertEquals(5, recursion1TestObject.bunnyEars2(2));
+        assertEquals(7, recursion1TestObject.bunnyEars2(3));
+        assertEquals(10, recursion1TestObject.bunnyEars2(4));
+        assertEquals(12, recursion1TestObject.bunnyEars2(5));
+        assertEquals(15, recursion1TestObject.bunnyEars2(6));
+        assertEquals(25, recursion1TestObject.bunnyEars2(10));
+    }
 }
