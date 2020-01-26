@@ -43,4 +43,15 @@ public class Recursion1Test {
         assertEquals(468, recursion1TestObject.bunnyEars(234));
     }
 
+    @Test
+    public void fibonacciTest() {
+        assertEquals(0, recursion1TestObject.fibonacci(0));
+        assertEquals(1, recursion1TestObject.fibonacci(1));
+        assertEquals(1, recursion1TestObject.fibonacci(2));
+        assertEquals(2, recursion1TestObject.fibonacci(3));
+        assertEquals(3, recursion1TestObject.fibonacci(4));
+        assertEquals(5, recursion1TestObject.fibonacci(5));
+        assertEquals(8, recursion1TestObject.fibonacci(6));
+        assertEquals(13, recursion1TestObject.fibonacci(7));
+    }
 }
