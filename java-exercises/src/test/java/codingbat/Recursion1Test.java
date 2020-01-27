@@ -66,4 +66,16 @@ public class Recursion1Test {
         assertEquals(15, recursion1TestObject.bunnyEars2(6));
         assertEquals(25, recursion1TestObject.bunnyEars2(10));
     }
+
+    @Test
+    public void triagleTest() {
+        assertEquals(0, recursion1TestObject.triangle(0));
+        assertEquals(1, recursion1TestObject.triangle(1));
+        assertEquals(3, recursion1TestObject.triangle(2));
+        assertEquals(6, recursion1TestObject.triangle(3));
+        assertEquals(10, recursion1TestObject.triangle(4));
+        assertEquals(15, recursion1TestObject.triangle(5));
+        assertEquals(21, recursion1TestObject.triangle(6));
+        assertEquals(28, recursion1TestObject.triangle(7));
+    }
 }
