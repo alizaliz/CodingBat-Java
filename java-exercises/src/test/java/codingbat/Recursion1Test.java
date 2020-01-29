@@ -78,4 +78,19 @@ public class Recursion1Test {
         assertEquals(21, recursion1TestObject.triangle(6));
         assertEquals(28, recursion1TestObject.triangle(7));
     }
+
+    @Test
+    public void sumDigitsTest() {
+        assertEquals(9, recursion1TestObject.sumDigits(126));
+        assertEquals(13, recursion1TestObject.sumDigits(49));
+        assertEquals(3, recursion1TestObject.sumDigits(12));
+        assertEquals(1, recursion1TestObject.sumDigits(10));
+        assertEquals(1, recursion1TestObject.sumDigits(1));
+        assertEquals(0, recursion1TestObject.sumDigits(0));
+        assertEquals(10, recursion1TestObject.sumDigits(730));
+        assertEquals(4, recursion1TestObject.sumDigits(1111));
+        assertEquals(5, recursion1TestObject.sumDigits(11111));
+        assertEquals(3, recursion1TestObject.sumDigits(10110));
+        assertEquals(10, recursion1TestObject.sumDigits(235));
+    }
 }
