@@ -93,4 +93,21 @@ public class Recursion1Test {
         assertEquals(3, recursion1TestObject.sumDigits(10110));
         assertEquals(10, recursion1TestObject.sumDigits(235));
     }
+
+    @Test
+    public void count7Test() {
+        assertEquals(2, recursion1TestObject.count7(717));
+        assertEquals(1, recursion1TestObject.count7(7));
+        assertEquals(0, recursion1TestObject.count7(123));
+        assertEquals(2, recursion1TestObject.count7(77));
+        assertEquals(1, recursion1TestObject.count7(7123));
+        assertEquals(3, recursion1TestObject.count7(771237));
+        assertEquals(4, recursion1TestObject.count7(771737));
+        assertEquals(2, recursion1TestObject.count7(47571));
+        assertEquals(6, recursion1TestObject.count7(777777));
+        assertEquals(4, recursion1TestObject.count7(70701277));
+        assertEquals(5, recursion1TestObject.count7(777576197));
+        assertEquals(0, recursion1TestObject.count7(99999));
+        assertEquals(1, recursion1TestObject.count7(99799));
+    }
 }
