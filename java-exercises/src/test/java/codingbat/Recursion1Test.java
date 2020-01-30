@@ -110,4 +110,26 @@ public class Recursion1Test {
         assertEquals(0, recursion1TestObject.count7(99999));
         assertEquals(1, recursion1TestObject.count7(99799));
     }
+
+    @Test
+    public void cont8Test() {
+        assertEquals(1, recursion1TestObject.count8(8));
+        assertEquals(2, recursion1TestObject.count8(818));
+        assertEquals(4, recursion1TestObject.count8(8818));
+        assertEquals(4, recursion1TestObject.count8(8088));
+        assertEquals(0, recursion1TestObject.count8(123));
+        assertEquals(2, recursion1TestObject.count8(81238));
+        assertEquals(6, recursion1TestObject.count8(88788));
+        assertEquals(1, recursion1TestObject.count8(8234));
+        assertEquals(1, recursion1TestObject.count8(2348));
+        assertEquals(3, recursion1TestObject.count8(23884));
+        assertEquals(0, recursion1TestObject.count8(0));
+        assertEquals(5, recursion1TestObject.count8(1818188));
+        assertEquals(5, recursion1TestObject.count8(8818181));
+        assertEquals(1, recursion1TestObject.count8(1080));
+        assertEquals(3, recursion1TestObject.count8(188));
+        assertEquals(9, recursion1TestObject.count8(88888));
+        assertEquals(2, recursion1TestObject.count8(9898));
+        assertEquals(1, recursion1TestObject.count8(78));
+    }
 }
