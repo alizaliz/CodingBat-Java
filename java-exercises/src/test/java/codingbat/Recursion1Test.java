@@ -159,4 +159,19 @@ public class Recursion1Test {
         assertEquals(0, recursion1TestObject.countX("hihi"));
         assertEquals(0, recursion1TestObject.countX("hiAAhi12hi"));
     }
+
+    @Test
+    public void countHiTest() {
+        assertEquals(1, recursion1TestObject.countHi("xxhixx"));
+        assertEquals(2, recursion1TestObject.countHi("xhixhix"));
+        assertEquals(1, recursion1TestObject.countHi("hi"));
+        assertEquals(2, recursion1TestObject.countHi("hihih"));
+        assertEquals(0, recursion1TestObject.countHi("h"));
+        assertEquals(0, recursion1TestObject.countHi(""));
+        assertEquals(4, recursion1TestObject.countHi("ihihihihih"));
+        assertEquals(5, recursion1TestObject.countHi("ihihihihihi"));
+        assertEquals(3, recursion1TestObject.countHi("hiAAhi12hi"));
+        assertEquals(3, recursion1TestObject.countHi("xhixhxihihhhih"));
+        assertEquals(1, recursion1TestObject.countHi("ship"));
+    }
 }
