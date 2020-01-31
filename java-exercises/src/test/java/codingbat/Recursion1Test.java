@@ -132,4 +132,19 @@ public class Recursion1Test {
         assertEquals(2, recursion1TestObject.count8(9898));
         assertEquals(1, recursion1TestObject.count8(78));
     }
+
+    @Test
+    public void powerNTest() {
+        assertEquals(3, recursion1TestObject.powerN(3, 1));
+        assertEquals(9, recursion1TestObject.powerN(3, 2));
+        assertEquals(27, recursion1TestObject.powerN(3, 3));
+        assertEquals(2, recursion1TestObject.powerN(2, 1));
+        assertEquals(4, recursion1TestObject.powerN(2, 2));
+        assertEquals(8, recursion1TestObject.powerN(2, 3));
+        assertEquals(16, recursion1TestObject.powerN(2, 4));
+        assertEquals(32, recursion1TestObject.powerN(2, 5));
+        assertEquals(10, recursion1TestObject.powerN(10, 1));
+        assertEquals(100, recursion1TestObject.powerN(10, 2));
+        assertEquals(1000, recursion1TestObject.powerN(10, 3));
+    }
 }
