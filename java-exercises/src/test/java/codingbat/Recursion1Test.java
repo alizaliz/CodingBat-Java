@@ -174,4 +174,18 @@ public class Recursion1Test {
         assertEquals(3, recursion1TestObject.countHi("xhixhxihihhhih"));
         assertEquals(1, recursion1TestObject.countHi("ship"));
     }
+
+    @Test
+    public void changeXYTest() {
+        assertEquals("codey", recursion1TestObject.changeXY("codex"));
+        assertEquals("yyhiyy", recursion1TestObject.changeXY("xxhixx"));
+        assertEquals("yhiyhiy", recursion1TestObject.changeXY("xhixhix"));
+        assertEquals("hiy", recursion1TestObject.changeXY("hiy"));
+        assertEquals("h", recursion1TestObject.changeXY("h"));
+        assertEquals("y", recursion1TestObject.changeXY("x"));
+        assertEquals("", recursion1TestObject.changeXY(""));
+        assertEquals("yyy", recursion1TestObject.changeXY("xxx"));
+        assertEquals("yyhyyi", recursion1TestObject.changeXY("yyhxyi"));
+        assertEquals("hihi", recursion1TestObject.changeXY("hihi"));
+    }
 }
