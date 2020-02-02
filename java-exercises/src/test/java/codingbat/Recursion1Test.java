@@ -202,4 +202,14 @@ public class Recursion1Test {
         assertEquals("3.14xx", recursion1TestObject.changePi("pixx"));
         assertEquals("xyzzy", recursion1TestObject.changePi("xyzzy"));
     }
+
+    @Test
+    public void noXTest() {
+        assertEquals("ab", recursion1TestObject.noX("xaxb"));
+        assertEquals("abc", recursion1TestObject.noX("abc"));
+        assertEquals("", recursion1TestObject.noX("xx"));
+        assertEquals("", recursion1TestObject.noX(""));
+        assertEquals("ab", recursion1TestObject.noX("axxbxx"));
+        assertEquals("Hello", recursion1TestObject.noX("Hellox"));
+    }
 }

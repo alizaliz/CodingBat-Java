@@ -252,4 +252,19 @@ public final class Recursion1 {
         }
     }
 
+    /**
+     * Given a string, compute recursively a new string where all the 'x' chars have
+     * been removed.
+     * 
+     * noX("xaxb") → "ab" noX("abc") → "abc" noX("xx") → ""
+     */
+    public String noX(String str) {
+        int index = str.indexOf('x');
+        if (index >= 0) {
+            str = str.substring(0, index) + str.substring(index + 1);
+            return noX(str);
+        }
+        return str;
+    }
+
 }
