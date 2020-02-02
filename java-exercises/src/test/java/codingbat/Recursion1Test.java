@@ -188,4 +188,18 @@ public class Recursion1Test {
         assertEquals("yyhyyi", recursion1TestObject.changeXY("yyhxyi"));
         assertEquals("hihi", recursion1TestObject.changeXY("hihi"));
     }
+
+    @Test
+    public void changePiTest() {
+        assertEquals("x3.14x", recursion1TestObject.changePi("xpix"));
+        assertEquals("3.143.14", recursion1TestObject.changePi("pipi"));
+        assertEquals("3.14p", recursion1TestObject.changePi("pip"));
+        assertEquals("3.14", recursion1TestObject.changePi("pi"));
+        assertEquals("hip", recursion1TestObject.changePi("hip"));
+        assertEquals("p", recursion1TestObject.changePi("p"));
+        assertEquals("x", recursion1TestObject.changePi("x"));
+        assertEquals("", recursion1TestObject.changePi(""));
+        assertEquals("3.14xx", recursion1TestObject.changePi("pixx"));
+        assertEquals("xyzzy", recursion1TestObject.changePi("xyzzy"));
+    }
 }
