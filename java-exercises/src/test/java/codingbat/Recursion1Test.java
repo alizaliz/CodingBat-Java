@@ -212,4 +212,16 @@ public class Recursion1Test {
         assertEquals("ab", recursion1TestObject.noX("axxbxx"));
         assertEquals("Hello", recursion1TestObject.noX("Hellox"));
     }
+
+    @Test
+    public void array6Test() {
+        assertTrue(recursion1TestObject.array6(new int[] { 1, 6, 4 }, 0));
+        assertFalse(recursion1TestObject.array6(new int[] { 1, 4 }, 0));
+        assertTrue(recursion1TestObject.array6(new int[] { 6 }, 0));
+        assertFalse(recursion1TestObject.array6(new int[] {}, 0));
+        assertTrue(recursion1TestObject.array6(new int[] { 6, 2, 2 }, 0));
+        assertFalse(recursion1TestObject.array6(new int[] { 2, 5 }, 0));
+        assertTrue(recursion1TestObject.array6(new int[] { 1, 9, 4, 6, 6 }, 0));
+        assertTrue(recursion1TestObject.array6(new int[] { 2, 5, 6 }, 0));
+    }
 }
