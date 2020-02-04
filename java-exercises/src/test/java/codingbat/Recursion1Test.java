@@ -224,4 +224,17 @@ public class Recursion1Test {
         assertTrue(recursion1TestObject.array6(new int[] { 1, 9, 4, 6, 6 }, 0));
         assertTrue(recursion1TestObject.array6(new int[] { 2, 5, 6 }, 0));
     }
+
+    @Test
+    public void array11Test() {
+        assertEquals(1, recursion1TestObject.array11(new int[] { 1, 2, 11 }, 0));
+        assertEquals(2, recursion1TestObject.array11(new int[] { 11, 11 }, 0));
+        assertEquals(0, recursion1TestObject.array11(new int[] { 1, 2, 3, 4 }, 0));
+        assertEquals(3, recursion1TestObject.array11(new int[] { 1, 11, 3, 11, 11 }, 0));
+        assertEquals(1, recursion1TestObject.array11(new int[] { 11 }, 0));
+        assertEquals(0, recursion1TestObject.array11(new int[] { 1 }, 0));
+        assertEquals(0, recursion1TestObject.array11(new int[] {}, 0));
+        assertEquals(2, recursion1TestObject.array11(new int[] { 11, 2, 3, 4, 11, 5 }, 0));
+        assertEquals(2, recursion1TestObject.array11(new int[] { 11, 5, 11 }, 0));
+    }
 }
