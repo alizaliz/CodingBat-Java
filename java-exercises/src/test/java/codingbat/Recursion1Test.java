@@ -237,4 +237,22 @@ public class Recursion1Test {
         assertEquals(2, recursion1TestObject.array11(new int[] { 11, 2, 3, 4, 11, 5 }, 0));
         assertEquals(2, recursion1TestObject.array11(new int[] { 11, 5, 11 }, 0));
     }
+
+    @Test
+    public void array220Test() {
+        assertTrue(recursion1TestObject.array220(new int[] { 1, 2, 20 }, 0));
+        assertTrue(recursion1TestObject.array220(new int[] { 3, 30 }, 0));
+        assertFalse(recursion1TestObject.array220(new int[] { 3 }, 0));
+        assertFalse(recursion1TestObject.array220(new int[] {}, 0));
+        assertTrue(recursion1TestObject.array220(new int[] { 3, 3, 30, 4 }, 0));
+        assertFalse(recursion1TestObject.array220(new int[] { 2, 19, 4 }, 0));
+        assertFalse(recursion1TestObject.array220(new int[] { 20, 2, 21 }, 0));
+        assertTrue(recursion1TestObject.array220(new int[] { 20, 2, 21, 210 }, 0));
+        assertTrue(recursion1TestObject.array220(new int[] { 2, 200, 2000 }, 0));
+        assertTrue(recursion1TestObject.array220(new int[] { 0, 0 }, 0));
+        assertFalse(recursion1TestObject.array220(new int[] { 1, 2, 3, 4, 5, 6 }, 0));
+        assertTrue(recursion1TestObject.array220(new int[] { 1, 2, 3, 4, 5, 50, 6 }, 0));
+        assertFalse(recursion1TestObject.array220(new int[] { 1, 2, 3, 4, 5, 51, 6 }, 0));
+        assertTrue(recursion1TestObject.array220(new int[] { 1, 2, 3, 4, 4, 50, 500, 6 }, 0));
+    }
 }
