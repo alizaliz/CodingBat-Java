@@ -267,4 +267,18 @@ public class Recursion1Test {
         assertEquals("C*h*o*c*o*l*a*t*e", recursion1TestObject.allStar("Chocolate"));
         assertEquals("1*2*3*4", recursion1TestObject.allStar("1234"));
     }
+
+    @Test
+    public void pairStarTest() {
+        assertEquals("hel*lo", recursion1TestObject.pairStar("hello"));
+        assertEquals("x*xy*y", recursion1TestObject.pairStar("xxyy"));
+        assertEquals("a*a*a*a", recursion1TestObject.pairStar("aaaa"));
+        assertEquals("a*a*ab", recursion1TestObject.pairStar("aaab"));
+        assertEquals("a*a", recursion1TestObject.pairStar("aa"));
+        assertEquals("a", recursion1TestObject.pairStar("a"));
+        assertEquals("", recursion1TestObject.pairStar(""));
+        assertEquals("noadjacent", recursion1TestObject.pairStar("noadjacent"));
+        assertEquals("ab*ba", recursion1TestObject.pairStar("abba"));
+        assertEquals("ab*b*ba", recursion1TestObject.pairStar("abbba"));
+    }
 }
