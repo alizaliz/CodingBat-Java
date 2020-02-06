@@ -255,4 +255,16 @@ public class Recursion1Test {
         assertFalse(recursion1TestObject.array220(new int[] { 1, 2, 3, 4, 5, 51, 6 }, 0));
         assertTrue(recursion1TestObject.array220(new int[] { 1, 2, 3, 4, 4, 50, 500, 6 }, 0));
     }
+
+    @Test
+    public void allStarTest() {
+        assertEquals("h*e*l*l*o", recursion1TestObject.allStar("hello"));
+        assertEquals("a*b*c", recursion1TestObject.allStar("abc"));
+        assertEquals("a*b", recursion1TestObject.allStar("ab"));
+        assertEquals("a", recursion1TestObject.allStar("a"));
+        assertEquals("", recursion1TestObject.allStar(""));
+        assertEquals("3*.*1*4", recursion1TestObject.allStar("3.14"));
+        assertEquals("C*h*o*c*o*l*a*t*e", recursion1TestObject.allStar("Chocolate"));
+        assertEquals("1*2*3*4", recursion1TestObject.allStar("1234"));
+    }
 }
