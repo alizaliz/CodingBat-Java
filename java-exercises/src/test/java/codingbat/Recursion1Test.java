@@ -281,4 +281,20 @@ public class Recursion1Test {
         assertEquals("ab*ba", recursion1TestObject.pairStar("abba"));
         assertEquals("ab*b*ba", recursion1TestObject.pairStar("abbba"));
     }
+
+    @Test
+    public void endXTest() {
+        assertEquals("rexx", recursion1TestObject.endX("xxre"));
+        assertEquals("hixxxx", recursion1TestObject.endX("xxhixx"));
+        assertEquals("hihixxx", recursion1TestObject.endX("xhixhix"));
+        assertEquals("hiy", recursion1TestObject.endX("hiy"));
+        assertEquals("h", recursion1TestObject.endX("h"));
+        assertEquals("x", recursion1TestObject.endX("x"));
+        assertEquals("xx", recursion1TestObject.endX("xx"));
+        assertEquals("", recursion1TestObject.endX(""));
+        assertEquals("bxx", recursion1TestObject.endX("bxx"));
+        assertEquals("baxx", recursion1TestObject.endX("bxax"));
+        assertEquals("aaaxxx", recursion1TestObject.endX("axaxax"));
+        assertEquals("hixxx", recursion1TestObject.endX("xxhxi"));
+    }
 }

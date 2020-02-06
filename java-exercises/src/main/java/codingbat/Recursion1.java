@@ -374,4 +374,23 @@ public final class Recursion1 {
         return str;
     }
 
+    /**
+     * Given a string, compute recursively a new string where all the lowercase 'x'
+     * chars have been moved to the end of the string.
+     * 
+     * endX("xxre") → "rexx" endX("xxhixx") → "hixxxx" endX("xhixhix") → "hihixxx"
+     */
+    public String endX(String str) {
+
+        if (str.length() > 0) {
+            int index = str.indexOf('x');
+            if (index >= 0) {
+                return str.substring(0, index) + endX(str.substring(index + 1)) + "x";
+            }
+        }
+
+        return str;
+
+    }
+
 }
