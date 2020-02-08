@@ -297,4 +297,19 @@ public class Recursion1Test {
         assertEquals("aaaxxx", recursion1TestObject.endX("axaxax"));
         assertEquals("hixxx", recursion1TestObject.endX("xxhxi"));
     }
+
+    @Test
+    public void countPairsTest() {
+        assertEquals(1, recursion1TestObject.countPairs("axa"));
+        assertEquals(2, recursion1TestObject.countPairs("axax"));
+        assertEquals(1, recursion1TestObject.countPairs("axbx"));
+        assertEquals(0, recursion1TestObject.countPairs("hi"));
+        assertEquals(3, recursion1TestObject.countPairs("hihih"));
+        assertEquals(3, recursion1TestObject.countPairs("ihihhh"));
+        assertEquals(0, recursion1TestObject.countPairs("ihjxhh"));
+        assertEquals(0, recursion1TestObject.countPairs(""));
+        assertEquals(0, recursion1TestObject.countPairs("a"));
+        assertEquals(0, recursion1TestObject.countPairs("aa"));
+        assertEquals(1, recursion1TestObject.countPairs("aaa"));
+    }
 }
