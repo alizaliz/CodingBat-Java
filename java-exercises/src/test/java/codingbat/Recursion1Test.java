@@ -343,4 +343,14 @@ public class Recursion1Test {
         assertEquals(0, recursion1TestObject.count11("1Hello1"));
         assertEquals(0, recursion1TestObject.count11("Hello"));
     }
+
+    @Test
+    public void stringCleanTest() {
+        assertEquals("yza", recursion1TestObject.stringClean("yyzzza"));
+        assertEquals("abcd", recursion1TestObject.stringClean("abbbcdd"));
+        assertEquals("Helo", recursion1TestObject.stringClean("Hello"));
+        assertEquals("XabcY", recursion1TestObject.stringClean("XXabcYY"));
+        assertEquals("12ab45", recursion1TestObject.stringClean("112ab445"));
+        assertEquals("Helo Bokeper", recursion1TestObject.stringClean("Hello Bookkeeper"));
+    }
 }
