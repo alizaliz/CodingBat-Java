@@ -373,4 +373,20 @@ public class Recursion1Test {
         assertEquals(0, recursion1TestObject.countHi2(""));
         assertEquals(1, recursion1TestObject.countHi2("Hellohi"));
     }
+
+    @Test
+    public void parenbitTest() {
+        assertEquals("(abc)", recursion1TestObject.parenBit("xyz(abc)123"));
+        assertEquals("(hello)", recursion1TestObject.parenBit("x(hello)"));
+        assertEquals("(xy)", recursion1TestObject.parenBit("(xy)1"));
+        assertEquals("(possible)", recursion1TestObject.parenBit("not really (possible)"));
+        assertEquals("(abc)", recursion1TestObject.parenBit("(abc)"));
+        assertEquals("(abc)", recursion1TestObject.parenBit("(abc)xyz"));
+        assertEquals("(abc)", recursion1TestObject.parenBit("(abc)x"));
+        assertEquals("(x)", recursion1TestObject.parenBit("(x)"));
+        assertEquals("()", recursion1TestObject.parenBit("()"));
+        assertEquals("(ipsa)", recursion1TestObject.parenBit("res (ipsa) loquitor"));
+        assertEquals("(not really)", recursion1TestObject.parenBit("hello(not really)there"));
+        assertEquals("(ab)", recursion1TestObject.parenBit("ab(ab)ab"));
+    }
 }
