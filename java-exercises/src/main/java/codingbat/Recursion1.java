@@ -481,4 +481,34 @@ public final class Recursion1 {
         return str;
     }
 
+    /**
+     * Given a string, compute recursively the number of times lowercase "hi"
+     * appears in the string, however do not count "hi" that have an 'x' immedately
+     * before them.
+     * 
+     * countHi2("ahixhi") → 1 countHi2("ahibhi") → 2 countHi2("xhixhi") → 0
+     */
+    public int countHi2(String str) {
+
+        if (str.length() == 3) {
+            if (str.contains("hi") && str.charAt(0) != 'x') {
+                return 1;
+            }
+        } else if (str.length() > 3) {
+            if (str.substring(0, 3).contains("hi")) {
+                if (str.substring(0, 3).charAt(0) != 'x') {
+                    return 1 + countHi2(str.substring(2));
+                }
+                return countHi2(str.substring(2));
+            }
+            return countHi2(str.substring(1));
+        } else if (str.length() == 2) {
+            if (str.contains("hi")) {
+                return 1;
+            }
+        }
+
+        return 0;
+    }
+
 }

@@ -353,4 +353,24 @@ public class Recursion1Test {
         assertEquals("12ab45", recursion1TestObject.stringClean("112ab445"));
         assertEquals("Helo Bokeper", recursion1TestObject.stringClean("Hello Bookkeeper"));
     }
+
+    @Test
+    public void countHi2Test() {
+        assertEquals(1, recursion1TestObject.countHi2("ahixhi"));
+        assertEquals(2, recursion1TestObject.countHi2("ahibhi"));
+        assertEquals(0, recursion1TestObject.countHi2("xhixhi"));
+        assertEquals(1, recursion1TestObject.countHi2("hixhi"));
+        assertEquals(2, recursion1TestObject.countHi2("hixhhi"));
+        assertEquals(3, recursion1TestObject.countHi2("hihihi"));
+        assertEquals(3, recursion1TestObject.countHi2("hihihix"));
+        assertEquals(2, recursion1TestObject.countHi2("xhihihix"));
+        assertEquals(0, recursion1TestObject.countHi2("xxhi"));
+        assertEquals(1, recursion1TestObject.countHi2("hixxhi"));
+        assertEquals(1, recursion1TestObject.countHi2("hi"));
+        assertEquals(0, recursion1TestObject.countHi2("xxxx"));
+        assertEquals(0, recursion1TestObject.countHi2("h"));
+        assertEquals(0, recursion1TestObject.countHi2("x"));
+        assertEquals(0, recursion1TestObject.countHi2(""));
+        assertEquals(1, recursion1TestObject.countHi2("Hellohi"));
+    }
 }
