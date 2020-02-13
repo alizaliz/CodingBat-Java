@@ -389,4 +389,24 @@ public class Recursion1Test {
         assertEquals("(not really)", recursion1TestObject.parenBit("hello(not really)there"));
         assertEquals("(ab)", recursion1TestObject.parenBit("ab(ab)ab"));
     }
+
+    @Test
+
+    public void nextParenTest() {
+        assertTrue(recursion1TestObject.nestParen("(())"));
+        assertTrue(recursion1TestObject.nestParen("((()))"));
+        assertFalse(recursion1TestObject.nestParen("(((x))"));
+        assertFalse(recursion1TestObject.nestParen("((())"));
+        assertFalse(recursion1TestObject.nestParen("((()()"));
+        assertTrue(recursion1TestObject.nestParen("()"));
+        assertTrue(recursion1TestObject.nestParen(""));
+        assertFalse(recursion1TestObject.nestParen("(yy)"));
+        assertTrue(recursion1TestObject.nestParen("(())"));
+        assertFalse(recursion1TestObject.nestParen("(((y))"));
+        assertFalse(recursion1TestObject.nestParen("((y)))"));
+        assertTrue(recursion1TestObject.nestParen("((()))"));
+        assertFalse(recursion1TestObject.nestParen("(())))"));
+        assertFalse(recursion1TestObject.nestParen("((yy())))"));
+        assertTrue(recursion1TestObject.nestParen("(((())))"));
+    }
 }
