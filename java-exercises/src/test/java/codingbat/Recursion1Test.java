@@ -426,4 +426,22 @@ public class Recursion1Test {
         assertEquals(6, recursion1TestObject.strCount("aaabababab", "a"));
         assertEquals(4, recursion1TestObject.strCount("aaabababab", "b"));
     }
+
+    @Test
+    public void strCopiesTest() {
+        assertTrue(recursion1TestObject.strCopies("catcowcat", "cat", 2));
+        assertFalse(recursion1TestObject.strCopies("catcowcat", "cow", 2));
+        assertTrue(recursion1TestObject.strCopies("catcowcat", "cow", 1));
+        assertTrue(recursion1TestObject.strCopies("iiijjj", "i", 3));
+        assertFalse(recursion1TestObject.strCopies("iiijjj", "i", 4));
+        assertTrue(recursion1TestObject.strCopies("iiijjj", "ii", 2));
+        assertFalse(recursion1TestObject.strCopies("iiijjj", "ii", 3));
+        assertFalse(recursion1TestObject.strCopies("iiijjj", "x", 3));
+        assertTrue(recursion1TestObject.strCopies("iiijjj", "x", 0));
+        assertTrue(recursion1TestObject.strCopies("iiiiij", "iii", 3));
+        assertFalse(recursion1TestObject.strCopies("iiiiij", "iii", 4));
+        assertTrue(recursion1TestObject.strCopies("ijiiiiij", "iiii", 2));
+        assertFalse(recursion1TestObject.strCopies("ijiiiiij", "iiii", 3));
+        assertTrue(recursion1TestObject.strCopies("dogcatdogcat", "dog", 2));
+    }
 }
