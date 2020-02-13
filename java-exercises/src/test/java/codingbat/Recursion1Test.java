@@ -391,7 +391,6 @@ public class Recursion1Test {
     }
 
     @Test
-
     public void nextParenTest() {
         assertTrue(recursion1TestObject.nestParen("(())"));
         assertTrue(recursion1TestObject.nestParen("((()))"));
@@ -408,5 +407,23 @@ public class Recursion1Test {
         assertFalse(recursion1TestObject.nestParen("(())))"));
         assertFalse(recursion1TestObject.nestParen("((yy())))"));
         assertTrue(recursion1TestObject.nestParen("(((())))"));
+    }
+
+    @Test
+    public void strCountTest() {
+        assertEquals(2, recursion1TestObject.strCount("catcowcat", "cat"));
+        assertEquals(1, recursion1TestObject.strCount("catcowcat", "cow"));
+        assertEquals(0, recursion1TestObject.strCount("catcowcat", "dog"));
+        assertEquals(2, recursion1TestObject.strCount("cacatcowcat", "cat"));
+        assertEquals(2, recursion1TestObject.strCount("xyx", "x"));
+        assertEquals(4, recursion1TestObject.strCount("iiiijj", "i"));
+        assertEquals(2, recursion1TestObject.strCount("iiiijj", "ii"));
+        assertEquals(1, recursion1TestObject.strCount("iiiijj", "iii"));
+        assertEquals(2, recursion1TestObject.strCount("iiiijj", "j"));
+        assertEquals(1, recursion1TestObject.strCount("iiiijj", "jj"));
+        assertEquals(4, recursion1TestObject.strCount("aaabababab", "ab"));
+        assertEquals(1, recursion1TestObject.strCount("aaabababab", "aa"));
+        assertEquals(6, recursion1TestObject.strCount("aaabababab", "a"));
+        assertEquals(4, recursion1TestObject.strCount("aaabababab", "b"));
     }
 }
