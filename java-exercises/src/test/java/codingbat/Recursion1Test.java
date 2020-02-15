@@ -444,4 +444,22 @@ public class Recursion1Test {
         assertFalse(recursion1TestObject.strCopies("ijiiiiij", "iiii", 3));
         assertTrue(recursion1TestObject.strCopies("dogcatdogcat", "dog", 2));
     }
+
+    @Test
+    public void strDistTest(){
+        assertEquals(9, recursion1TestObject.strDist("catcowcat", "cat") );
+        assertEquals(3, recursion1TestObject.strDist("catcowcat", "cow") );
+        assertEquals(9, recursion1TestObject.strDist("cccatcowcatxx", "cat") );
+        assertEquals(12, recursion1TestObject.strDist("abccatcowcatcatxyz", "cat") );
+        assertEquals(3, recursion1TestObject.strDist("xyx", "x") );
+        assertEquals(1, recursion1TestObject.strDist("xyx", "y") );
+        assertEquals(0, recursion1TestObject.strDist("xyx", "z") );
+        assertEquals(1, recursion1TestObject.strDist("z", "z") );
+        assertEquals(0, recursion1TestObject.strDist("x", "z"));
+        assertEquals(0, recursion1TestObject.strDist("", "z") );
+        assertEquals(13, recursion1TestObject.strDist("hiHellohihihi", "hi") );
+        assertEquals(5, recursion1TestObject.strDist("hiHellohihihi", "hih") );
+        assertEquals(1, recursion1TestObject.strDist("hiHellohihihi", "o") );
+        assertEquals(2, recursion1TestObject.strDist("hiHellohihihi", "ll"));
+    }
 }
