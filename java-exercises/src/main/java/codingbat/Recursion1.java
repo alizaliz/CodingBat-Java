@@ -229,4 +229,407 @@ public final class Recursion1 {
         }
     }
 
+    /**
+     * Given a string, compute recursively (no loops) a new string where all
+     * appearances of "pi" have been replaced by "3.14".
+     * 
+     * changePi("xpix") → "x3.14x" changePi("pipi") → "3.143.14" changePi("pip") →
+     * "3.14p"
+     */
+    public String changePi(String str) {
+        if (str.length() <= 2) {
+            if (str.equals("pi")) {
+                return "3.14";
+            } else {
+                return str;
+            }
+        } else {
+            if (str.substring(0, 2).equals("pi")) {
+                return "3.14" + changePi(str.substring(2));
+            } else {
+                return str.substring(0, 1) + changePi(str.substring(1));
+            }
+        }
+    }
+
+    /**
+     * Given a string, compute recursively a new string where all the 'x' chars have
+     * been removed.
+     * 
+     * noX("xaxb") → "ab" noX("abc") → "abc" noX("xx") → ""
+     */
+    public String noX(String str) {
+        int index = str.indexOf('x');
+        if (index >= 0) {
+            str = str.substring(0, index) + str.substring(index + 1);
+            return noX(str);
+        }
+        return str;
+    }
+
+    /**
+     * Given an array of ints, compute recursively if the array contains a 6. We'll
+     * use the convention of considering only the part of the array that begins at
+     * the given index. In this way, a recursive call can pass index+1 to move down
+     * the array. The initial call will pass in index as 0.
+     * 
+     * array6([1, 6, 4], 0) → true array6([1, 4], 0) → false array6([6], 0) → true
+     */
+    public boolean array6(int[] nums, int index) {
+
+        if (index < nums.length) {
+            if (nums[index] == 6) {
+                return true;
+            }
+            return array6(nums, index + 1);
+        } else {
+            return false;
+        }
+
+    }
+
+    /**
+     * Given an array of ints, compute recursively the number of times that the
+     * value 11 appears in the array. We'll use the convention of considering only
+     * the part of the array that begins at the given index. In this way, a
+     * recursive call can pass index+1 to move down the array. The initial call will
+     * pass in index as 0.
+     * 
+     * array11([1, 2, 11], 0) → 1 array11([11, 11], 0) → 2 array11([1, 2, 3, 4], 0)
+     * → 0
+     */
+    public int array11(int[] nums, int index) {
+
+        if (index < nums.length) {
+
+            if (nums[index] == 11) {
+                return 1 + array11(nums, index + 1);
+            }
+            return array11(nums, index + 1);
+
+        }
+
+        return 0;
+
+    }
+
+    /**
+     * Given an array of ints, compute recursively if the array contains somewhere a
+     * value followed in the array by that value times 10. We'll use the convention
+     * of considering only the part of the array that begins at the given index. In
+     * this way, a recursive call can pass index+1 to move down the array. The
+     * initial call will pass in index as 0.
+     * 
+     * array220([1, 2, 20], 0) → true array220([3, 30], 0) → true array220([3], 0) →
+     * false
+     */
+    public boolean array220(int[] nums, int index) {
+
+        if (index < nums.length) {
+            if (index > 0 && nums[index] % 10 == 0 && nums[index] / 10 == nums[index - 1]) {
+                return true;
+            }
+            return array220(nums, index + 1);
+        }
+
+        return false;
+    }
+
+    /**
+     * Given a string, compute recursively a new string where all the adjacent chars
+     * are now separated by a "*".
+     * 
+     * allStar("hello") → "h*e*l*l*o" allStar("abc") → "a*b*c" allStar("ab") → "a*b"
+     */
+    public String allStar(String str) {
+
+        int index = str.indexOf('*');
+
+        if (index < 0 && str.length() > 1) {
+            return str.substring(0, 1) + "*" + allStar(str.substring(1));
+        }
+
+        return str;
+
+    }
+
+    /**
+     * Given a string, compute recursively a new string where identical chars that
+     * are adjacent in the original string are separated from each other by a "*".
+     * 
+     * pairStar("hello") → "hel*lo" pairStar("xxyy") → "x*xy*y" pairStar("aaaa") →
+     * "a*a*a*a"
+     */
+    public String pairStar(String str) {
+
+        int index = str.indexOf('*');
+
+        if (index < 0 && str.length() > 1) {
+            if (str.charAt(0) == str.charAt(1)) {
+                return str.substring(0, 1) + "*" + pairStar(str.substring(1));
+            }
+            return str.substring(0, 1) + pairStar(str.substring(1));
+        }
+
+        return str;
+    }
+
+    /**
+     * Given a string, compute recursively a new string where all the lowercase 'x'
+     * chars have been moved to the end of the string.
+     * 
+     * endX("xxre") → "rexx" endX("xxhixx") → "hixxxx" endX("xhixhix") → "hihixxx"
+     */
+    public String endX(String str) {
+
+        if (str.length() > 0) {
+            int index = str.indexOf('x');
+            if (index >= 0) {
+                return str.substring(0, index) + endX(str.substring(index + 1)) + "x";
+            }
+        }
+
+        return str;
+
+    }
+
+    /**
+     * We'll say that a "pair" in a string is two instances of a char separated by a
+     * char. So "AxA" the A's make a pair. Pair's can overlap, so "AxAxA" contains 3
+     * pairs -- 2 for A and 1 for x. Recursively compute the number of pairs in the
+     * given string.
+     * 
+     * countPairs("axa") → 1 countPairs("axax") → 2 countPairs("axbx") → 1
+     */
+    public int countPairs(String str) {
+
+        if (str.length() >= 3) {
+            if (str.charAt(0) == str.charAt(2)) {
+                return 1 + countPairs(str.substring(1));
+            }
+            return countPairs(str.substring(1));
+        }
+
+        return 0;
+    }
+
+    /**
+     * Count recursively the total number of "abc" and "aba" substrings that appear
+     * in the given string.
+     * 
+     * countAbc("abc") → 1 countAbc("abcxxabc") → 2 countAbc("abaxxaba") → 2
+     */
+    public int countAbc(String str) {
+
+        if (str.length() == 3) {
+            if (str.contains("aba") || str.contains("abc")) {
+                return 1;
+            }
+        } else if (str.length() > 3) {
+            int count = 0;
+            if (str.substring(0, 3).contains("aba") || str.substring(0, 3).contains("abc")) {
+                count = 1;
+            }
+            return count + countAbc(str.substring(1));
+        }
+
+        return 0;
+    }
+
+    /**
+     * Given a string, compute recursively (no loops) the number of "11" substrings
+     * in the string. The "11" substrings should not overlap.
+     * 
+     * count11("11abc11") → 2 count11("abc11x11x11") → 3 count11("111") → 1
+     */
+    public int count11(String str) {
+
+        if (str.length() == 2) {
+            if (str.contains("11")) {
+                return 1;
+            }
+        } else if (str.length() > 2) {
+
+            if (str.substring(0, 2).contains("11")) {
+                return 1 + count11(str.substring(2));
+            } else {
+                return count11(str.substring(1));
+            }
+
+        }
+
+        return 0;
+    }
+
+    /**
+     * Given a string, return recursively a "cleaned" string where adjacent chars
+     * that are the same have been reduced to a single char. So "yyzzza" yields
+     * "yza".
+     * 
+     * stringClean("yyzzza") → "yza" stringClean("abbbcdd") → "abcd"
+     * stringClean("Hello") → "Helo"
+     */
+    public String stringClean(String str) {
+
+        if (str.length() > 1) {
+            if (str.charAt(0) == str.charAt(1)) {
+                return stringClean(str.substring(1));
+            }
+            return str.substring(0, 1) + stringClean(str.substring(1));
+        }
+
+        return str;
+    }
+
+    /**
+     * Given a string, compute recursively the number of times lowercase "hi"
+     * appears in the string, however do not count "hi" that have an 'x' immedately
+     * before them.
+     * 
+     * countHi2("ahixhi") → 1 countHi2("ahibhi") → 2 countHi2("xhixhi") → 0
+     */
+    public int countHi2(String str) {
+
+        if (str.length() == 3) {
+            if (str.contains("hi") && str.charAt(0) != 'x') {
+                return 1;
+            }
+        } else if (str.length() > 3) {
+            if (str.substring(0, 3).contains("hi")) {
+                if (str.substring(0, 3).charAt(0) != 'x') {
+                    return 1 + countHi2(str.substring(2));
+                }
+                return countHi2(str.substring(2));
+            }
+            return countHi2(str.substring(1));
+        } else if (str.length() == 2) {
+            if (str.contains("hi")) {
+                return 1;
+            }
+        }
+
+        return 0;
+    }
+
+    /**
+     * Given a string that contains a single pair of parenthesis, compute
+     * recursively a new string made of only of the parenthesis and their contents,
+     * so "xyz(abc)123" yields "(abc)".
+     * 
+     * parenBit("xyz(abc)123") → "(abc)" parenBit("x(hello)") → "(hello)"
+     * parenBit("(xy)1") → "(xy)
+     */
+    public String parenBit(String str) {
+
+        if (str.charAt(0) == '(') {
+            return str.charAt(0) + parenBit(str.substring(1));
+        } else if (str.charAt(0) == ')') {
+            return "" + str.charAt(0);
+        }
+
+        if (!str.contains("(")) {
+            return str.charAt(0) + parenBit(str.substring(1));
+        }
+
+        return parenBit(str.substring(1));
+    }
+
+    /**
+     * Given a string, return true if it is a nesting of zero or more pairs of
+     * parenthesis, like "(())" or "((()))". Suggestion: check the first and last
+     * chars, and then recur on what's inside them.
+     * 
+     * nestParen("(())") → true nestParen("((()))") → true nestParen("(((x))") →
+     * false
+     */
+    public boolean nestParen(String str) {
+
+        if (str.length() > 2) {
+            return nestChars(str.charAt(0), str.charAt(str.length() - 1))
+                    && nestParen(str.substring(1, str.length() - 1));
+        } else if (str.length() == 2) {
+            return str.charAt(0) == '(' && str.charAt(str.length() - 1) == ')';
+        } else if (str.length() == 0) {
+            return true;
+        }
+
+        return false;
+    }
+
+    public boolean nestChars(char a, char b) {
+        return a == '(' && b == ')' || a == '"' && b == '"';
+    }
+
+    /**
+     * Given a string and a non-empty substring sub, compute recursively the number
+     * of times that sub appears in the string, without the sub strings overlapping.
+     * 
+     * strCount("catcowcat", "cat") → 2 strCount("catcowcat", "cow") → 1
+     * strCount("catcowcat", "dog") → 0
+     */
+    public int strCount(String str, String sub) {
+
+        if (str.length() >= sub.length()) {
+            if (str.substring(0, sub.length()).contains(sub)) {
+                return 1 + strCount(str.substring(sub.length()), sub);
+            } else {
+                return strCount(str.substring(1), sub);
+            }
+        }
+
+        return 0;
+
+    }
+
+    /**
+     * Given a string and a non-empty substring sub, compute recursively if at least
+     * n copies of sub appear in the string somewhere, possibly with overlapping. N
+     * will be non-negative.
+     * 
+     * strCopies("catcowcat", "cat", 2) → true strCopies("catcowcat", "cow", 2) →
+     * false strCopies("catcowcat", "cow", 1) → true
+     */
+    public boolean strCopies(String str, String sub, int n) {
+
+        if (n > 0 && str.contains(sub)) {
+            if (str.substring(0, sub.length()).contains(sub)) {
+                return strCopies(str.substring(1), sub, n - 1);
+            } else {
+                return strCopies(str.substring(1), sub, n);
+            }
+        } else if (n == 0) {
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Given a string and a non-empty substring sub, compute recursively the largest
+     * substring which starts and ends with sub and return its length.
+     * 
+     * strDist("catcowcat", "cat") → 9 strDist("catcowcat", "cow") → 3
+     * strDist("cccatcowcatxx", "cat") → 9
+     */
+    public int strDist(String str, String sub) {
+
+        if (!str.contains(sub)) {
+            return 0;
+        } else {
+            if (str.length() >= sub.length()) {
+                if (str.substring(0, sub.length()).contains(sub)) {
+                    if (str.substring(str.length() - sub.length()).contains(sub)) {
+                        return str.length();
+                    } else {
+                        return strDist(str.substring(0, str.length() - 1), sub);
+                    }
+                } else {
+                    return strDist(str.substring(1), sub);
+                }
+            }
+            return 0;
+        }
+
+    }
+
 }
