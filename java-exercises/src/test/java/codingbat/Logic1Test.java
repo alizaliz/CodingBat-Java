@@ -32,4 +32,20 @@ public final class Logic1Test {
         assertFalse(logic1testObject.cigarParty(39, true));
     }
 
+    @Test
+    public void dateFashionTest() {
+        assertEquals(2, logic1testObject.dateFashion(5, 10));
+        assertEquals(0, logic1testObject.dateFashion(5, 2));
+        assertEquals(1, logic1testObject.dateFashion(5, 5));
+        assertEquals(1, logic1testObject.dateFashion(3, 3));
+        assertEquals(0, logic1testObject.dateFashion(10, 2));
+        assertEquals(0, logic1testObject.dateFashion(2, 9));
+        assertEquals(2, logic1testObject.dateFashion(9, 9));
+        assertEquals(2, logic1testObject.dateFashion(10, 5));
+        assertEquals(0, logic1testObject.dateFashion(2, 2));
+        assertEquals(1, logic1testObject.dateFashion(3, 7));
+        assertEquals(0, logic1testObject.dateFashion(2, 7));
+        assertEquals(0, logic1testObject.dateFashion(6, 2));
+    }
+
 }
