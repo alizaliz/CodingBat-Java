@@ -48,4 +48,21 @@ public final class Logic1Test {
         assertEquals(0, logic1testObject.dateFashion(6, 2));
     }
 
+    @Test
+    public void squirrelPlayTest() {
+        assertTrue(logic1testObject.squirrelPlay(70, false));
+        assertFalse(logic1testObject.squirrelPlay(95, false));
+        assertTrue(logic1testObject.squirrelPlay(95, true));
+        assertTrue(logic1testObject.squirrelPlay(90, false));
+        assertTrue(logic1testObject.squirrelPlay(90, true));
+        assertFalse(logic1testObject.squirrelPlay(50, false));
+        assertFalse(logic1testObject.squirrelPlay(50, true));
+        assertFalse(logic1testObject.squirrelPlay(100, false));
+        assertTrue(logic1testObject.squirrelPlay(100, true));
+        assertFalse(logic1testObject.squirrelPlay(105, true));
+        assertFalse(logic1testObject.squirrelPlay(59, false));
+        assertFalse(logic1testObject.squirrelPlay(59, true));
+        assertTrue(logic1testObject.squirrelPlay(60, false));
+    }
+
 }
