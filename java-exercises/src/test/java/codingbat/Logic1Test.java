@@ -80,4 +80,17 @@ public final class Logic1Test {
         assertEquals(0, logic1testObject.caughtSpeeding(40, true));
         assertEquals(2, logic1testObject.caughtSpeeding(90, false));
     }
+
+    @Test
+    public void sortaSumTest() {
+        assertEquals(7, logic1testObject.sortaSum(3, 4));
+        assertEquals(20, logic1testObject.sortaSum(9, 4));
+        assertEquals(21, logic1testObject.sortaSum(10, 11));
+        assertEquals(9, logic1testObject.sortaSum(12, -3));
+        assertEquals(9, logic1testObject.sortaSum(-3, 12));
+        assertEquals(9, logic1testObject.sortaSum(4, 5));
+        assertEquals(20, logic1testObject.sortaSum(4, 6));
+        assertEquals(21, logic1testObject.sortaSum(14, 7));
+        assertEquals(20, logic1testObject.sortaSum(14, 6));
+    }
 }
