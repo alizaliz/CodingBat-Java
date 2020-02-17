@@ -93,4 +93,17 @@ public final class Logic1Test {
         assertEquals(21, logic1testObject.sortaSum(14, 7));
         assertEquals(20, logic1testObject.sortaSum(14, 6));
     }
+
+    @Test
+    public void alarmClockTest() {
+        assertEquals("7:00", logic1testObject.alarmClock(1, false));
+        assertEquals("7:00", logic1testObject.alarmClock(5, false));
+        assertEquals("10:00", logic1testObject.alarmClock(0, false));
+        assertEquals("10:00", logic1testObject.alarmClock(6, false));
+        assertEquals("off", logic1testObject.alarmClock(0, true));
+        assertEquals("off", logic1testObject.alarmClock(6, true));
+        assertEquals("10:00", logic1testObject.alarmClock(1, true));
+        assertEquals("10:00", logic1testObject.alarmClock(3, true));
+        assertEquals("10:00", logic1testObject.alarmClock(5, true));
+    }
 }
