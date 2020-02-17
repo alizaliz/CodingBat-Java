@@ -65,4 +65,19 @@ public final class Logic1Test {
         assertTrue(logic1testObject.squirrelPlay(60, false));
     }
 
+    @Test
+    public void caughtSpeedingTest() {
+        assertEquals(0, logic1testObject.caughtSpeeding(60, false));
+        assertEquals(1, logic1testObject.caughtSpeeding(65, false));
+        assertEquals(0, logic1testObject.caughtSpeeding(65, true));
+        assertEquals(1, logic1testObject.caughtSpeeding(80, false));
+        assertEquals(2, logic1testObject.caughtSpeeding(85, false));
+        assertEquals(1, logic1testObject.caughtSpeeding(85, true));
+        assertEquals(1, logic1testObject.caughtSpeeding(70, false));
+        assertEquals(1, logic1testObject.caughtSpeeding(75, false));
+        assertEquals(1, logic1testObject.caughtSpeeding(75, true));
+        assertEquals(0, logic1testObject.caughtSpeeding(40, false));
+        assertEquals(0, logic1testObject.caughtSpeeding(40, true));
+        assertEquals(2, logic1testObject.caughtSpeeding(90, false));
+    }
 }
