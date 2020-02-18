@@ -106,4 +106,28 @@ public final class Logic1Test {
         assertEquals("10:00", logic1testObject.alarmClock(3, true));
         assertEquals("10:00", logic1testObject.alarmClock(5, true));
     }
+
+    @Test
+    public void love6Test() {
+        assertTrue(logic1testObject.love6(6, 4));
+        assertFalse(logic1testObject.love6(4, 5));
+        assertTrue(logic1testObject.love6(1, 5));
+        assertTrue(logic1testObject.love6(1, 6));
+        assertFalse(logic1testObject.love6(1, 8));
+        assertTrue(logic1testObject.love6(1, 7));
+        assertFalse(logic1testObject.love6(7, 5));
+        assertTrue(logic1testObject.love6(8, 2));
+        assertTrue(logic1testObject.love6(6, 6));
+        assertFalse(logic1testObject.love6(-6, 2));
+        assertTrue(logic1testObject.love6(-4, -10));
+        assertFalse(logic1testObject.love6(-7, 1));
+        assertTrue(logic1testObject.love6(7, -1));
+        assertTrue(logic1testObject.love6(-6, 12));
+        assertFalse(logic1testObject.love6(-2, -4));
+        assertTrue(logic1testObject.love6(7, 1));
+        assertFalse(logic1testObject.love6(0, 9));
+        assertFalse(logic1testObject.love6(8, 3));
+        assertTrue(logic1testObject.love6(3, 3));
+        assertFalse(logic1testObject.love6(3, 4));
+    }
 }
