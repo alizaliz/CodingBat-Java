@@ -198,4 +198,24 @@ public final class Logic1Test {
         assertFalse(logic1testObject.more20(39));
         assertTrue(logic1testObject.more20(42));
     }
+
+    @Test
+    public void old35Test() {
+        assertTrue(logic1testObject.old35(3));
+        assertTrue(logic1testObject.old35(10));
+        assertFalse(logic1testObject.old35(15));
+        assertTrue(logic1testObject.old35(5));
+        assertTrue(logic1testObject.old35(9));
+        assertFalse(logic1testObject.old35(8));
+        assertFalse(logic1testObject.old35(7));
+        assertTrue(logic1testObject.old35(6));
+        assertFalse(logic1testObject.old35(17));
+        assertTrue(logic1testObject.old35(18));
+        assertFalse(logic1testObject.old35(29));
+        assertTrue(logic1testObject.old35(20));
+        assertTrue(logic1testObject.old35(21));
+        assertFalse(logic1testObject.old35(22));
+        assertFalse(logic1testObject.old35(45));
+        assertTrue(logic1testObject.old35(99));
+    }
 }
