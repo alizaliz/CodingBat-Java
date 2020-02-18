@@ -173,4 +173,29 @@ public final class Logic1Test {
         assertFalse(logic1testObject.specialEleven(54));
         assertTrue(logic1testObject.specialEleven(55));
     }
+
+    @Test
+    public void more20Test() {
+        assertFalse(logic1testObject.more20(20));
+        assertTrue(logic1testObject.more20(21));
+        assertTrue(logic1testObject.more20(22));
+        assertFalse(logic1testObject.more20(23));
+        assertFalse(logic1testObject.more20(25));
+        assertFalse(logic1testObject.more20(30));
+        assertFalse(logic1testObject.more20(31));
+        assertFalse(logic1testObject.more20(59));
+        assertFalse(logic1testObject.more20(60));
+        assertTrue(logic1testObject.more20(61));
+        assertTrue(logic1testObject.more20(62));
+        assertFalse(logic1testObject.more20(1020));
+        assertTrue(logic1testObject.more20(1021));
+        assertFalse(logic1testObject.more20(1000));
+        assertTrue(logic1testObject.more20(1001));
+        assertFalse(logic1testObject.more20(50));
+        assertFalse(logic1testObject.more20(55));
+        assertFalse(logic1testObject.more20(40));
+        assertTrue(logic1testObject.more20(41));
+        assertFalse(logic1testObject.more20(39));
+        assertTrue(logic1testObject.more20(42));
+    }
 }
