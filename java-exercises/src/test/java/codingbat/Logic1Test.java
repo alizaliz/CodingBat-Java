@@ -218,4 +218,30 @@ public final class Logic1Test {
         assertFalse(logic1testObject.old35(45));
         assertTrue(logic1testObject.old35(99));
     }
+
+    @Test
+    public void less20Test() {
+        assertTrue(logic1testObject.less20(18));
+        assertTrue(logic1testObject.less20(19));
+        assertFalse(logic1testObject.less20(20));
+        assertFalse(logic1testObject.less20(8));
+        assertFalse(logic1testObject.less20(17));
+        assertFalse(logic1testObject.less20(23));
+        assertFalse(logic1testObject.less20(25));
+        assertFalse(logic1testObject.less20(30));
+        assertFalse(logic1testObject.less20(31));
+        assertTrue(logic1testObject.less20(58));
+        assertTrue(logic1testObject.less20(59));
+        assertFalse(logic1testObject.less20(60));
+        assertFalse(logic1testObject.less20(61));
+        assertFalse(logic1testObject.less20(62));
+        assertFalse(logic1testObject.less20(1017));
+        assertTrue(logic1testObject.less20(1018));
+        assertTrue(logic1testObject.less20(1019));
+        assertFalse(logic1testObject.less20(1020));
+        assertFalse(logic1testObject.less20(1021));
+        assertFalse(logic1testObject.less20(1022));
+        assertFalse(logic1testObject.less20(1023));
+        assertFalse(logic1testObject.less20(37));
+    }
 }

@@ -180,12 +180,23 @@ public final class Logic1 {
 
     /**
      * Return true if the given non-negative number is a multiple of 3 or 5, but not
-     * both. Use the % "mod" operator -- see Introduction to Mod
+     * both. Use the % "mod" operator
      * 
      * old35(3) → true old35(10) → true old35(15) → false
      */
     public boolean old35(int n) {
         return ((n % 3 == 0) || (n % 5 == 0)) && !(n % 15 == 0);
+    }
+
+    /**
+     * Return true if the given non-negative number is 1 or 2 less than a multiple
+     * of 20. So for example 38 and 39 return true, but 40 returns false. See also:
+     * Introduction to Mod
+     * 
+     * less20(18) → true less20(19) → true less20(20) → false
+     */
+    public boolean less20(int n) {
+        return ((n + 1) % 20 == 0 || (n + 2) % 20 == 0);
     }
 
 }
