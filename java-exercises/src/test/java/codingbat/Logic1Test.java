@@ -244,4 +244,23 @@ public final class Logic1Test {
         assertFalse(logic1testObject.less20(1023));
         assertFalse(logic1testObject.less20(37));
     }
+
+    @Test
+    public void near10Test() {
+        assertTrue(logic1testObject.nearTen(12));
+        assertFalse(logic1testObject.nearTen(17));
+        assertTrue(logic1testObject.nearTen(19));
+        assertTrue(logic1testObject.nearTen(31));
+        assertFalse(logic1testObject.nearTen(6));
+        assertTrue(logic1testObject.nearTen(10));
+        assertTrue(logic1testObject.nearTen(11));
+        assertTrue(logic1testObject.nearTen(21));
+        assertTrue(logic1testObject.nearTen(22));
+        assertFalse(logic1testObject.nearTen(23));
+        assertFalse(logic1testObject.nearTen(54));
+        assertFalse(logic1testObject.nearTen(155));
+        assertTrue(logic1testObject.nearTen(158));
+        assertFalse(logic1testObject.nearTen(3));
+        assertTrue(logic1testObject.nearTen(1));
+    }
 }
