@@ -130,4 +130,23 @@ public final class Logic1Test {
         assertTrue(logic1testObject.love6(3, 3));
         assertFalse(logic1testObject.love6(3, 4));
     }
+
+    @Test
+    public void in1To10Test() {
+        assertTrue(logic1testObject.in1To10(5, false));
+        assertFalse(logic1testObject.in1To10(11, false));
+        assertTrue(logic1testObject.in1To10(11, true));
+        assertTrue(logic1testObject.in1To10(10, false));
+        assertTrue(logic1testObject.in1To10(10, true));
+        assertTrue(logic1testObject.in1To10(9, false));
+        assertFalse(logic1testObject.in1To10(9, true));
+        assertTrue(logic1testObject.in1To10(1, false));
+        assertTrue(logic1testObject.in1To10(1, true));
+        assertFalse(logic1testObject.in1To10(0, false));
+        assertTrue(logic1testObject.in1To10(0, true));
+        assertFalse(logic1testObject.in1To10(-1, false));
+        assertTrue(logic1testObject.in1To10(-1, true));
+        assertFalse(logic1testObject.in1To10(99, false));
+        assertTrue(logic1testObject.in1To10(-99, true));
+    }
 }
