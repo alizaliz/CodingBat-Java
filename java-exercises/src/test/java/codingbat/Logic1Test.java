@@ -149,4 +149,28 @@ public final class Logic1Test {
         assertFalse(logic1testObject.in1To10(99, false));
         assertTrue(logic1testObject.in1To10(-99, true));
     }
+
+    @Test
+    public void specialElevenTest() {
+        assertTrue(logic1testObject.specialEleven(22));
+        assertTrue(logic1testObject.specialEleven(23));
+        assertFalse(logic1testObject.specialEleven(24));
+        assertFalse(logic1testObject.specialEleven(21));
+        assertTrue(logic1testObject.specialEleven(11));
+        assertTrue(logic1testObject.specialEleven(12));
+        assertFalse(logic1testObject.specialEleven(10));
+        assertFalse(logic1testObject.specialEleven(9));
+        assertFalse(logic1testObject.specialEleven(8));
+        assertTrue(logic1testObject.specialEleven(0));
+        assertTrue(logic1testObject.specialEleven(1));
+        assertFalse(logic1testObject.specialEleven(2));
+        assertTrue(logic1testObject.specialEleven(121));
+        assertTrue(logic1testObject.specialEleven(122));
+        assertFalse(logic1testObject.specialEleven(123));
+        assertFalse(logic1testObject.specialEleven(46));
+        assertFalse(logic1testObject.specialEleven(49));
+        assertFalse(logic1testObject.specialEleven(52));
+        assertFalse(logic1testObject.specialEleven(54));
+        assertTrue(logic1testObject.specialEleven(55));
+    }
 }
