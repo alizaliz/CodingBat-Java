@@ -201,13 +201,31 @@ public final class Logic1 {
     /**
      * Given a non-negative number "num", return true if num is within 2 of a
      * multiple of 10. Note: (a % b) is the remainder of dividing a by b, so (7 % 5)
-     * is 2. 
+     * is 2.
      * 
      * nearTen(12) → true nearTen(17) → false nearTen(19) → true
      */
     public boolean nearTen(int num) {
         return num % 10 == 0 || (num - 1) % 10 == 0 || (num - 2) % 10 == 0 || (num + 1) % 10 == 0
                 || (num + 2) % 10 == 0;
+    }
+
+    /**
+     * Given 2 ints, a and b, return their sum. However, "teen" values in the range
+     * 13..19 inclusive, are extra lucky. So if either value is a teen, just return
+     * 19.
+     * 
+     * teenSum(3, 4) → 7 teenSum(10, 13) → 19 teenSum(13, 2) → 19
+     */
+    public int teenSum(int a, int b) {
+        if (isTeen(a) || isTeen(b)) {
+            return 19;
+        }
+        return a + b;
+    }
+
+    public boolean isTeen(int n) {
+        return n >= 13 && n < 20;
     }
 
 }

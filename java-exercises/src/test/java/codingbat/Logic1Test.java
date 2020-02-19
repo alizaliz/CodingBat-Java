@@ -263,4 +263,24 @@ public final class Logic1Test {
         assertFalse(logic1testObject.nearTen(3));
         assertTrue(logic1testObject.nearTen(1));
     }
+
+    @Test
+    public void teenSumTest() {
+        assertEquals(7, logic1testObject.teenSum(3, 4));
+        assertEquals(19, logic1testObject.teenSum(10, 13));
+        assertEquals(19, logic1testObject.teenSum(13, 2));
+        assertEquals(19, logic1testObject.teenSum(3, 19));
+        assertEquals(19, logic1testObject.teenSum(13, 13));
+        assertEquals(20, logic1testObject.teenSum(10, 10));
+        assertEquals(19, logic1testObject.teenSum(6, 14));
+        assertEquals(19, logic1testObject.teenSum(15, 2));
+        assertEquals(19, logic1testObject.teenSum(19, 19));
+        assertEquals(19, logic1testObject.teenSum(19, 20));
+        assertEquals(19, logic1testObject.teenSum(2, 18));
+        assertEquals(16, logic1testObject.teenSum(12, 4));
+        assertEquals(22, logic1testObject.teenSum(2, 20));
+        assertEquals(19, logic1testObject.teenSum(2, 17));
+        assertEquals(19, logic1testObject.teenSum(2, 16));
+        assertEquals(13, logic1testObject.teenSum(6, 7));
+    }
 }
