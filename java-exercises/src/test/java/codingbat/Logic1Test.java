@@ -294,4 +294,21 @@ public final class Logic1Test {
         assertTrue(logic1testObject.answerCell(false, true, false));
         assertFalse(logic1testObject.answerCell(true, true, true));
     }
+
+    @Test
+    public void teaPartyTest() {
+        assertEquals(1, logic1testObject.teaParty(6, 8));
+        assertEquals(0, logic1testObject.teaParty(3, 8));
+        assertEquals(2, logic1testObject.teaParty(20, 6));
+        assertEquals(2, logic1testObject.teaParty(12, 6));
+        assertEquals(1, logic1testObject.teaParty(11, 6));
+        assertEquals(0, logic1testObject.teaParty(11, 4));
+        assertEquals(0, logic1testObject.teaParty(4, 5));
+        assertEquals(1, logic1testObject.teaParty(5, 5));
+        assertEquals(1, logic1testObject.teaParty(6, 6));
+        assertEquals(2, logic1testObject.teaParty(5, 10));
+        assertEquals(1, logic1testObject.teaParty(5, 9));
+        assertEquals(0, logic1testObject.teaParty(10, 4));
+        assertEquals(2, logic1testObject.teaParty(10, 20));
+    }
 }
