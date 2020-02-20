@@ -311,4 +311,24 @@ public final class Logic1Test {
         assertEquals(0, logic1testObject.teaParty(10, 4));
         assertEquals(2, logic1testObject.teaParty(10, 20));
     }
+
+    @Test
+    public void fizzStringTest() {
+        assertEquals("Fizz", logic1testObject.fizzString("fig"));
+        assertEquals("Buzz", logic1testObject.fizzString("dib"));
+        assertEquals("FizzBuzz", logic1testObject.fizzString("fib"));
+        assertEquals("abc", logic1testObject.fizzString("abc"));
+        assertEquals("Fizz", logic1testObject.fizzString("fooo"));
+        assertEquals("booo", logic1testObject.fizzString("booo"));
+        assertEquals("Buzz", logic1testObject.fizzString("ooob"));
+        assertEquals("FizzBuzz", logic1testObject.fizzString("fooob"));
+        assertEquals("Fizz", logic1testObject.fizzString("f"));
+        assertEquals("Buzz", logic1testObject.fizzString("b"));
+        assertEquals("Buzz", logic1testObject.fizzString("abcb"));
+        assertEquals("Hello", logic1testObject.fizzString("Hello"));
+        assertEquals("Buzz", logic1testObject.fizzString("Hellob"));
+        assertEquals("af", logic1testObject.fizzString("af"));
+        assertEquals("bf", logic1testObject.fizzString("bf"));
+        assertEquals("FizzBuzz", logic1testObject.fizzString("fb"));
+    }
 }
