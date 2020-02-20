@@ -283,4 +283,15 @@ public final class Logic1Test {
         assertEquals(19, logic1testObject.teenSum(2, 16));
         assertEquals(13, logic1testObject.teenSum(6, 7));
     }
+
+    @Test
+    public void answerCellTest() {
+        assertTrue(logic1testObject.answerCell(false, false, false));
+        assertFalse(logic1testObject.answerCell(false, false, true));
+        assertFalse(logic1testObject.answerCell(false, false, true));
+        assertFalse(logic1testObject.answerCell(true, false, false));
+        assertTrue(logic1testObject.answerCell(true, true, false));
+        assertTrue(logic1testObject.answerCell(false, true, false));
+        assertFalse(logic1testObject.answerCell(true, true, true));
+    }
 }
