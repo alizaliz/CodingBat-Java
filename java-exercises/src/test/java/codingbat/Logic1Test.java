@@ -331,4 +331,25 @@ public final class Logic1Test {
         assertEquals("bf", logic1testObject.fizzString("bf"));
         assertEquals("FizzBuzz", logic1testObject.fizzString("fb"));
     }
+
+    @Test
+    public void fizzString2Test() {
+        assertEquals("1!", logic1testObject.fizzString2(1));
+        assertEquals("2!", logic1testObject.fizzString2(2));
+        assertEquals("Fizz!", logic1testObject.fizzString2(3));
+        assertEquals("4!", logic1testObject.fizzString2(4));
+        assertEquals("Buzz!", logic1testObject.fizzString2(5));
+        assertEquals("Fizz!", logic1testObject.fizzString2(6));
+        assertEquals("7!", logic1testObject.fizzString2(7));
+        assertEquals("8!", logic1testObject.fizzString2(8));
+        assertEquals("Fizz!", logic1testObject.fizzString2(9));
+        assertEquals("FizzBuzz!", logic1testObject.fizzString2(15));
+        assertEquals("16!", logic1testObject.fizzString2(16));
+        assertEquals("Fizz!", logic1testObject.fizzString2(18));
+        assertEquals("19!", logic1testObject.fizzString2(19));
+        assertEquals("Fizz!", logic1testObject.fizzString2(21));
+        assertEquals("44!", logic1testObject.fizzString2(44));
+        assertEquals("FizzBuzz!", logic1testObject.fizzString2(45));
+        assertEquals("Buzz!", logic1testObject.fizzString2(100));
+    }
 }
