@@ -114,19 +114,19 @@ public final class Logic1 {
      */
     public String alarmClock(int day, boolean vacation) {
         switch (day) {
-        case 0:
-        case 6:
-            if (vacation) {
-                return "off";
-            } else {
-                return "10:00";
-            }
-        default:
-            if (vacation) {
-                return "10:00";
-            } else {
-                return "7:00";
-            }
+            case 0:
+            case 6:
+                if (vacation) {
+                    return "off";
+                } else {
+                    return "10:00";
+                }
+            default:
+                if (vacation) {
+                    return "10:00";
+                } else {
+                    return "7:00";
+                }
         }
     }
 
@@ -284,22 +284,38 @@ public final class Logic1 {
     }
 
     /**
-     * Given an int n, return the string form of the number followed by "!". So the int 6 yields "6!". Except if the number is divisible by 3 use "Fizz" instead of the number, and if the number is divisible by 5 use "Buzz", and if divisible by both 3 and 5, use "FizzBuzz". Note: the % "mod" operator computes the remainder after division, so 23 % 10 yields 3. What will the remainder be when one number divides evenly into another? (See also: FizzBuzz Code and Introduction to Mod)
+     * Given an int n, return the string form of the number followed by "!". So the
+     * int 6 yields "6!". Except if the number is divisible by 3 use "Fizz" instead
+     * of the number, and if the number is divisible by 5 use "Buzz", and if
+     * divisible by both 3 and 5, use "FizzBuzz". Note: the % "mod" operator
+     * computes the remainder after division, so 23 % 10 yields 3. What will the
+     * remainder be when one number divides evenly into another? (See also: FizzBuzz
+     * Code and Introduction to Mod)
      * 
-     * fizzString2(1) → "1!"
-     * fizzString2(2) → "2!"
-     * fizzString2(3) → "Fizz!"
+     * fizzString2(1) → "1!" fizzString2(2) → "2!" fizzString2(3) → "Fizz!"
      */
     public String fizzString2(int n) {
         String ret = "";
-        if(n%3 == 0) ret += "Fizz";
-        if(n%5 ==0) ret += "Buzz";
-        if(!(ret.length() > 1)) ret += n;
-        
+        if (n % 3 == 0)
+            ret += "Fizz";
+        if (n % 5 == 0)
+            ret += "Buzz";
+        if (!(ret.length() > 1))
+            ret += n;
+
         ret += "!";
-        
+
         return ret;
-      }
-      
+    }
+
+    /**
+     * Given three ints, a b c, return true if it is possible to add two of the ints
+     * to get the third.
+     * 
+     * twoAsOne(1, 2, 3) → true twoAsOne(3, 1, 2) → true twoAsOne(3, 2, 2) → false
+     */
+    public boolean twoAsOne(int a, int b, int c) {
+        return (a + (b - c)) == 0 || (a - (b + c)) == 0 || (a + (c - b)) == 0 || (a - (c + b)) == 0;
+    }
 
 }

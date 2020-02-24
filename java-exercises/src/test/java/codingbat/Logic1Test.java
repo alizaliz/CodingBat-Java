@@ -352,4 +352,20 @@ public final class Logic1Test {
         assertEquals("FizzBuzz!", logic1testObject.fizzString2(45));
         assertEquals("Buzz!", logic1testObject.fizzString2(100));
     }
+
+    @Test
+    public void twoAdOneTest() {
+        assertTrue(logic1testObject.twoAsOne(1, 2, 3));
+        assertTrue(logic1testObject.twoAsOne(3, 1, 2));
+        assertFalse(logic1testObject.twoAsOne(3, 2, 2));
+        assertTrue(logic1testObject.twoAsOne(2, 3, 1));
+        assertTrue(logic1testObject.twoAsOne(5, 3, -2));
+        assertFalse(logic1testObject.twoAsOne(5, 3, -3));
+        assertTrue(logic1testObject.twoAsOne(2, 5, 3));
+        assertFalse(logic1testObject.twoAsOne(9, 5, 5));
+        assertTrue(logic1testObject.twoAsOne(9, 4, 5));
+        assertTrue(logic1testObject.twoAsOne(5, 4, 9));
+        assertTrue(logic1testObject.twoAsOne(3, 3, 0));
+        assertFalse(logic1testObject.twoAsOne(3, 3, 2));
+    }
 }
