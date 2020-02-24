@@ -381,7 +381,25 @@ public final class Logic1Test {
         assertFalse(logic1testObject.inOrder(4, 5, 2, true));
         assertTrue(logic1testObject.inOrder(2, 4, 6, true));
         assertTrue(logic1testObject.inOrder(7, 9, 10, false));
-        assertTrue(logic1testObject.inOrder(7, 5, 6, true));
+        assertFalse(logic1testObject.inOrder(7, 5, 6, true));
         assertFalse(logic1testObject.inOrder(7, 5, 4, true));
+    }
+
+    @Test
+    public void inOrderEqualTest() {
+        assertTrue(logic1testObject.inOrderEqual(2, 5, 11, false));
+        assertFalse(logic1testObject.inOrderEqual(5, 7, 6, false));
+        assertTrue(logic1testObject.inOrderEqual(5, 5, 7, true));
+        assertFalse(logic1testObject.inOrderEqual(5, 5, 7, false));
+        assertFalse(logic1testObject.inOrderEqual(2, 5, 4, false));
+        assertFalse(logic1testObject.inOrderEqual(3, 4, 3, false));
+        assertFalse(logic1testObject.inOrderEqual(3, 4, 4, false));
+        assertFalse(logic1testObject.inOrderEqual(3, 4, 3, true));
+        assertTrue(logic1testObject.inOrderEqual(3, 4, 4, true));
+        assertTrue(logic1testObject.inOrderEqual(1, 5, 5, true));
+        assertTrue(logic1testObject.inOrderEqual(5, 5, 5, true));
+        assertFalse(logic1testObject.inOrderEqual(2, 2, 1, true));
+        assertFalse(logic1testObject.inOrderEqual(9, 2, 2, true));
+        assertFalse(logic1testObject.inOrderEqual(0, 1, 0, true));
     }
 }
