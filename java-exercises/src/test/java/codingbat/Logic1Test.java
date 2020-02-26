@@ -402,4 +402,21 @@ public final class Logic1Test {
         assertFalse(logic1testObject.inOrderEqual(9, 2, 2, true));
         assertFalse(logic1testObject.inOrderEqual(0, 1, 0, true));
     }
+
+    @Test
+    public void lastDigitTest() {
+        assertTrue(logic1testObject.lastDigit(23, 19, 13));
+        assertFalse(logic1testObject.lastDigit(23, 19, 12));
+        assertTrue(logic1testObject.lastDigit(23, 19, 3));
+        assertTrue(logic1testObject.lastDigit(23, 19, 39));
+        assertFalse(logic1testObject.lastDigit(1, 2, 3));
+        assertTrue(logic1testObject.lastDigit(1, 1, 2));
+        assertTrue(logic1testObject.lastDigit(1, 2, 2));
+        assertFalse(logic1testObject.lastDigit(14, 25, 43));
+        assertTrue(logic1testObject.lastDigit(14, 25, 45));
+        assertFalse(logic1testObject.lastDigit(248, 106, 1002));
+        assertTrue(logic1testObject.lastDigit(248, 106, 1008));
+        assertTrue(logic1testObject.lastDigit(10, 11, 20));
+        assertTrue(logic1testObject.lastDigit(0, 11, 0));
+    }
 }
