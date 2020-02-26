@@ -419,4 +419,22 @@ public final class Logic1Test {
         assertTrue(logic1testObject.lastDigit(10, 11, 20));
         assertTrue(logic1testObject.lastDigit(0, 11, 0));
     }
+
+    @Test
+    public void lessby10() {
+        assertTrue(logic1testObject.lessBy10(1, 7, 11));
+        assertFalse(logic1testObject.lessBy10(1, 7, 10));
+        assertTrue(logic1testObject.lessBy10(11, 1, 7));
+        assertFalse(logic1testObject.lessBy10(10, 7, 1));
+        assertTrue(logic1testObject.lessBy10(-10, 2, 2));
+        assertFalse(logic1testObject.lessBy10(2, 11, 11));
+        assertTrue(logic1testObject.lessBy10(3, 3, 30));
+        assertFalse(logic1testObject.lessBy10(3, 3, 3));
+        assertTrue(logic1testObject.lessBy10(10, 1, 11));
+        assertTrue(logic1testObject.lessBy10(10, 11, 1));
+        assertFalse(logic1testObject.lessBy10(10, 11, 2));
+        assertTrue(logic1testObject.lessBy10(3, 30, 3));
+        assertTrue(logic1testObject.lessBy10(2, 2, -8));
+        assertTrue(logic1testObject.lessBy10(2, 8, 12));
+    }
 }
