@@ -437,4 +437,20 @@ public final class Logic1Test {
         assertTrue(logic1testObject.lessBy10(2, 2, -8));
         assertTrue(logic1testObject.lessBy10(2, 8, 12));
     }
+
+    @Test
+    public void withoutDoublesTest() {
+        assertEquals(5, logic1testObject.withoutDoubles(2, 3, true));
+        assertEquals(7, logic1testObject.withoutDoubles(3, 3, true));
+        assertEquals(6, logic1testObject.withoutDoubles(3, 3, false));
+        assertEquals(5, logic1testObject.withoutDoubles(2, 3, false));
+        assertEquals(9, logic1testObject.withoutDoubles(5, 4, true));
+        assertEquals(9, logic1testObject.withoutDoubles(5, 4, false));
+        assertEquals(11, logic1testObject.withoutDoubles(5, 5, true));
+        assertEquals(10, logic1testObject.withoutDoubles(5, 5, false));
+        assertEquals(7, logic1testObject.withoutDoubles(6, 6, true));
+        assertEquals(12, logic1testObject.withoutDoubles(6, 6, false));
+        assertEquals(7, logic1testObject.withoutDoubles(1, 6, true));
+        assertEquals(7, logic1testObject.withoutDoubles(6, 1, false));
+    }
 }
