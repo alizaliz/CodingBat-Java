@@ -453,4 +453,19 @@ public final class Logic1Test {
         assertEquals(7, logic1testObject.withoutDoubles(1, 6, true));
         assertEquals(7, logic1testObject.withoutDoubles(6, 1, false));
     }
+
+    @Test
+    public void maxMod5Test() {
+        assertEquals(3, logic1testObject.maxMod5(2, 3));
+        assertEquals(6, logic1testObject.maxMod5(6, 2));
+        assertEquals(3, logic1testObject.maxMod5(3, 2));
+        assertEquals(12, logic1testObject.maxMod5(8, 12));
+        assertEquals(7, logic1testObject.maxMod5(7, 12));
+        assertEquals(6, logic1testObject.maxMod5(11, 6));
+        assertEquals(2, logic1testObject.maxMod5(2, 7));
+        assertEquals(0, logic1testObject.maxMod5(7, 7));
+        assertEquals(9, logic1testObject.maxMod5(9, 1));
+        assertEquals(9, logic1testObject.maxMod5(9, 14));
+        assertEquals(2, logic1testObject.maxMod5(1, 2));
+    }
 }

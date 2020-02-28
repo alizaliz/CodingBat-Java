@@ -379,16 +379,46 @@ public final class Logic1 {
     }
 
     /**
-     * Return the sum of two 6-sided dice rolls, each in the range 1..6. However, if noDoubles is true, if the two dice show the same value, increment one die to the next value, wrapping around to 1 if its value was 6.
+     * Return the sum of two 6-sided dice rolls, each in the range 1..6. However, if
+     * noDoubles is true, if the two dice show the same value, increment one die to
+     * the next value, wrapping around to 1 if its value was 6.
      * 
-     * withoutDoubles(2, 3, true) → 5
-     * withoutDoubles(3, 3, true) → 7
+     * withoutDoubles(2, 3, true) → 5 withoutDoubles(3, 3, true) → 7
      * withoutDoubles(3, 3, false) → 6
      */
     public int withoutDoubles(int die1, int die2, boolean noDoubles) {
-        if(noDoubles && die1 == die2) die1++;
-        if(die1 > 6) die1 = 1;
+        if (noDoubles && die1 == die2)
+            die1++;
+        if (die1 > 6)
+            die1 = 1;
         return die1 + die2;
-      }
-      
+    }
+
+    /**
+     * Given two int values, return whichever value is larger. However if the two
+     * values have the same remainder when divided by 5, then the return the smaller
+     * value. However, in all cases, if the two values are the same, return 0. Note:
+     * the % "mod" operator computes the remainder, e.g. 7 % 5 is 2.
+     * 
+     * 
+     * maxMod5(2, 3) → 3 maxMod5(6, 2) → 6 maxMod5(3, 2) → 3
+     */
+    public int maxMod5(int a, int b) {
+
+        if (a == b)
+            return 0;
+
+        if (a % 5 == b % 5) {
+            if (a < b)
+                return a;
+            else
+                return b;
+        }
+
+        if (a > b)
+            return a;
+        else
+            return b;
+    }
+
 }
