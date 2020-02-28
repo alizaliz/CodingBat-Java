@@ -468,4 +468,20 @@ public final class Logic1Test {
         assertEquals(9, logic1testObject.maxMod5(9, 14));
         assertEquals(2, logic1testObject.maxMod5(1, 2));
     }
+
+    @Test
+    public void redTicketTest() {
+        assertEquals(10, logic1testObject.redTicket(2, 2, 2));
+        assertEquals(0, logic1testObject.redTicket(2, 2, 1));
+        assertEquals(5, logic1testObject.redTicket(0, 0, 0));
+        assertEquals(1, logic1testObject.redTicket(2, 0, 0));
+        assertEquals(5, logic1testObject.redTicket(1, 1, 1));
+        assertEquals(0, logic1testObject.redTicket(1, 2, 1));
+        assertEquals(1, logic1testObject.redTicket(1, 2, 0));
+        assertEquals(1, logic1testObject.redTicket(0, 2, 2));
+        assertEquals(1, logic1testObject.redTicket(1, 2, 2));
+        assertEquals(0, logic1testObject.redTicket(0, 2, 0));
+        assertEquals(0, logic1testObject.redTicket(1, 1, 2));
+    }
+
 }
