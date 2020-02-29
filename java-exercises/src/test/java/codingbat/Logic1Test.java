@@ -484,4 +484,19 @@ public final class Logic1Test {
         assertEquals(0, logic1testObject.redTicket(1, 1, 2));
     }
 
+    @Test
+    public void reenTicketTest() {
+        assertEquals(0, logic1testObject.greenTicket(1, 2, 3));
+        assertEquals(20, logic1testObject.greenTicket(2, 2, 2));
+        assertEquals(10, logic1testObject.greenTicket(1, 1, 2));
+        assertEquals(10, logic1testObject.greenTicket(2, 1, 1));
+        assertEquals(10, logic1testObject.greenTicket(1, 2, 1));
+        assertEquals(0, logic1testObject.greenTicket(3, 2, 1));
+        assertEquals(20, logic1testObject.greenTicket(0, 0, 0));
+        assertEquals(10, logic1testObject.greenTicket(2, 0, 0));
+        assertEquals(0, logic1testObject.greenTicket(0, 9, 10));
+        assertEquals(10, logic1testObject.greenTicket(0, 10, 0));
+        assertEquals(20, logic1testObject.greenTicket(9, 9, 9));
+        assertEquals(10, logic1testObject.greenTicket(9, 0, 9));
+    }
 }
