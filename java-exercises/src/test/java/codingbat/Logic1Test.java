@@ -499,4 +499,20 @@ public final class Logic1Test {
         assertEquals(20, logic1testObject.greenTicket(9, 9, 9));
         assertEquals(10, logic1testObject.greenTicket(9, 0, 9));
     }
+
+    @Test
+    public void blueTicketTest() {
+        assertEquals(10, logic1testObject.blueTicket(9, 1, 0));
+        assertEquals(0, logic1testObject.blueTicket(9, 2, 0));
+        assertEquals(10, logic1testObject.blueTicket(6, 1, 4));
+        assertEquals(0, logic1testObject.blueTicket(6, 1, 5));
+        assertEquals(10, logic1testObject.blueTicket(10, 0, 0));
+        assertEquals(5, logic1testObject.blueTicket(15, 0, 5));
+        assertEquals(10, logic1testObject.blueTicket(5, 15, 5));
+        assertEquals(5, logic1testObject.blueTicket(4, 11, 1));
+        assertEquals(5, logic1testObject.blueTicket(13, 2, 3));
+        assertEquals(0, logic1testObject.blueTicket(8, 4, 3));
+        assertEquals(10, logic1testObject.blueTicket(8, 4, 2));
+        assertEquals(0, logic1testObject.blueTicket(8, 4, 1));
+    }
 }
