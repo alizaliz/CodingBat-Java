@@ -515,4 +515,18 @@ public final class Logic1Test {
         assertEquals(10, logic1testObject.blueTicket(8, 4, 2));
         assertEquals(0, logic1testObject.blueTicket(8, 4, 1));
     }
+
+    @Test
+    public void shareDigitTest() {
+        assertTrue(logic1testObject.shareDigit(12, 23));
+        assertFalse(logic1testObject.shareDigit(12, 43));
+        assertFalse(logic1testObject.shareDigit(12, 44));
+        assertTrue(logic1testObject.shareDigit(23, 12));
+        assertTrue(logic1testObject.shareDigit(23, 39));
+        assertFalse(logic1testObject.shareDigit(23, 19));
+        assertTrue(logic1testObject.shareDigit(30, 90));
+        assertFalse(logic1testObject.shareDigit(30, 91));
+        assertTrue(logic1testObject.shareDigit(55, 55));
+        assertFalse(logic1testObject.shareDigit(55, 44));
+    }
 }
