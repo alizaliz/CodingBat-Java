@@ -529,4 +529,23 @@ public final class Logic1Test {
         assertTrue(logic1testObject.shareDigit(55, 55));
         assertFalse(logic1testObject.shareDigit(55, 44));
     }
+
+    @Test
+    public void sumLimitTest() {
+        assertEquals(5, logic1testObject.sumLimit(2, 3));
+        assertEquals(8, logic1testObject.sumLimit(8, 3));
+        assertEquals(9, logic1testObject.sumLimit(8, 1));
+        assertEquals(50, logic1testObject.sumLimit(11, 39));
+        assertEquals(11, logic1testObject.sumLimit(11, 99));
+        assertEquals(0, logic1testObject.sumLimit(0, 0));
+        assertEquals(99, logic1testObject.sumLimit(99, 0));
+        assertEquals(99, logic1testObject.sumLimit(99, 1));
+        assertEquals(124, logic1testObject.sumLimit(123, 1));
+        assertEquals(1, logic1testObject.sumLimit(1, 123));
+        assertEquals(83, logic1testObject.sumLimit(23, 60));
+        assertEquals(23, logic1testObject.sumLimit(23, 80));
+        assertEquals(9001, logic1testObject.sumLimit(9000, 1));
+        assertEquals(90000001, logic1testObject.sumLimit(90000000, 1));
+        assertEquals(9000, logic1testObject.sumLimit(9000, 1000));
+    }
 }
