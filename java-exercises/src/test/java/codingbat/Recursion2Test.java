@@ -55,4 +55,20 @@ public class Recursion2Test {
         assertTrue(recursion2TestObject.groupSum6(0, new int[] { 1, 6, 2, 6, 5 }, 15));
         assertFalse(recursion2TestObject.groupSum6(0, new int[] { 1, 6, 2, 6, 5 }, 16));
     }
+
+    @Test
+    public void groupNoAdjTest() {
+        assertTrue(recursion2TestObject.groupNoAdj(0, new int[] { 2, 5, 10, 4 }, 12));
+        assertFalse(recursion2TestObject.groupNoAdj(0, new int[] { 2, 5, 10, 4 }, 14));
+        assertFalse(recursion2TestObject.groupNoAdj(0, new int[] { 2, 5, 10, 4 }, 7));
+        assertTrue(recursion2TestObject.groupNoAdj(0, new int[] { 2, 5, 10, 4, 2 }, 7));
+        assertTrue(recursion2TestObject.groupNoAdj(0, new int[] { 2, 5, 10, 4 }, 9));
+        assertTrue(recursion2TestObject.groupNoAdj(0, new int[] { 10, 2, 2, 3, 3 }, 15));
+        assertFalse(recursion2TestObject.groupNoAdj(0, new int[] { 10, 2, 2, 3, 3 }, 7));
+        assertTrue(recursion2TestObject.groupNoAdj(0, new int[] {}, 0));
+        assertTrue(recursion2TestObject.groupNoAdj(0, new int[] { 1 }, 1));
+        assertFalse(recursion2TestObject.groupNoAdj(0, new int[] { 9 }, 1));
+        assertTrue(recursion2TestObject.groupNoAdj(0, new int[] { 9 }, 0));
+        assertTrue(recursion2TestObject.groupNoAdj(0, new int[] { 5, 10, 4, 1 }, 11));
+    }
 }
