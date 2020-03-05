@@ -90,4 +90,15 @@ public class Recursion2Test {
         assertTrue(recursion2TestObject.groupSum5(0, new int[] { 9 }, 0));
         assertTrue(recursion2TestObject.groupSum5(0, new int[] {}, 0));
     }
+
+    @Test
+    public void groupSumClumpTest() {
+        assertTrue(recursion2TestObject.groupSumClump(0, new int[] { 2, 4, 8 }, 10));
+        assertTrue(recursion2TestObject.groupSumClump(0, new int[] { 1, 2, 4, 8, 1 }, 14));
+        assertFalse(recursion2TestObject.groupSumClump(0, new int[] { 2, 4, 4, 8 }, 14));
+        assertTrue(recursion2TestObject.groupSumClump(0, new int[] { 8, 2, 2, 1 }, 9));
+        assertFalse(recursion2TestObject.groupSumClump(0, new int[] { 8, 2, 2, 1 }, 11));
+        assertTrue(recursion2TestObject.groupSumClump(0, new int[] { 1 }, 1));
+        assertFalse(recursion2TestObject.groupSumClump(0, new int[] { 9 }, 1));
+    }
 }
