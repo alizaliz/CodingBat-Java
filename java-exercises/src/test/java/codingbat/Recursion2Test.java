@@ -134,4 +134,16 @@ public class Recursion2Test {
         assertTrue(recursion2TestObject.splitOdd10(new int[] { 10, 7, 5, 5, 2 }));
         assertFalse(recursion2TestObject.splitOdd10(new int[] { 10, 7, 5, 5, 1 }));
     }
+
+    @Test
+    public void split53Test() {
+        assertTrue(recursion2TestObject.split53(new int[] { 1, 1 }));
+        assertFalse(recursion2TestObject.split53(new int[] { 1, 1, 1 }));
+        assertTrue(recursion2TestObject.split53(new int[] { 2, 4, 2 }));
+        assertFalse(recursion2TestObject.split53(new int[] { 2, 2, 2, 1 }));
+        assertTrue(recursion2TestObject.split53(new int[] { 3, 3, 5, 1 }));
+        assertFalse(recursion2TestObject.split53(new int[] { 3, 5, 8 }));
+        assertTrue(recursion2TestObject.split53(new int[] { 2, 4, 6 }));
+        assertTrue(recursion2TestObject.split53(new int[] { 3, 5, 6, 10, 3, 3 }));
+    }
 }
