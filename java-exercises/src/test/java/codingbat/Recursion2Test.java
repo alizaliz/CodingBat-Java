@@ -101,4 +101,21 @@ public class Recursion2Test {
         assertTrue(recursion2TestObject.groupSumClump(0, new int[] { 1 }, 1));
         assertFalse(recursion2TestObject.groupSumClump(0, new int[] { 9 }, 1));
     }
+
+    @Test
+    public void splitArrayTest() {
+        assertTrue(recursion2TestObject.splitArray(new int[] { 2, 2 }));
+        assertFalse(recursion2TestObject.splitArray(new int[] { 2, 3 }));
+        assertTrue(recursion2TestObject.splitArray(new int[] { 5, 2, 3 }));
+        assertFalse(recursion2TestObject.splitArray(new int[] { 5, 2, 2 }));
+        assertTrue(recursion2TestObject.splitArray(new int[] { 1, 1, 1, 1, 1, 1 }));
+        assertFalse(recursion2TestObject.splitArray(new int[] { 1, 1, 1, 1, 1 }));
+        assertTrue(recursion2TestObject.splitArray(new int[] {}));
+        assertFalse(recursion2TestObject.splitArray(new int[] { 1 }));
+        assertFalse(recursion2TestObject.splitArray(new int[] { 3, 5 }));
+        assertTrue(recursion2TestObject.splitArray(new int[] { 5, 3, 2 }));
+        assertTrue(recursion2TestObject.splitArray(new int[] { 2, 2, 10, 10, 1, 1 }));
+        assertFalse(recursion2TestObject.splitArray(new int[] { 1, 2, 2, 10, 10, 1, 1 }));
+        assertTrue(recursion2TestObject.splitArray(new int[] { 1, 2, 3, 10, 10, 1, 1 }));
+    }
 }
