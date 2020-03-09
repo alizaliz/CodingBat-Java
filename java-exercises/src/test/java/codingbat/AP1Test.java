@@ -26,4 +26,14 @@ public class AP1Test {
         assertFalse(ap1TestObject.scoresIncreasing(new int[] { 1, 1, 2, 4, 3, 7 }));
         assertTrue(ap1TestObject.scoresIncreasing(new int[] { -5, 4, 11 }));
     }
+
+    @Test
+    public void scores100Test() {
+        assertTrue(ap1TestObject.scores100(new int[] { 1, 100, 100 }));
+        assertFalse(ap1TestObject.scores100(new int[] { 1, 100, 99, 100 }));
+        assertTrue(ap1TestObject.scores100(new int[] { 100, 1, 100, 100 }));
+        assertFalse(ap1TestObject.scores100(new int[] { 100, 1, 100, 1 }));
+        assertFalse(ap1TestObject.scores100(new int[] { 1, 2, 3, 4, 5 }));
+        assertFalse(ap1TestObject.scores100(new int[] { 1, 2, 100, 4, 5 }));
+    }
 }
