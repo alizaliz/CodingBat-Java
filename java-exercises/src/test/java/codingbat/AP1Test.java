@@ -49,4 +49,14 @@ public class AP1Test {
         assertTrue(ap1TestObject.scoresClump(new int[] { 3, 3, 7, 7, 9 }));
         assertFalse(ap1TestObject.scoresClump(new int[] { 4, 5, 8 }));
     }
+
+    @Test
+    public void scoresAverageTest() {
+        assertEquals(4, ap1TestObject.scoresAverage(new int[] { 2, 2, 4, 4 }));
+        assertEquals(4, ap1TestObject.scoresAverage(new int[] { 4, 4, 4, 2, 2, 2 }));
+        assertEquals(4, ap1TestObject.scoresAverage(new int[] { 3, 4, 5, 1, 2, 3 }));
+        assertEquals(6, ap1TestObject.scoresAverage(new int[] { 5, 6 }));
+        assertEquals(5, ap1TestObject.scoresAverage(new int[] { 5, 4 }));
+        assertEquals(5, ap1TestObject.scoresAverage(new int[] { 5, 4, 5, 6, 2, 1, 2, 3 }));
+    }
 }
