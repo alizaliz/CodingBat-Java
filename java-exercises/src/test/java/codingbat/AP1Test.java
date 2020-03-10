@@ -36,4 +36,17 @@ public class AP1Test {
         assertFalse(ap1TestObject.scores100(new int[] { 1, 2, 3, 4, 5 }));
         assertFalse(ap1TestObject.scores100(new int[] { 1, 2, 100, 4, 5 }));
     }
+
+    @Test
+    public void scoreClumpTest() {
+        assertTrue(ap1TestObject.scoresClump(new int[] { 3, 4, 5 }));
+        assertFalse(ap1TestObject.scoresClump(new int[] { 3, 4, 6 }));
+        assertTrue(ap1TestObject.scoresClump(new int[] { 1, 3, 5, 5 }));
+        assertTrue(ap1TestObject.scoresClump(new int[] { 2, 4, 5, 6 }));
+        assertFalse(ap1TestObject.scoresClump(new int[] { 2, 4, 5, 7 }));
+        assertTrue(ap1TestObject.scoresClump(new int[] { 2, 4, 4, 7 }));
+        assertFalse(ap1TestObject.scoresClump(new int[] { 3, 3, 6, 7, 9 }));
+        assertTrue(ap1TestObject.scoresClump(new int[] { 3, 3, 7, 7, 9 }));
+        assertFalse(ap1TestObject.scoresClump(new int[] { 4, 5, 8 }));
+    }
 }
