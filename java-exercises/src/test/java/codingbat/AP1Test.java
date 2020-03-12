@@ -59,4 +59,14 @@ public class AP1Test {
         assertEquals(5, ap1TestObject.scoresAverage(new int[] { 5, 4 }));
         assertEquals(5, ap1TestObject.scoresAverage(new int[] { 5, 4, 5, 6, 2, 1, 2, 3 }));
     }
+
+    @Test
+    public void wordsCountTest() {
+        assertEquals(2, ap1TestObject.wordsCount(new String[] { "a", "bb", "b", "ccc" }, 1));
+        assertEquals(1, ap1TestObject.wordsCount(new String[] { "a", "bb", "b", "ccc" }, 3));
+        assertEquals(0, ap1TestObject.wordsCount(new String[] { "a", "bb", "b", "ccc" }, 4));
+        assertEquals(2, ap1TestObject.wordsCount(new String[] { "xx", "yyy", "x", "yy", "z" }, 1));
+        assertEquals(2, ap1TestObject.wordsCount(new String[] { "xx", "yyy", "x", "yy", "z" }, 2));
+        assertEquals(1, ap1TestObject.wordsCount(new String[] { "xx", "yyy", "x", "yy", "z" }, 3));
+    }
 }
