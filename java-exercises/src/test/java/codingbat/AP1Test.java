@@ -4,6 +4,8 @@ package codingbat;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+
 import org.junit.Before;
 
 /**
@@ -80,5 +82,19 @@ public class AP1Test {
                 ap1TestObject.wordsFront(new String[] { "a", "b", "c", "d" }, 4));
         assertArrayEquals(new String[] { "Hi" }, ap1TestObject.wordsFront(new String[] { "Hi", "There" }, 1));
         assertArrayEquals(new String[] { "Hi", "There" }, ap1TestObject.wordsFront(new String[] { "Hi", "There" }, 2));
+    }
+
+    @Test
+    public void wordsWithoutListTest() {
+        assertEquals(Arrays.asList("bb", "ccc"),
+                ap1TestObject.wordsWithoutList(new String[] { "a", "bb", "b", "ccc" }, 1));
+        assertEquals(Arrays.asList("a", "bb", "b"),
+                ap1TestObject.wordsWithoutList(new String[] { "a", "bb", "b", "ccc" }, 3));
+        assertEquals(Arrays.asList("a", "bb", "b", "ccc"),
+                ap1TestObject.wordsWithoutList(new String[] { "a", "bb", "b", "ccc" }, 4));
+        assertEquals(Arrays.asList("xx", "yyy", "yy"),
+                ap1TestObject.wordsWithoutList(new String[] { "xx", "yyy", "x", "yy", "z" }, 1));
+        assertEquals(Arrays.asList("yyy", "x", "z"),
+                ap1TestObject.wordsWithoutList(new String[] { "xx", "yyy", "x", "yy", "z" }, 2));
     }
 }
