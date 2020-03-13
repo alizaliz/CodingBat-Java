@@ -69,4 +69,16 @@ public class AP1Test {
         assertEquals(2, ap1TestObject.wordsCount(new String[] { "xx", "yyy", "x", "yy", "z" }, 2));
         assertEquals(1, ap1TestObject.wordsCount(new String[] { "xx", "yyy", "x", "yy", "z" }, 3));
     }
+
+    @Test
+    public void wordsFrontTest() {
+        assertArrayEquals(new String[] { "a" }, ap1TestObject.wordsFront(new String[] { "a", "b", "c", "d" }, 1));
+        assertArrayEquals(new String[] { "a", "b" }, ap1TestObject.wordsFront(new String[] { "a", "b", "c", "d" }, 2));
+        assertArrayEquals(new String[] { "a", "b", "c" },
+                ap1TestObject.wordsFront(new String[] { "a", "b", "c", "d" }, 3));
+        assertArrayEquals(new String[] { "a", "b", "c", "d" },
+                ap1TestObject.wordsFront(new String[] { "a", "b", "c", "d" }, 4));
+        assertArrayEquals(new String[] { "Hi" }, ap1TestObject.wordsFront(new String[] { "Hi", "There" }, 1));
+        assertArrayEquals(new String[] { "Hi", "There" }, ap1TestObject.wordsFront(new String[] { "Hi", "There" }, 2));
+    }
 }
