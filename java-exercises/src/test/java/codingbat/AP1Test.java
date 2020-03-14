@@ -97,4 +97,19 @@ public class AP1Test {
         assertEquals(Arrays.asList("yyy", "x", "z"),
                 ap1TestObject.wordsWithoutList(new String[] { "xx", "yyy", "x", "yy", "z" }, 2));
     }
+
+    @Test
+    public void hasOneTest() {
+        assertTrue(ap1TestObject.hasOne(10));
+        assertFalse(ap1TestObject.hasOne(22));
+        assertFalse(ap1TestObject.hasOne(220));
+        assertTrue(ap1TestObject.hasOne(212));
+        assertTrue(ap1TestObject.hasOne(1));
+        assertFalse(ap1TestObject.hasOne(9));
+        assertTrue(ap1TestObject.hasOne(211112));
+        assertTrue(ap1TestObject.hasOne(121121));
+        assertFalse(ap1TestObject.hasOne(222222));
+        assertTrue(ap1TestObject.hasOne(56156));
+        assertFalse(ap1TestObject.hasOne(56556));
+    }
 }
