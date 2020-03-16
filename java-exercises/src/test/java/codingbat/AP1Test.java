@@ -112,4 +112,19 @@ public class AP1Test {
         assertTrue(ap1TestObject.hasOne(56156));
         assertFalse(ap1TestObject.hasOne(56556));
     }
+
+    @Test
+    public void divideSelfTest() {
+        assertTrue(ap1TestObject.dividesSelf(128));
+        assertTrue(ap1TestObject.dividesSelf(12));
+        assertFalse(ap1TestObject.dividesSelf(120));
+        assertTrue(ap1TestObject.dividesSelf(122));
+        assertFalse(ap1TestObject.dividesSelf(13));
+        assertFalse(ap1TestObject.dividesSelf(32));
+        assertTrue(ap1TestObject.dividesSelf(22));
+        assertFalse(ap1TestObject.dividesSelf(42));
+        assertTrue(ap1TestObject.dividesSelf(212));
+        assertFalse(ap1TestObject.dividesSelf(213));
+        assertTrue(ap1TestObject.dividesSelf(162));
+    }
 }
