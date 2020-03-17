@@ -143,4 +143,20 @@ public class AP1Test {
         assertArrayEquals(new int[] { 8, 4 }, ap1TestObject.copyEvens(new int[] { 1, 8, 4 }, 2));
         assertArrayEquals(new int[] { 2, 8 }, ap1TestObject.copyEvens(new int[] { 2, 8, 4 }, 2));
     }
+
+    @Test
+    public void copyEndy() {
+        assertArrayEquals(new int[] { 9, 90 }, ap1TestObject.copyEndy(new int[] { 9, 11, 90, 22, 6 }, 2));
+        assertArrayEquals(new int[] { 9, 90, 6 }, ap1TestObject.copyEndy(new int[] { 9, 11, 90, 22, 6 }, 3));
+        assertArrayEquals(new int[] { 1, 1 }, ap1TestObject.copyEndy(new int[] { 12, 1, 1, 13, 0, 20 }, 2));
+        assertArrayEquals(new int[] { 1, 1, 0 }, ap1TestObject.copyEndy(new int[] { 12, 1, 1, 13, 0, 20 }, 3));
+        assertArrayEquals(new int[] { 0 }, ap1TestObject.copyEndy(new int[] { 0 }, 1));
+        assertArrayEquals(new int[] { 10, 90 }, ap1TestObject.copyEndy(new int[] { 10, 11, 90 }, 2));
+        assertArrayEquals(new int[] { 90, 100 }, ap1TestObject.copyEndy(new int[] { 90, 22, 100 }, 2));
+        assertArrayEquals(new int[] { 10 }, ap1TestObject.copyEndy(new int[] { 12, 11, 10, 89, 101, 4 }, 1));
+        assertArrayEquals(new int[] { 2, 2 }, ap1TestObject.copyEndy(new int[] { 13, 2, 2, 0 }, 2));
+        assertArrayEquals(new int[] { 2, 2, 0 }, ap1TestObject.copyEndy(new int[] { 13, 2, 2, 0 }, 3));
+        assertArrayEquals(new int[] { 2, 2 }, ap1TestObject.copyEndy(new int[] { 13, 2, 13, 2, 0, 30 }, 2));
+        assertArrayEquals(new int[] { 2, 2, 0 }, ap1TestObject.copyEndy(new int[] { 13, 2, 13, 2, 0, 30 }, 3));
+    }
 }
