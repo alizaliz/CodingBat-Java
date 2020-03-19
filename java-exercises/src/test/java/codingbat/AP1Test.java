@@ -159,4 +159,21 @@ public class AP1Test {
         assertArrayEquals(new int[] { 2, 2 }, ap1TestObject.copyEndy(new int[] { 13, 2, 13, 2, 0, 30 }, 2));
         assertArrayEquals(new int[] { 2, 2, 0 }, ap1TestObject.copyEndy(new int[] { 13, 2, 13, 2, 0, 30 }, 3));
     }
+
+    @Test
+    public void matchUPTest(){
+        assertEquals( 1 , ap1TestObject.matchUp(new String[] {"aa", "bb", "cc" } , new String[] {"aaa", "xx", "bb"}));
+        assertEquals(2, ap1TestObject.matchUp(new String[] {"aa", "bb", "cc"} , new String[] {"aaa", "b", "bb"}));
+        assertEquals(1, ap1TestObject.matchUp(new String[] {"aa", "bb", "cc"} , new String[] {"", "", "ccc"}));
+        assertEquals(1, ap1TestObject.matchUp(new String[] {"", "", "ccc"} , new String[] {"aa", "bb", "cc"}));
+        assertEquals(0 , ap1TestObject.matchUp(new String[] {"", "", ""} , new String[] {"", "bb", "cc"}));
+        assertEquals(0 , ap1TestObject.matchUp(new String[] {"aa", "bb", "cc"} , new String[] {"", "", ""}));
+        assertEquals( 1, ap1TestObject.matchUp(new String[] {"aa", "", "ccc"} , new String[] {"", "bb", "cc"}));
+        assertEquals( 0, ap1TestObject.matchUp(new String[] {"x", "y", "z"} , new String[] {"y", "z", "x"}));
+        assertEquals( 1, ap1TestObject.matchUp(new String[] {"", "y", "z"} , new String[] {"", "y", "x"}));
+        assertEquals( 3, ap1TestObject.matchUp(new String[] {"x", "y", "z"} , new String[] {"xx", "yyy", "zzz"}));
+        assertEquals( 2, ap1TestObject.matchUp(new String[] {"x", "y", "z"} , new String[] {"xx", "yyy", ""}));
+        assertEquals( 3, ap1TestObject.matchUp(new String[] {"b", "x", "y", "z"} , new String[] {"a", "xx", "yyy", "zzz"}));
+        assertEquals( 1, ap1TestObject.matchUp(new String[] {"aaa", "bb", "c"} , new String[] {"aaa", "xx", "bb"}));
+    }
 }
