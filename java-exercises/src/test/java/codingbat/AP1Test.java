@@ -161,19 +161,46 @@ public class AP1Test {
     }
 
     @Test
-    public void matchUPTest(){
-        assertEquals( 1 , ap1TestObject.matchUp(new String[] {"aa", "bb", "cc" } , new String[] {"aaa", "xx", "bb"}));
-        assertEquals(2, ap1TestObject.matchUp(new String[] {"aa", "bb", "cc"} , new String[] {"aaa", "b", "bb"}));
-        assertEquals(1, ap1TestObject.matchUp(new String[] {"aa", "bb", "cc"} , new String[] {"", "", "ccc"}));
-        assertEquals(1, ap1TestObject.matchUp(new String[] {"", "", "ccc"} , new String[] {"aa", "bb", "cc"}));
-        assertEquals(0 , ap1TestObject.matchUp(new String[] {"", "", ""} , new String[] {"", "bb", "cc"}));
-        assertEquals(0 , ap1TestObject.matchUp(new String[] {"aa", "bb", "cc"} , new String[] {"", "", ""}));
-        assertEquals( 1, ap1TestObject.matchUp(new String[] {"aa", "", "ccc"} , new String[] {"", "bb", "cc"}));
-        assertEquals( 0, ap1TestObject.matchUp(new String[] {"x", "y", "z"} , new String[] {"y", "z", "x"}));
-        assertEquals( 1, ap1TestObject.matchUp(new String[] {"", "y", "z"} , new String[] {"", "y", "x"}));
-        assertEquals( 3, ap1TestObject.matchUp(new String[] {"x", "y", "z"} , new String[] {"xx", "yyy", "zzz"}));
-        assertEquals( 2, ap1TestObject.matchUp(new String[] {"x", "y", "z"} , new String[] {"xx", "yyy", ""}));
-        assertEquals( 3, ap1TestObject.matchUp(new String[] {"b", "x", "y", "z"} , new String[] {"a", "xx", "yyy", "zzz"}));
-        assertEquals( 1, ap1TestObject.matchUp(new String[] {"aaa", "bb", "c"} , new String[] {"aaa", "xx", "bb"}));
+    public void matchUPTest() {
+        assertEquals(1, ap1TestObject.matchUp(new String[] { "aa", "bb", "cc" }, new String[] { "aaa", "xx", "bb" }));
+        assertEquals(2, ap1TestObject.matchUp(new String[] { "aa", "bb", "cc" }, new String[] { "aaa", "b", "bb" }));
+        assertEquals(1, ap1TestObject.matchUp(new String[] { "aa", "bb", "cc" }, new String[] { "", "", "ccc" }));
+        assertEquals(1, ap1TestObject.matchUp(new String[] { "", "", "ccc" }, new String[] { "aa", "bb", "cc" }));
+        assertEquals(0, ap1TestObject.matchUp(new String[] { "", "", "" }, new String[] { "", "bb", "cc" }));
+        assertEquals(0, ap1TestObject.matchUp(new String[] { "aa", "bb", "cc" }, new String[] { "", "", "" }));
+        assertEquals(1, ap1TestObject.matchUp(new String[] { "aa", "", "ccc" }, new String[] { "", "bb", "cc" }));
+        assertEquals(0, ap1TestObject.matchUp(new String[] { "x", "y", "z" }, new String[] { "y", "z", "x" }));
+        assertEquals(1, ap1TestObject.matchUp(new String[] { "", "y", "z" }, new String[] { "", "y", "x" }));
+        assertEquals(3, ap1TestObject.matchUp(new String[] { "x", "y", "z" }, new String[] { "xx", "yyy", "zzz" }));
+        assertEquals(2, ap1TestObject.matchUp(new String[] { "x", "y", "z" }, new String[] { "xx", "yyy", "" }));
+        assertEquals(3,
+                ap1TestObject.matchUp(new String[] { "b", "x", "y", "z" }, new String[] { "a", "xx", "yyy", "zzz" }));
+        assertEquals(1, ap1TestObject.matchUp(new String[] { "aaa", "bb", "c" }, new String[] { "aaa", "xx", "bb" }));
+    }
+
+    @Test
+    public void scoreUpTest() {
+        assertEquals(6,
+                ap1TestObject.scoreUp(new String[] { "a", "a", "b", "b" }, new String[] { "a", "c", "b", "c" }));
+        assertEquals(11,
+                ap1TestObject.scoreUp(new String[] { "a", "a", "b", "b" }, new String[] { "a", "a", "b", "c" }));
+        assertEquals(16,
+                ap1TestObject.scoreUp(new String[] { "a", "a", "b", "b" }, new String[] { "a", "a", "b", "b" }));
+        assertEquals(3,
+                ap1TestObject.scoreUp(new String[] { "a", "a", "b", "b" }, new String[] { "?", "c", "b", "?" }));
+        assertEquals(-1,
+                ap1TestObject.scoreUp(new String[] { "a", "a", "b", "b" }, new String[] { "?", "c", "?", "?" }));
+        assertEquals(7,
+                ap1TestObject.scoreUp(new String[] { "a", "a", "b", "b" }, new String[] { "c", "?", "b", "b" }));
+        assertEquals(3,
+                ap1TestObject.scoreUp(new String[] { "a", "a", "b", "b" }, new String[] { "c", "?", "b", "?" }));
+        assertEquals(2, ap1TestObject.scoreUp(new String[] { "a", "b", "c" }, new String[] { "a", "c", "b" }));
+        assertEquals(4, ap1TestObject.scoreUp(new String[] { "a", "a", "b", "b", "c", "c" },
+                new String[] { "a", "c", "a", "c", "a", "c" }));
+        assertEquals(6, ap1TestObject.scoreUp(new String[] { "a", "a", "b", "b", "c", "c" },
+                new String[] { "a", "c", "?", "?", "a", "c" }));
+        assertEquals(11, ap1TestObject.scoreUp(new String[] { "a", "a", "b", "b", "c", "c" },
+                new String[] { "a", "c", "?", "?", "c", "c" }));
+        assertEquals(12, ap1TestObject.scoreUp(new String[] { "a", "b", "c" }, new String[] { "a", "b", "c" }));
     }
 }
