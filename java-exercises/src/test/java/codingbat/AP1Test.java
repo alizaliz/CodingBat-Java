@@ -264,4 +264,20 @@ public class AP1Test {
                 assertEquals(1, ap1TestObject.sumHeights(new int[] { 10, 8, 7, 7, 7, 6, 7 }, 1, 4));
                 assertEquals(2, ap1TestObject.sumHeights(new int[] { 10, 8, 7, 7, 7, 6, 7 }, 1, 5));
         }
+
+        @Test
+        public void sumHeights2Test() {
+                assertEquals(7, ap1TestObject.sumHeights2(new int[] { 5, 3, 6, 7, 2 }, 2, 4));
+                assertEquals(2, ap1TestObject.sumHeights2(new int[] { 5, 3, 6, 7, 2 }, 0, 1));
+                assertEquals(15, ap1TestObject.sumHeights2(new int[] { 5, 3, 6, 7, 2 }, 0, 4));
+                assertEquals(0, ap1TestObject.sumHeights2(new int[] { 5, 3, 6, 7, 2 }, 1, 1));
+                assertEquals(6, ap1TestObject.sumHeights2(new int[] { 1, 2, 3, 4, 5, 4, 3, 2, 10 }, 0, 3));
+                assertEquals(19, ap1TestObject.sumHeights2(new int[] { 1, 2, 3, 4, 5, 4, 3, 2, 10 }, 4, 8));
+                assertEquals(16, ap1TestObject.sumHeights2(new int[] { 1, 2, 3, 4, 5, 4, 3, 2, 10 }, 7, 8));
+                assertEquals(0, ap1TestObject.sumHeights2(new int[] { 1, 2, 3, 4, 5, 4, 3, 2, 10 }, 8, 8));
+                assertEquals(0, ap1TestObject.sumHeights2(new int[] { 1, 2, 3, 4, 5, 4, 3, 2, 10 }, 2, 2));
+                assertEquals(4, ap1TestObject.sumHeights2(new int[] { 1, 2, 3, 4, 5, 4, 3, 2, 10 }, 3, 6));
+                assertEquals(1, ap1TestObject.sumHeights2(new int[] { 10, 8, 7, 7, 7, 6, 7 }, 1, 4));
+                assertEquals(2, ap1TestObject.sumHeights2(new int[] { 10, 8, 7, 7, 7, 6, 7 }, 1, 5));
+        }
 }
