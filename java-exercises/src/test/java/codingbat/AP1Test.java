@@ -280,4 +280,16 @@ public class AP1Test {
                 assertEquals(1, ap1TestObject.sumHeights2(new int[] { 10, 8, 7, 7, 7, 6, 7 }, 1, 4));
                 assertEquals(2, ap1TestObject.sumHeights2(new int[] { 10, 8, 7, 7, 7, 6, 7 }, 1, 5));
         }
+
+        @Test
+        public void userCompareTest() {
+                assertEquals(-1, ap1TestObject.userCompare("bb", 1, "zz", 2));
+                assertEquals(1, ap1TestObject.userCompare("bb", 1, "aa", 2));
+                assertEquals(0, ap1TestObject.userCompare("bb", 1, "bb", 1));
+                assertEquals(1, ap1TestObject.userCompare("bb", 5, "bb", 1));
+                assertEquals(-1, ap1TestObject.userCompare("bb", 5, "bb", 10));
+                assertEquals(-1, ap1TestObject.userCompare("adam", 1, "bob", 2));
+                assertEquals(-1, ap1TestObject.userCompare("bob", 1, "bob", 2));
+                assertEquals(1, ap1TestObject.userCompare("bzb", 1, "bob", 2));
+        }
 }
