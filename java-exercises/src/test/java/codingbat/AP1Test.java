@@ -292,4 +292,27 @@ public class AP1Test {
                 assertEquals(-1, ap1TestObject.userCompare("bob", 1, "bob", 2));
                 assertEquals(1, ap1TestObject.userCompare("bzb", 1, "bob", 2));
         }
+
+        @Test
+        public void mergeTwoTest() {
+                assertArrayEquals(new String[] { "a", "b", "c" }, ap1TestObject.mergeTwo(new String[] { "a", "c", "z" },
+                                new String[] { "b", "f", "z" }, 3));
+                assertArrayEquals(new String[] { "a", "c", "f" }, ap1TestObject.mergeTwo(new String[] { "a", "c", "z" },
+                                new String[] { "c", "f", "z" }, 3));
+                assertArrayEquals(new String[] { "c", "f", "g" }, ap1TestObject.mergeTwo(new String[] { "f", "g", "z" },
+                                new String[] { "c", "f", "g" }, 3));
+                assertArrayEquals(new String[] { "a", "c", "z" }, ap1TestObject.mergeTwo(new String[] { "a", "c", "z" },
+                                new String[] { "a", "c", "z" }, 3));
+                assertArrayEquals(new String[] { "a", "b", "c" }, ap1TestObject
+                                .mergeTwo(new String[] { "a", "b", "c", "z" }, new String[] { "a", "c", "z" }, 3));
+                assertArrayEquals(new String[] { "a", "b", "c" }, ap1TestObject.mergeTwo(new String[] { "a", "c", "z" },
+                                new String[] { "a", "b", "c", "z" }, 3));
+                assertArrayEquals(new String[] { "a", "c" }, ap1TestObject.mergeTwo(new String[] { "a", "c", "z" },
+                                new String[] { "a", "c", "z" }, 2));
+                assertArrayEquals(new String[] { "a", "c", "y" }, ap1TestObject.mergeTwo(new String[] { "a", "c", "z" },
+                                new String[] { "a", "c", "y", "z" }, 3));
+                assertArrayEquals(new String[] {"a", "b", "x"}, ap1TestObject.mergeTwo(new String[] { "x", "y", "z" },
+                                new String[] { "a", "b", "z" }, 3));
+
+        }
 }
