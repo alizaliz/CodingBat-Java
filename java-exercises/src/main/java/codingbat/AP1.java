@@ -481,4 +481,47 @@ public final class AP1 {
         return ret;
     }
 
+    /**
+     * Start with two arrays of strings, a and b, each in alphabetical order,
+     * possibly with duplicates. Return the count of the number of strings which
+     * appear in both arrays. The best "linear" solution makes a single pass over
+     * both arrays, taking advantage of the fact that they are in alphabetical
+     * order.
+     * 
+     * commonTwo(["a", "c", "x"], ["b", "c", "d", "x"]) → 2 commonTwo(["a", "c",
+     * "x"], ["a", "b", "c", "x", "z"]) → 3 commonTwo(["a", "b", "c"], ["a", "b",
+     * "c"]) → 3
+     */
+    public int commonTwo(String[] a, String[] b) {
+        int ret = 0;
+
+        for (int i = 0, j = 0; i < a.length && j < b.length;) {
+            int diff = a[i].compareTo(b[j]);
+            if (diff == 0) {
+                ret++;
+
+                i++;
+                if (i > 0 && i < a.length)
+                    while (i < a.length && a[i].compareTo(a[i - 1]) == 0) {
+                        i++;
+
+                    }
+
+                j++;
+                if (j > 0 && j < b.length)
+                    while (j < b.length && b[j].compareTo(b[j - 1]) == 0) {
+                        j++;
+
+                    }
+            } else if (diff < 0) {
+                i++;
+            } else {
+                j++;
+            }
+
+        }
+
+        return ret;
+    }
+
 }
