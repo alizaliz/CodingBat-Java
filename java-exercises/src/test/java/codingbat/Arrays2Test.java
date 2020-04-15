@@ -67,4 +67,22 @@ public class Arrays2Test {
         assertEquals(4, arrays2testObject.centeredAverage(new int[] { 4, 4, 4, 1, 5 }));
         assertEquals(6, arrays2testObject.centeredAverage(new int[] { 6, 4, 8, 12, 3 }));
     }
+
+    @Test
+    public void sum13Test() {
+        assertEquals(6, arrays2testObject.sum13(new int[] { 1, 2, 2, 1 }));
+        assertEquals(2, arrays2testObject.sum13(new int[] { 1, 1 }));
+        assertEquals(6, arrays2testObject.sum13(new int[] { 1, 2, 2, 1, 13 }));
+        assertEquals(4, arrays2testObject.sum13(new int[] { 1, 2, 13, 2, 1, 13 }));
+        assertEquals(3, arrays2testObject.sum13(new int[] { 13, 1, 2, 13, 2, 1, 13 }));
+        assertEquals(0, arrays2testObject.sum13(new int[] {}));
+        assertEquals(0, arrays2testObject.sum13(new int[] { 13 }));
+        assertEquals(0, arrays2testObject.sum13(new int[] { 13, 13 }));
+        assertEquals(0, arrays2testObject.sum13(new int[] { 13, 0, 13 }));
+        assertEquals(0, arrays2testObject.sum13(new int[] { 13, 1, 13 }));
+        assertEquals(14, arrays2testObject.sum13(new int[] { 5, 7, 2 }));
+        assertEquals(5, arrays2testObject.sum13(new int[] { 5, 13, 2 }));
+        assertEquals(0, arrays2testObject.sum13(new int[] { 0 }));
+        assertEquals(0, arrays2testObject.sum13(new int[] { 13, 0 }));
+    }
 }
