@@ -85,4 +85,22 @@ public class Arrays2Test {
         assertEquals(0, arrays2testObject.sum13(new int[] { 0 }));
         assertEquals(0, arrays2testObject.sum13(new int[] { 13, 0 }));
     }
+
+    @Test
+    public void sum67Test() {
+        assertEquals(5, arrays2testObject.sum67(new int[] { 1, 2, 2 }));
+        assertEquals(5, arrays2testObject.sum67(new int[] { 1, 2, 2, 6, 99, 99, 7 }));
+        assertEquals(4, arrays2testObject.sum67(new int[] { 1, 1, 6, 7, 2 }));
+        assertEquals(2, arrays2testObject.sum67(new int[] { 1, 6, 2, 2, 7, 1, 6, 99, 99, 7 }));
+        assertEquals(2, arrays2testObject.sum67(new int[] { 1, 6, 2, 6, 2, 7, 1, 6, 99, 99, 7 }));
+        assertEquals(18, arrays2testObject.sum67(new int[] { 2, 7, 6, 2, 6, 7, 2, 7 }));
+        assertEquals(9, arrays2testObject.sum67(new int[] { 2, 7, 6, 2, 6, 2, 7 }));
+        assertEquals(8, arrays2testObject.sum67(new int[] { 1, 6, 7, 7 }));
+        assertEquals(8, arrays2testObject.sum67(new int[] { 6, 7, 1, 6, 7, 7 }));
+        assertEquals(0, arrays2testObject.sum67(new int[] { 6, 8, 1, 6, 7 }));
+        assertEquals(0, arrays2testObject.sum67(new int[] {}));
+        assertEquals(11, arrays2testObject.sum67(new int[] { 6, 7, 11 }));
+        assertEquals(22, arrays2testObject.sum67(new int[] { 11, 6, 7, 11 }));
+        assertEquals(11, arrays2testObject.sum67(new int[] { 2, 2, 6, 7, 7 }));
+    }
 }
