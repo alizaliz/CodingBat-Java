@@ -121,4 +121,20 @@ public class Arrays2Test {
         assertTrue(arrays2testObject.has22(new int[] { 3, 3, 2, 2 }));
         assertFalse(arrays2testObject.has22(new int[] { 5, 2, 5, 2 }));
     }
+
+    @Test
+    public void lucky13Test() {
+        assertTrue(arrays2testObject.lucky13(new int[] { 0, 2, 4 }));
+        assertFalse(arrays2testObject.lucky13(new int[] { 1, 2, 3 }));
+        assertFalse(arrays2testObject.lucky13(new int[] { 1, 2, 4 }));
+        assertTrue(arrays2testObject.lucky13(new int[] { 2, 7, 2, 8 }));
+        assertFalse(arrays2testObject.lucky13(new int[] { 2, 7, 1, 8 }));
+        assertFalse(arrays2testObject.lucky13(new int[] { 3, 7, 2, 8 }));
+        assertFalse(arrays2testObject.lucky13(new int[] { 2, 7, 2, 1 }));
+        assertFalse(arrays2testObject.lucky13(new int[] { 1, 2 }));
+        assertTrue(arrays2testObject.lucky13(new int[] { 2, 2 }));
+        assertTrue(arrays2testObject.lucky13(new int[] { 2 }));
+        assertFalse(arrays2testObject.lucky13(new int[] { 3 }));
+        assertTrue(arrays2testObject.lucky13(new int[] {}));
+    }
 }
