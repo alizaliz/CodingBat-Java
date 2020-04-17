@@ -103,4 +103,22 @@ public class Arrays2Test {
         assertEquals(22, arrays2testObject.sum67(new int[] { 11, 6, 7, 11 }));
         assertEquals(11, arrays2testObject.sum67(new int[] { 2, 2, 6, 7, 7 }));
     }
+
+    @Test
+    public void has22Test() {
+        assertTrue(arrays2testObject.has22(new int[] { 1, 2, 2 }));
+        assertFalse(arrays2testObject.has22(new int[] { 1, 2, 1, 2 }));
+        assertFalse(arrays2testObject.has22(new int[] { 2, 1, 2 }));
+        assertTrue(arrays2testObject.has22(new int[] { 2, 2, 1, 2 }));
+        assertFalse(arrays2testObject.has22(new int[] { 1, 3, 2 }));
+        assertTrue(arrays2testObject.has22(new int[] { 1, 3, 2, 2 }));
+        assertTrue(arrays2testObject.has22(new int[] { 2, 3, 2, 2 }));
+        assertTrue(arrays2testObject.has22(new int[] { 4, 2, 4, 2, 2, 5 }));
+        assertFalse(arrays2testObject.has22(new int[] { 1, 2 }));
+        assertTrue(arrays2testObject.has22(new int[] { 2, 2 }));
+        assertFalse(arrays2testObject.has22(new int[] { 2 }));
+        assertFalse(arrays2testObject.has22(new int[] {}));
+        assertTrue(arrays2testObject.has22(new int[] { 3, 3, 2, 2 }));
+        assertFalse(arrays2testObject.has22(new int[] { 5, 2, 5, 2 }));
+    }
 }
