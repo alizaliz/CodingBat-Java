@@ -194,4 +194,26 @@ public class Arrays2 {
         return sum == 8;
     }
 
+    /**
+     * Given an array of ints, return true if the number of 1's is greater than the
+     * number of 4's
+     * 
+     * more14([1, 4, 1]) → true more14([1, 4, 1, 4]) → false more14([1, 1]) → true
+     */
+    public boolean more14(int[] nums) {
+        int num1s = 0;
+        int num4s = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 1) {
+                num1s++;
+            }
+            if (nums[i] == 4) {
+                num4s++;
+            }
+        }
+
+        return num1s > num4s;
+    }
+
 }

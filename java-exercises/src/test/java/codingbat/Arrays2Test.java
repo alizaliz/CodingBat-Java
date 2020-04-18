@@ -153,4 +153,22 @@ public class Arrays2Test {
         assertTrue(arrays2testObject.sum28(new int[] { 1, 2, 2, 1, 2, 2 }));
         assertTrue(arrays2testObject.sum28(new int[] { 5, 2, 2, 2, 4, 2 }));
     }
+
+    @Test
+    public void more14Test() {
+        assertTrue(arrays2testObject.more14(new int[] { 1, 4, 1 }));
+        assertFalse(arrays2testObject.more14(new int[] { 1, 4, 1, 4 }));
+        assertTrue(arrays2testObject.more14(new int[] { 1, 1 }));
+        assertTrue(arrays2testObject.more14(new int[] { 1, 6, 6 }));
+        assertTrue(arrays2testObject.more14(new int[] { 1 }));
+        assertFalse(arrays2testObject.more14(new int[] { 1, 4 }));
+        assertTrue(arrays2testObject.more14(new int[] { 6, 1, 1 }));
+        assertFalse(arrays2testObject.more14(new int[] { 1, 6, 4 }));
+        assertTrue(arrays2testObject.more14(new int[] { 1, 1, 4, 4, 1 }));
+        assertTrue(arrays2testObject.more14(new int[] { 1, 1, 6, 4, 4, 1 }));
+        assertFalse(arrays2testObject.more14(new int[] {}));
+        assertFalse(arrays2testObject.more14(new int[] { 4, 1, 4, 6 }));
+        assertFalse(arrays2testObject.more14(new int[] { 4, 1, 4, 6, 1 }));
+        assertTrue(arrays2testObject.more14(new int[] { 1, 4, 1, 4, 1, 6 }));
+    }
 }
