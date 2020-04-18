@@ -137,4 +137,20 @@ public class Arrays2Test {
         assertFalse(arrays2testObject.lucky13(new int[] { 3 }));
         assertTrue(arrays2testObject.lucky13(new int[] {}));
     }
+
+    @Test
+    public void sum28Test() {
+        assertTrue(arrays2testObject.sum28(new int[] { 2, 3, 2, 2, 4, 2 }));
+        assertFalse(arrays2testObject.sum28(new int[] { 2, 3, 2, 2, 4, 2, 2 }));
+        assertFalse(arrays2testObject.sum28(new int[] { 1, 2, 3, 4 }));
+        assertTrue(arrays2testObject.sum28(new int[] { 2, 2, 2, 2 }));
+        assertTrue(arrays2testObject.sum28(new int[] { 1, 2, 2, 2, 2, 4 }));
+        assertFalse(arrays2testObject.sum28(new int[] {}));
+        assertFalse(arrays2testObject.sum28(new int[] { 2 }));
+        assertFalse(arrays2testObject.sum28(new int[] { 8 }));
+        assertFalse(arrays2testObject.sum28(new int[] { 2, 2, 2 }));
+        assertFalse(arrays2testObject.sum28(new int[] { 2, 2, 2, 2, 2 }));
+        assertTrue(arrays2testObject.sum28(new int[] { 1, 2, 2, 1, 2, 2 }));
+        assertTrue(arrays2testObject.sum28(new int[] { 5, 2, 2, 2, 4, 2 }));
+    }
 }
