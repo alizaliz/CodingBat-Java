@@ -171,4 +171,14 @@ public class Arrays2Test {
         assertFalse(arrays2testObject.more14(new int[] { 4, 1, 4, 6, 1 }));
         assertTrue(arrays2testObject.more14(new int[] { 1, 4, 1, 4, 1, 6 }));
     }
+
+    @Test
+    public void fizzArrayTest() {
+        assertArrayEquals(new int[] { 0, 1, 2, 3 }, arrays2testObject.fizzArray(4));
+        assertArrayEquals(new int[] { 0 }, arrays2testObject.fizzArray(1));
+        assertArrayEquals(new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }, arrays2testObject.fizzArray(10));
+        assertArrayEquals(new int[] {}, arrays2testObject.fizzArray(0));
+        assertArrayEquals(new int[] { 0, 1 }, arrays2testObject.fizzArray(2));
+        assertArrayEquals(new int[] { 0, 1, 2, 3, 4, 5, 6 }, arrays2testObject.fizzArray(7));
+    }
 }
