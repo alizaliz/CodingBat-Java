@@ -181,4 +181,23 @@ public class Arrays2Test {
         assertArrayEquals(new int[] { 0, 1 }, arrays2testObject.fizzArray(2));
         assertArrayEquals(new int[] { 0, 1, 2, 3, 4, 5, 6 }, arrays2testObject.fizzArray(7));
     }
+
+    @Test
+    public void only14Test() {
+        assertTrue(arrays2testObject.only14(new int[] { 1, 4, 1, 4 }));
+        assertFalse(arrays2testObject.only14(new int[] { 1, 4, 2, 4 }));
+        assertTrue(arrays2testObject.only14(new int[] { 1, 1 }));
+        assertTrue(arrays2testObject.only14(new int[] { 4, 1 }));
+        assertFalse(arrays2testObject.only14(new int[] { 2 }));
+        assertTrue(arrays2testObject.only14(new int[] {}));
+        assertFalse(arrays2testObject.only14(new int[] { 1, 4, 1, 3 }));
+        assertFalse(arrays2testObject.only14(new int[] { 3, 1, 3 }));
+        assertTrue(arrays2testObject.only14(new int[] { 1 }));
+        assertTrue(arrays2testObject.only14(new int[] { 4 }));
+        assertFalse(arrays2testObject.only14(new int[] { 3, 4 }));
+        assertFalse(arrays2testObject.only14(new int[] { 1, 3, 4 }));
+        assertTrue(arrays2testObject.only14(new int[] { 1, 1, 1 }));
+        assertFalse(arrays2testObject.only14(new int[] { 1, 1, 1, 5 }));
+        assertTrue(arrays2testObject.only14(new int[] { 4, 1, 4, 1 }));
+    }
 }
