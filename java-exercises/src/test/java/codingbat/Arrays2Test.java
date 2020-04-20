@@ -200,4 +200,18 @@ public class Arrays2Test {
         assertFalse(arrays2testObject.only14(new int[] { 1, 1, 1, 5 }));
         assertTrue(arrays2testObject.only14(new int[] { 4, 1, 4, 1 }));
     }
+
+    @Test
+    public void fizzArray2() {
+        assertArrayEquals(new String[] { "0", "1", "2", "3" }, arrays2testObject.fizzArray2(4));
+        assertArrayEquals(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" },
+                arrays2testObject.fizzArray2(10));
+        assertArrayEquals(new String[] { "0", "1" }, arrays2testObject.fizzArray2(2));
+        assertArrayEquals(new String[] { "0" }, arrays2testObject.fizzArray2(1));
+        assertArrayEquals(new String[] {}, arrays2testObject.fizzArray2(0));
+        assertArrayEquals(new String[] { "0", "1", "2", "3", "4", "5", "6" }, arrays2testObject.fizzArray2(7));
+        assertArrayEquals(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8" }, arrays2testObject.fizzArray2(9));
+        assertArrayEquals(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" },
+                arrays2testObject.fizzArray2(11));
+    }
 }
