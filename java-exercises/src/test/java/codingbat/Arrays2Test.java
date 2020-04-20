@@ -210,8 +210,32 @@ public class Arrays2Test {
         assertArrayEquals(new String[] { "0" }, arrays2testObject.fizzArray2(1));
         assertArrayEquals(new String[] {}, arrays2testObject.fizzArray2(0));
         assertArrayEquals(new String[] { "0", "1", "2", "3", "4", "5", "6" }, arrays2testObject.fizzArray2(7));
-        assertArrayEquals(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8" }, arrays2testObject.fizzArray2(9));
+        assertArrayEquals(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8" },
+                arrays2testObject.fizzArray2(9));
         assertArrayEquals(new String[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" },
                 arrays2testObject.fizzArray2(11));
+    }
+
+    @Test
+    public void no14Test() {
+        assertTrue(arrays2testObject.no14(new int[] { 1, 2, 3 }));
+        assertFalse(arrays2testObject.no14(new int[] { 1, 2, 3, 4 }));
+        assertTrue(arrays2testObject.no14(new int[] { 2, 3, 4 }));
+        assertFalse(arrays2testObject.no14(new int[] { 1, 1, 4, 4 }));
+        assertTrue(arrays2testObject.no14(new int[] { 2, 2, 4, 4 }));
+        assertFalse(arrays2testObject.no14(new int[] { 2, 3, 4, 1 }));
+        assertTrue(arrays2testObject.no14(new int[] { 2, 1, 1 }));
+        assertFalse(arrays2testObject.no14(new int[] { 1, 4 }));
+        assertTrue(arrays2testObject.no14(new int[] { 2 }));
+        assertTrue(arrays2testObject.no14(new int[] { 2, 1 }));
+        assertTrue(arrays2testObject.no14(new int[] { 1 }));
+        assertTrue(arrays2testObject.no14(new int[] { 4 }));
+        assertTrue(arrays2testObject.no14(new int[] {}));
+        assertTrue(arrays2testObject.no14(new int[] { 1, 1, 1, 1 }));
+        assertFalse(arrays2testObject.no14(new int[] { 9, 4, 4, 1 }));
+        assertFalse(arrays2testObject.no14(new int[] { 4, 2, 3, 1 }));
+        assertTrue(arrays2testObject.no14(new int[] { 4, 2, 3, 5 }));
+        assertTrue(arrays2testObject.no14(new int[] { 4, 4, 2 }));
+        assertFalse(arrays2testObject.no14(new int[] { 1, 4, 4 }));
     }
 }
