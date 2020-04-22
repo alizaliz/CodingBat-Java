@@ -238,4 +238,24 @@ public class Arrays2Test {
         assertTrue(arrays2testObject.no14(new int[] { 4, 4, 2 }));
         assertFalse(arrays2testObject.no14(new int[] { 1, 4, 4 }));
     }
+
+    @Test
+    public void iSEverywhereTest() {
+        assertTrue(arrays2testObject.isEverywhere(new int[] { 1, 2, 1, 3 }, 1));
+        assertFalse(arrays2testObject.isEverywhere(new int[] { 1, 2, 1, 3 }, 2));
+        assertFalse(arrays2testObject.isEverywhere(new int[] { 1, 2, 1, 3, 4 }, 1));
+        assertTrue(arrays2testObject.isEverywhere(new int[] { 2, 1, 2, 1 }, 1));
+        assertTrue(arrays2testObject.isEverywhere(new int[] { 2, 1, 2, 1 }, 2));
+        assertFalse(arrays2testObject.isEverywhere(new int[] { 2, 1, 2, 3, 1 }, 2));
+        assertTrue(arrays2testObject.isEverywhere(new int[] { 3, 1 }, 3));
+        assertFalse(arrays2testObject.isEverywhere(new int[] { 3, 1 }, 2));
+        assertTrue(arrays2testObject.isEverywhere(new int[] { 3 }, 1));
+        assertTrue(arrays2testObject.isEverywhere(new int[] {}, 1));
+        assertTrue(arrays2testObject.isEverywhere(new int[] { 1, 2, 1, 2, 3, 2, 5 }, 2));
+        assertFalse(arrays2testObject.isEverywhere(new int[] { 1, 2, 1, 1, 1, 2 }, 2));
+        assertFalse(arrays2testObject.isEverywhere(new int[] { 2, 1, 2, 1, 1, 2 }, 2));
+        assertFalse(arrays2testObject.isEverywhere(new int[] { 2, 1, 2, 2, 2, 1, 1, 2 }, 2));
+        assertTrue(arrays2testObject.isEverywhere(new int[] { 2, 1, 2, 2, 2, 1, 2, 1 }, 2));
+        assertTrue(arrays2testObject.isEverywhere(new int[] { 2, 1, 2, 1, 2 }, 2));
+    }
 }
