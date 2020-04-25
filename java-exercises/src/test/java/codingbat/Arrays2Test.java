@@ -258,4 +258,22 @@ public class Arrays2Test {
         assertTrue(arrays2testObject.isEverywhere(new int[] { 2, 1, 2, 2, 2, 1, 2, 1 }, 2));
         assertTrue(arrays2testObject.isEverywhere(new int[] { 2, 1, 2, 1, 2 }, 2));
     }
+
+    @Test
+    public void either24Test() {
+        assertTrue(arrays2testObject.either24(new int[] { 1, 2, 2 }));
+        assertTrue(arrays2testObject.either24(new int[] { 4, 4, 1 }));
+        assertFalse(arrays2testObject.either24(new int[] { 4, 4, 1, 2, 2 }));
+        assertFalse(arrays2testObject.either24(new int[] { 1, 2, 3, 4 }));
+        assertFalse(arrays2testObject.either24(new int[] { 3, 5, 9 }));
+        assertTrue(arrays2testObject.either24(new int[] { 1, 2, 3, 4, 4 }));
+        assertTrue(arrays2testObject.either24(new int[] { 2, 2, 3, 4 }));
+        assertTrue(arrays2testObject.either24(new int[] { 1, 2, 3, 2, 2, 4 }));
+        assertFalse(arrays2testObject.either24(new int[] { 1, 2, 3, 2, 2, 4, 4 }));
+        assertFalse(arrays2testObject.either24(new int[] { 1, 2 }));
+        assertTrue(arrays2testObject.either24(new int[] { 2, 2 }));
+        assertTrue(arrays2testObject.either24(new int[] { 4, 4 }));
+        assertFalse(arrays2testObject.either24(new int[] { 2 }));
+        assertFalse(arrays2testObject.either24(new int[] {}));
+    }
 }
