@@ -276,4 +276,19 @@ public class Arrays2Test {
         assertFalse(arrays2testObject.either24(new int[] { 2 }));
         assertFalse(arrays2testObject.either24(new int[] {}));
     }
+
+    @Test
+    public void matchUpTest() {
+        assertEquals(2, arrays2testObject.matchUp(new int[] { 1, 2, 3 }, new int[] { 2, 3, 10 }));
+        assertEquals(3, arrays2testObject.matchUp(new int[] { 1, 2, 3 }, new int[] { 2, 3, 5 }));
+        assertEquals(2, arrays2testObject.matchUp(new int[] { 1, 2, 3 }, new int[] { 2, 3, 3 }));
+        assertEquals(1, arrays2testObject.matchUp(new int[] { 5, 3 }, new int[] { 5, 5 }));
+        assertEquals(2, arrays2testObject.matchUp(new int[] { 5, 3 }, new int[] { 4, 4 }));
+        assertEquals(1, arrays2testObject.matchUp(new int[] { 5, 3 }, new int[] { 3, 3 }));
+        assertEquals(1, arrays2testObject.matchUp(new int[] { 5, 3 }, new int[] { 2, 2 }));
+        assertEquals(1, arrays2testObject.matchUp(new int[] { 5, 3 }, new int[] { 1, 1 }));
+        assertEquals(0, arrays2testObject.matchUp(new int[] { 5, 3 }, new int[] { 0, 0 }));
+        assertEquals(0, arrays2testObject.matchUp(new int[] { 4 }, new int[] { 4 }));
+        assertEquals(1, arrays2testObject.matchUp(new int[] { 4 }, new int[] { 5 }));
+    }
 }
