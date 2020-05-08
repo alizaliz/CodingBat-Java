@@ -291,4 +291,22 @@ public class Arrays2Test {
         assertEquals(0, arrays2testObject.matchUp(new int[] { 4 }, new int[] { 4 }));
         assertEquals(1, arrays2testObject.matchUp(new int[] { 4 }, new int[] { 5 }));
     }
+
+    @Test
+    public void has77Test() {
+        assertTrue(arrays2testObject.has77(new int[] { 1, 7, 7 }));
+        assertTrue(arrays2testObject.has77(new int[] { 1, 7, 1, 7 }));
+        assertFalse(arrays2testObject.has77(new int[] { 1, 7, 1, 1, 7 }));
+        assertTrue(arrays2testObject.has77(new int[] { 7, 7, 1, 1, 7 }));
+        assertFalse(arrays2testObject.has77(new int[] { 2, 7, 2, 2, 7, 2 }));
+        assertTrue(arrays2testObject.has77(new int[] { 2, 7, 2, 2, 7, 7 }));
+        assertTrue(arrays2testObject.has77(new int[] { 7, 2, 7, 2, 2, 7 }));
+        assertFalse(arrays2testObject.has77(new int[] { 7, 2, 6, 2, 2, 7 }));
+        assertTrue(arrays2testObject.has77(new int[] { 7, 7, 7 }));
+        assertTrue(arrays2testObject.has77(new int[] { 7, 1, 7 }));
+        assertFalse(arrays2testObject.has77(new int[] { 7, 1, 1 }));
+        assertFalse(arrays2testObject.has77(new int[] { 1, 2 }));
+        assertFalse(arrays2testObject.has77(new int[] { 1, 7 }));
+        assertFalse(arrays2testObject.has77(new int[] { 7 }));
+    }
 }
