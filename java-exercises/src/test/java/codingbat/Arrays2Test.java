@@ -384,4 +384,22 @@ public class Arrays2Test {
         assertFalse(arrays2testObject.twoTwo(new int[] { 2, 2, 5, 2 }));
     }
 
+    @Test
+    public void sameEndsTest() {
+        assertFalse(arrays2testObject.sameEnds(new int[] { 5, 6, 45, 99, 13, 5, 6 }, 1));
+        assertTrue(arrays2testObject.sameEnds(new int[] { 5, 6, 45, 99, 13, 5, 6 }, 2));
+        assertFalse(arrays2testObject.sameEnds(new int[] { 5, 6, 45, 99, 13, 5, 6 }, 3));
+        assertTrue(arrays2testObject.sameEnds(new int[] { 1, 2, 5, 2, 1 }, 1));
+        assertFalse(arrays2testObject.sameEnds(new int[] { 1, 2, 5, 2, 1 }, 2));
+        assertTrue(arrays2testObject.sameEnds(new int[] { 1, 2, 5, 2, 1 }, 0));
+        assertTrue(arrays2testObject.sameEnds(new int[] { 1, 2, 5, 2, 1 }, 5));
+        assertTrue(arrays2testObject.sameEnds(new int[] { 1, 1, 1 }, 0));
+        assertTrue(arrays2testObject.sameEnds(new int[] { 1, 1, 1 }, 1));
+        assertTrue(arrays2testObject.sameEnds(new int[] { 1, 1, 1 }, 2));
+        assertTrue(arrays2testObject.sameEnds(new int[] { 1, 1, 1 }, 3));
+        assertTrue(arrays2testObject.sameEnds(new int[] { 1 }, 1));
+        assertTrue(arrays2testObject.sameEnds(new int[] {}, 0));
+        assertFalse(arrays2testObject.sameEnds(new int[] { 4, 2, 4, 5 }, 1));
+    }
+
 }
