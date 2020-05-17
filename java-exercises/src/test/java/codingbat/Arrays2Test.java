@@ -332,18 +332,34 @@ public class Arrays2Test {
     }
 
     @Test
-    public void modThree() {
+    public void modThreeTest() {
         assertTrue(arrays2testObject.modThree(new int[] { 2, 1, 3, 5 }));
-        assertTrue(arrays2testObject.modThree(new int[] { 2, 1, 2, 5 }));
+        assertFalse(arrays2testObject.modThree(new int[] { 2, 1, 2, 5 }));
         assertTrue(arrays2testObject.modThree(new int[] { 2, 4, 2, 5 }));
-        assertTrue(arrays2testObject.modThree(new int[] { 1, 2, 1, 2, 1 }));
+        assertFalse(arrays2testObject.modThree(new int[] { 1, 2, 1, 2, 1 }));
         assertTrue(arrays2testObject.modThree(new int[] { 9, 9, 9 }));
-        assertTrue(arrays2testObject.modThree(new int[] { 1, 2, 1 }));
-        assertTrue(arrays2testObject.modThree(new int[] { 1, 2 }));
-        assertTrue(arrays2testObject.modThree(new int[] { 1 }));
-        assertTrue(arrays2testObject.modThree(new int[] {}));
-        assertTrue(arrays2testObject.modThree(new int[] { 9, 7, 2, 9 }));
-        assertTrue(arrays2testObject.modThree(new int[] { 9, 7, 2, 9, 2, 2 }));
+        assertFalse(arrays2testObject.modThree(new int[] { 1, 2, 1 }));
+        assertFalse(arrays2testObject.modThree(new int[] { 1, 2 }));
+        assertFalse(arrays2testObject.modThree(new int[] { 1 }));
+        assertFalse(arrays2testObject.modThree(new int[] {}));
+        assertFalse(arrays2testObject.modThree(new int[] { 9, 7, 2, 9 }));
+        assertFalse(arrays2testObject.modThree(new int[] { 9, 7, 2, 9, 2, 2 }));
         assertTrue(arrays2testObject.modThree(new int[] { 9, 7, 2, 9, 2, 2, 6 }));
+    }
+
+    @Test
+    public void haveThreeTest() {
+        assertTrue(arrays2testObject.haveThree(new int[] { 3, 1, 3, 1, 3 }));
+        assertFalse(arrays2testObject.haveThree(new int[] { 3, 1, 3, 3 }));
+        assertFalse(arrays2testObject.haveThree(new int[] { 3, 4, 3, 3, 4 }));
+        assertFalse(arrays2testObject.haveThree(new int[] { 1, 3, 1, 3, 1, 2 }));
+        assertTrue(arrays2testObject.haveThree(new int[] { 1, 3, 1, 3, 1, 3 }));
+        assertFalse(arrays2testObject.haveThree(new int[] { 1, 3, 3, 1, 3 }));
+        assertFalse(arrays2testObject.haveThree(new int[] { 1, 3, 1, 3, 1, 3, 4, 3 }));
+        assertTrue(arrays2testObject.haveThree(new int[] { 3, 4, 3, 4, 3, 4, 4 }));
+        assertFalse(arrays2testObject.haveThree(new int[] { 3, 3, 3 }));
+        assertFalse(arrays2testObject.haveThree(new int[] { 1, 3 }));
+        assertFalse(arrays2testObject.haveThree(new int[] { 3 }));
+        assertFalse(arrays2testObject.haveThree(new int[] { 1 }));
     }
 }
