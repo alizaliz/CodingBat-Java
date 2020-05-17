@@ -362,4 +362,26 @@ public class Arrays2Test {
         assertFalse(arrays2testObject.haveThree(new int[] { 3 }));
         assertFalse(arrays2testObject.haveThree(new int[] { 1 }));
     }
+
+    @Test
+    public void twoTwoTest() {
+        assertTrue(arrays2testObject.twoTwo(new int[] { 4, 2, 2, 3 }));
+        assertTrue(arrays2testObject.twoTwo(new int[] { 2, 2, 4 }));
+        assertFalse(arrays2testObject.twoTwo(new int[] { 2, 2, 4, 2 }));
+        assertTrue(arrays2testObject.twoTwo(new int[] { 1, 3, 4 }));
+        assertTrue(arrays2testObject.twoTwo(new int[] { 1, 2, 2, 3, 4 }));
+        assertFalse(arrays2testObject.twoTwo(new int[] { 1, 2, 3, 4 }));
+        assertTrue(arrays2testObject.twoTwo(new int[] { 2, 2 }));
+        assertTrue(arrays2testObject.twoTwo(new int[] { 2, 2, 7 }));
+        assertFalse(arrays2testObject.twoTwo(new int[] { 2, 2, 7, 2, 1 }));
+        assertTrue(arrays2testObject.twoTwo(new int[] { 4, 2, 2, 2 }));
+        assertTrue(arrays2testObject.twoTwo(new int[] { 2, 2, 2 }));
+        assertFalse(arrays2testObject.twoTwo(new int[] { 1, 2 }));
+        assertFalse(arrays2testObject.twoTwo(new int[] { 2 }));
+        assertTrue(arrays2testObject.twoTwo(new int[] { 1 }));
+        assertTrue(arrays2testObject.twoTwo(new int[] {}));
+        assertTrue(arrays2testObject.twoTwo(new int[] { 5, 2, 2, 3 }));
+        assertFalse(arrays2testObject.twoTwo(new int[] { 2, 2, 5, 2 }));
+    }
+
 }
