@@ -419,4 +419,36 @@ public class Arrays2 {
         return false;
     }
 
+    /**
+     * Given an array of ints, return true if the array contains either 3 even or 3
+     * odd values all next to each other.
+     * 
+     * modThree([2, 1, 3, 5]) → true modThree([2, 1, 2, 5]) → false modThree([2, 4,
+     * 2, 5]) → true
+     */
+    public boolean modThree(int[] nums) {
+
+        int evens = 0;
+        int odds = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            switch (nums[i] % 2) {
+                case 0:
+                    evens++;
+                    odds = 0;
+                    break;
+                case 1:
+                    odds++;
+                    evens = 0;
+                    break;
+            }
+
+            if (evens >= 3 || odds >= 3) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 }

@@ -330,4 +330,20 @@ public class Arrays2Test {
         assertFalse(arrays2testObject.has12(new int[] { 3, 2, 1 }));
         assertTrue(arrays2testObject.has12(new int[] { 1, 2 }));
     }
+
+    @Test
+    public void modThree() {
+        assertTrue(arrays2testObject.modThree(new int[] { 2, 1, 3, 5 }));
+        assertTrue(arrays2testObject.modThree(new int[] { 2, 1, 2, 5 }));
+        assertTrue(arrays2testObject.modThree(new int[] { 2, 4, 2, 5 }));
+        assertTrue(arrays2testObject.modThree(new int[] { 1, 2, 1, 2, 1 }));
+        assertTrue(arrays2testObject.modThree(new int[] { 9, 9, 9 }));
+        assertTrue(arrays2testObject.modThree(new int[] { 1, 2, 1 }));
+        assertTrue(arrays2testObject.modThree(new int[] { 1, 2 }));
+        assertTrue(arrays2testObject.modThree(new int[] { 1 }));
+        assertTrue(arrays2testObject.modThree(new int[] {}));
+        assertTrue(arrays2testObject.modThree(new int[] { 9, 7, 2, 9 }));
+        assertTrue(arrays2testObject.modThree(new int[] { 9, 7, 2, 9, 2, 2 }));
+        assertTrue(arrays2testObject.modThree(new int[] { 9, 7, 2, 9, 2, 2, 6 }));
+    }
 }
