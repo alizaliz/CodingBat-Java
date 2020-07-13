@@ -402,4 +402,19 @@ public class Arrays2Test {
         assertFalse(arrays2testObject.sameEnds(new int[] { 4, 2, 4, 5 }, 1));
     }
 
+    @Test
+    public void tripleUpTest() {
+        assertTrue(arrays2testObject.tripleUp(new int[] { 1, 4, 5, 6, 2 }));
+        assertTrue(arrays2testObject.tripleUp(new int[] { 1, 2, 3 }));
+        assertFalse(arrays2testObject.tripleUp(new int[] { 1, 2, 4 }));
+        assertTrue(arrays2testObject.tripleUp(new int[] { 1, 2, 4, 5, 7, 6, 5, 6, 7, 6 }));
+        assertFalse(arrays2testObject.tripleUp(new int[] { 1, 2, 4, 5, 7, 6, 5, 7, 7, 6 }));
+        assertFalse(arrays2testObject.tripleUp(new int[] { 1, 2 }));
+        assertFalse(arrays2testObject.tripleUp(new int[] { 1 }));
+        assertFalse(arrays2testObject.tripleUp(new int[] {}));
+        assertTrue(arrays2testObject.tripleUp(new int[] { 10, 9, 8, -100, -99, -98, 100 }));
+        assertFalse(arrays2testObject.tripleUp(new int[] { 10, 9, 8, -100, -99, 99, 100 }));
+        assertTrue(arrays2testObject.tripleUp(new int[] { -100, -99, -99, 100, 101, 102 }));
+        assertFalse(arrays2testObject.tripleUp(new int[] { 2, 3, 5, 6, 8, 9, 2, 3 }));
+    }
 }
