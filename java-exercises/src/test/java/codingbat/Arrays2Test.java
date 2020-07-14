@@ -417,4 +417,14 @@ public class Arrays2Test {
         assertTrue(arrays2testObject.tripleUp(new int[] { -100, -99, -99, 100, 101, 102 }));
         assertFalse(arrays2testObject.tripleUp(new int[] { 2, 3, 5, 6, 8, 9, 2, 3 }));
     }
+
+    @Test
+    public void fizzArray3Test() {
+        assertArrayEquals(new int[] { 5, 6, 7, 8, 9 }, arrays2testObject.fizzArray3(5, 10));
+        assertArrayEquals(new int[] { 11, 12, 13, 14, 15, 16, 17 }, arrays2testObject.fizzArray3(11, 18));
+        assertArrayEquals(new int[] { 1, 2 }, arrays2testObject.fizzArray3(1, 3));
+        assertArrayEquals(new int[] { 1 }, arrays2testObject.fizzArray3(1, 2));
+        assertArrayEquals(new int[] {}, arrays2testObject.fizzArray3(1, 1));
+        assertArrayEquals(new int[] { 1000, 1001, 1002, 1003, 1004 }, arrays2testObject.fizzArray3(1000, 1005));
+    }
 }
