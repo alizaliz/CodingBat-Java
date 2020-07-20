@@ -427,4 +427,15 @@ public class Arrays2Test {
         assertArrayEquals(new int[] {}, arrays2testObject.fizzArray3(1, 1));
         assertArrayEquals(new int[] { 1000, 1001, 1002, 1003, 1004 }, arrays2testObject.fizzArray3(1000, 1005));
     }
+
+    @Test
+    public void shiftLeftTest() {
+        assertArrayEquals(new int[] { 2, 5, 3, 6 }, arrays2testObject.shiftLeft(new int[] { 6, 2, 5, 3 }));
+        assertArrayEquals(new int[] { 2, 1 }, arrays2testObject.shiftLeft(new int[] { 1, 2 }));
+        assertArrayEquals(new int[] { 1 }, arrays2testObject.shiftLeft(new int[] { 1 }));
+        assertArrayEquals(new int[] {}, arrays2testObject.shiftLeft(new int[] {}));
+        assertArrayEquals(new int[] { 1, 2, 2, 4, 1 }, arrays2testObject.shiftLeft(new int[] { 1, 1, 2, 2, 4 }));
+        assertArrayEquals(new int[] { 1, 1, 1 }, arrays2testObject.shiftLeft(new int[] { 1, 1, 1 }));
+        assertArrayEquals(new int[] { 2, 3, 1 }, arrays2testObject.shiftLeft(new int[] { 1, 2, 3 }));
+    }
 }
