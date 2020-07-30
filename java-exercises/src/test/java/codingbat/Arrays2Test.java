@@ -454,4 +454,18 @@ public class Arrays2Test {
         assertArrayEquals(new int[] { 1 }, arrays2testObject.tenRun(new int[] { 1 }));
         assertArrayEquals(new int[] {}, arrays2testObject.tenRun(new int[] {}));
     }
+
+    @Test
+    public void pre4Test() {
+        assertArrayEquals(new int[] { 1, 2 }, arrays2testObject.pre4(new int[] { 1, 2, 4, 1 }));
+        assertArrayEquals(new int[] { 3, 1 }, arrays2testObject.pre4(new int[] { 3, 1, 4 }));
+        assertArrayEquals(new int[] { 1 }, arrays2testObject.pre4(new int[] { 1, 4, 4 }));
+        assertArrayEquals(new int[] { 1 }, arrays2testObject.pre4(new int[] { 1, 4, 4, 2 }));
+        assertArrayEquals(new int[] { 1, 3 }, arrays2testObject.pre4(new int[] { 1, 3, 4, 2, 4 }));
+        assertArrayEquals(new int[] {}, arrays2testObject.pre4(new int[] { 4, 4 }));
+        assertArrayEquals(new int[] { 3, 3 }, arrays2testObject.pre4(new int[] { 3, 3, 4 }));
+        assertArrayEquals(new int[] { 1, 2, 1 }, arrays2testObject.pre4(new int[] { 1, 2, 1, 4 }));
+        assertArrayEquals(new int[] { 2, 1 }, arrays2testObject.pre4(new int[] { 2, 1, 4, 2 }));
+        assertArrayEquals(new int[] { 2, 1, 2, 1 }, arrays2testObject.pre4(new int[] { 2, 1, 2, 1, 4, 2 }));
+    }
 }
