@@ -512,4 +512,19 @@ public class Arrays2Test {
         assertArrayEquals(new int[] {}, arrays2testObject.zeroFront(new int[] {}));
         assertArrayEquals(new int[] { 0, 0, 9, 9, 9, 9 }, arrays2testObject.zeroFront(new int[] { 9, 9, 0, 9, 0, 9 }));
     }
+
+    @Test
+    public void withoutTenTest() {
+        assertArrayEquals(new int[] { 1, 2, 0, 0 }, arrays2testObject.withoutTen(new int[] { 1, 10, 10, 2 }));
+        assertArrayEquals(new int[] { 2, 0, 0 }, arrays2testObject.withoutTen(new int[] { 10, 2, 10 }));
+        assertArrayEquals(new int[] { 1, 99, 0 }, arrays2testObject.withoutTen(new int[] { 1, 99, 10 }));
+        assertArrayEquals(new int[] { 13, 14, 0, 0 }, arrays2testObject.withoutTen(new int[] { 10, 13, 10, 14 }));
+        assertArrayEquals(new int[] { 13, 14, 0, 0, 0 },
+                arrays2testObject.withoutTen(new int[] { 10, 13, 10, 14, 10 }));
+        assertArrayEquals(new int[] { 3, 0, 0 }, arrays2testObject.withoutTen(new int[] { 10, 10, 3 }));
+        assertArrayEquals(new int[] { 1 }, arrays2testObject.withoutTen(new int[] { 1 }));
+        assertArrayEquals(new int[] { 13, 1 }, arrays2testObject.withoutTen(new int[] { 13, 1 }));
+        assertArrayEquals(new int[] { 0 }, arrays2testObject.withoutTen(new int[] { 10 }));
+        assertArrayEquals(new int[] {}, arrays2testObject.withoutTen(new int[] {}));
+    }
 }
