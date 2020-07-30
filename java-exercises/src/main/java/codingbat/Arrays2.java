@@ -779,4 +779,71 @@ public class Arrays2 {
         return odd;
     }
 
+    /**
+     * Return an array that contains the exact same numbers as the given array, but
+     * rearranged so that all the even numbers come before all the odd numbers.
+     * Other than that, the numbers can be in any order. You may modify and return
+     * the given array, or make a new array.
+     * 
+     * 
+     * evenOdd([1, 0, 1, 0, 0, 1, 1]) → [0, 0, 0, 1, 1, 1, 1] evenOdd([3, 3, 2]) →
+     * [2, 3, 3] evenOdd([2, 2, 2]) → [2, 2, 2]
+     */
+    public int[] evenOdd(int[] nums) {
+
+        int i = 0;
+
+        while (i < nums.length) {
+            if (nums[i] % 2 == 0) {
+                int j = i;
+                while (j > 0) {
+                    int temp = nums[j];
+                    nums[j] = nums[j - 1];
+                    nums[j - 1] = temp;
+                    j--;
+                }
+            }
+            i++;
+        }
+
+        return nums;
+    }
+
+    /**
+     * This is slightly more difficult version of the famous FizzBuzz problem which
+     * is sometimes given as a first problem for job interviews. (See also: FizzBuzz
+     * Code https://codingbat.com/doc/practice/fizzbuzz-code.html) Consider the
+     * series of numbers beginning at start and running up to but not including end,
+     * so for example start=1 and end=5 gives the series 1, 2, 3, 4. Return a new
+     * String[] array containing the string form of these numbers, except for
+     * multiples of 3, use "Fizz" instead of the number, for multiples of 5 use
+     * "Buzz", and for multiples of both 3 and 5 use "FizzBuzz". In Java,
+     * String.valueOf(xxx) will make the String form of an int or other type. This
+     * version is a little more complicated than the usual version since you have to
+     * allocate and index into an array instead of just printing, and we vary the
+     * start/end instead of just always doing 1..100.
+     * 
+     * 
+     * fizzBuzz(1, 6) → ["1", "2", "Fizz", "4", "Buzz"] fizzBuzz(1, 8) → ["1", "2",
+     * "Fizz", "4", "Buzz", "Fizz", "7"] fizzBuzz(1, 11) → ["1", "2", "Fizz", "4",
+     * "Buzz", "Fizz", "7", "8", "Fizz", "Buzz"]
+     */
+    public String[] fizzBuzz(int start, int end) {
+        String[] ret = new String[end - start];
+
+        for (int i = 0; i < ret.length; i++, start++) {
+            if (start % 3 == 0 && start % 5 == 0) {
+                ret[i] = "FizzBuzz";
+            } else if (start % 3 == 0) {
+                ret[i] = "Fizz";
+            } else if (start % 5 == 0) {
+                ret[i] = "Buzz";
+            } else {
+                ret[i] = String.valueOf(start);
+            }
+        }
+
+        return ret;
+    }
+
 }

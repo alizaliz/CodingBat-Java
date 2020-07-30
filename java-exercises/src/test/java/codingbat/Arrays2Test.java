@@ -543,4 +543,41 @@ public class Arrays2Test {
         assertArrayEquals(new int[] { 7, 3, 4, 3, 0, 0 }, arrays2testObject.zeroMax(new int[] { 7, 0, 4, 3, 0, 0 }));
         assertArrayEquals(new int[] { 7, 7, 1, 7, 7, 7 }, arrays2testObject.zeroMax(new int[] { 7, 0, 1, 0, 0, 7 }));
     }
+
+    @Test
+    public void evenOddTest() {
+        assertArrayEquals(new int[] { 0, 0, 0, 1, 1, 1, 1 },
+                arrays2testObject.evenOdd(new int[] { 1, 0, 1, 0, 0, 1, 1 }));
+        assertArrayEquals(new int[] { 2, 3, 3 }, arrays2testObject.evenOdd(new int[] { 3, 3, 2 }));
+        assertArrayEquals(new int[] { 2, 2, 2 }, arrays2testObject.evenOdd(new int[] { 2, 2, 2 }));
+        assertArrayEquals(new int[] { 2, 2, 3 }, arrays2testObject.evenOdd(new int[] { 3, 2, 2 }));
+        assertArrayEquals(new int[] { 0, 0, 1, 1, 1 }, arrays2testObject.evenOdd(new int[] { 1, 1, 0, 1, 0 }));
+        assertArrayEquals(new int[] { 1 }, arrays2testObject.evenOdd(new int[] { 1 }));
+        assertArrayEquals(new int[] { 2, 1 }, arrays2testObject.evenOdd(new int[] { 1, 2 }));
+        assertArrayEquals(new int[] { 2, 1 }, arrays2testObject.evenOdd(new int[] { 2, 1 }));
+        assertArrayEquals(new int[] {}, arrays2testObject.evenOdd(new int[] {}));
+    }
+
+    @Test
+    public void fizzBuzzTest() {
+        assertArrayEquals(new String[] { "1", "2", "Fizz", "4", "Buzz" }, arrays2testObject.fizzBuzz(1, 6));
+        assertArrayEquals(new String[] { "1", "2", "Fizz", "4", "Buzz", "Fizz", "7" },
+                arrays2testObject.fizzBuzz(1, 8));
+        assertArrayEquals(new String[] { "1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz" },
+                arrays2testObject.fizzBuzz(1, 11));
+        assertArrayEquals(new String[] { "1", "2", "Fizz", "4", "Buzz", "Fizz", "7", "8", "Fizz", "Buzz", "11", "Fizz",
+                "13", "14", "FizzBuzz" }, arrays2testObject.fizzBuzz(1, 16));
+        assertArrayEquals(new String[] { "1", "2", "Fizz" }, arrays2testObject.fizzBuzz(1, 4));
+        assertArrayEquals(new String[] { "1" }, arrays2testObject.fizzBuzz(1, 2));
+        assertArrayEquals(new String[] { "Buzz", "Fizz", "52", "53", "Fizz", "Buzz" },
+                arrays2testObject.fizzBuzz(50, 56));
+        assertArrayEquals(new String[] { "FizzBuzz", "16" }, arrays2testObject.fizzBuzz(15, 17));
+        assertArrayEquals(new String[] { "FizzBuzz", "31", "32", "Fizz", "34", "Buzz" },
+                arrays2testObject.fizzBuzz(30, 36));
+        assertArrayEquals(new String[] { "Buzz", "1001", "Fizz", "1003", "1004", "FizzBuzz" },
+                arrays2testObject.fizzBuzz(1000, 1006));
+        assertArrayEquals(new String[] { "Fizz", "Buzz", "101" }, arrays2testObject.fizzBuzz(99, 102));
+        assertArrayEquals(new String[] { "14", "FizzBuzz", "16", "17", "Fizz", "19" },
+                arrays2testObject.fizzBuzz(14, 20));
+    }
 }
