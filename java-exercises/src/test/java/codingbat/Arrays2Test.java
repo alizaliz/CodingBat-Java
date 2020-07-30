@@ -468,4 +468,18 @@ public class Arrays2Test {
         assertArrayEquals(new int[] { 2, 1 }, arrays2testObject.pre4(new int[] { 2, 1, 4, 2 }));
         assertArrayEquals(new int[] { 2, 1, 2, 1 }, arrays2testObject.pre4(new int[] { 2, 1, 2, 1, 4, 2 }));
     }
+
+    @Test
+    public void post4Test() {
+        assertArrayEquals(new int[] { 1, 2 }, arrays2testObject.post4(new int[] { 2, 4, 1, 2 }));
+        assertArrayEquals(new int[] { 2 }, arrays2testObject.post4(new int[] { 4, 1, 4, 2 }));
+        assertArrayEquals(new int[] { 1, 2, 3 }, arrays2testObject.post4(new int[] { 4, 4, 1, 2, 3 }));
+        assertArrayEquals(new int[] { 2 }, arrays2testObject.post4(new int[] { 4, 2 }));
+        assertArrayEquals(new int[] { 3 }, arrays2testObject.post4(new int[] { 4, 4, 3 }));
+        assertArrayEquals(new int[] {}, arrays2testObject.post4(new int[] { 4, 4 }));
+        assertArrayEquals(new int[] {}, arrays2testObject.post4(new int[] { 4 }));
+        assertArrayEquals(new int[] { 3, 2 }, arrays2testObject.post4(new int[] { 2, 4, 1, 4, 3, 2 }));
+        assertArrayEquals(new int[] { 2, 2, 2 }, arrays2testObject.post4(new int[] { 4, 1, 4, 2, 2, 2 }));
+        assertArrayEquals(new int[] { 3, 2 }, arrays2testObject.post4(new int[] { 3, 4, 3, 2 }));
+    }
 }
