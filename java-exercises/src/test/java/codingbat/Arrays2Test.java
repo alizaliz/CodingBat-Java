@@ -527,4 +527,20 @@ public class Arrays2Test {
         assertArrayEquals(new int[] { 0 }, arrays2testObject.withoutTen(new int[] { 10 }));
         assertArrayEquals(new int[] {}, arrays2testObject.withoutTen(new int[] {}));
     }
+
+    @Test
+    public void zeroMaxTest() {
+        assertArrayEquals(new int[] { 5, 5, 3, 3 }, arrays2testObject.zeroMax(new int[] { 0, 5, 0, 3 }));
+        assertArrayEquals(new int[] { 3, 4, 3, 3 }, arrays2testObject.zeroMax(new int[] { 0, 4, 0, 3 }));
+        assertArrayEquals(new int[] { 1, 1, 0 }, arrays2testObject.zeroMax(new int[] { 0, 1, 0 }));
+        assertArrayEquals(new int[] { 5, 1, 5 }, arrays2testObject.zeroMax(new int[] { 0, 1, 5 }));
+        assertArrayEquals(new int[] { 0, 2, 0 }, arrays2testObject.zeroMax(new int[] { 0, 2, 0 }));
+        assertArrayEquals(new int[] { 1 }, arrays2testObject.zeroMax(new int[] { 1 }));
+        assertArrayEquals(new int[] { 0 }, arrays2testObject.zeroMax(new int[] { 0 }));
+        assertArrayEquals(new int[] {}, arrays2testObject.zeroMax(new int[] {}));
+        assertArrayEquals(new int[] { 7, 3, 4, 3, 0, 2 }, arrays2testObject.zeroMax(new int[] { 7, 0, 4, 3, 0, 2 }));
+        assertArrayEquals(new int[] { 7, 3, 4, 3, 1, 1 }, arrays2testObject.zeroMax(new int[] { 7, 0, 4, 3, 0, 1 }));
+        assertArrayEquals(new int[] { 7, 3, 4, 3, 0, 0 }, arrays2testObject.zeroMax(new int[] { 7, 0, 4, 3, 0, 0 }));
+        assertArrayEquals(new int[] { 7, 7, 1, 7, 7, 7 }, arrays2testObject.zeroMax(new int[] { 7, 0, 1, 0, 0, 7 }));
+    }
 }
