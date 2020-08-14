@@ -4,12 +4,10 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-import java.beans.Transient;
-
 import org.junit.Before;
 
 /**
- * Test cases for Arrays1 exercises
+ * Test cases for Arrays2 exercises
  */
 public class Arrays2Test {
 
