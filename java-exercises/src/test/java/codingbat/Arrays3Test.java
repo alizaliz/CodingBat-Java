@@ -77,4 +77,19 @@ public class Arrays3Test {
         assertArrayEquals(new int[] { 1, 4, 5 }, arrays3testObject.fix45(new int[] { 5, 4, 1 }));
         assertArrayEquals(new int[] { 2, 4, 5, 2 }, arrays3testObject.fix45(new int[] { 2, 4, 2, 5 }));
     }
+
+    @Test
+    public void canBalanceTest() {
+        assertTrue(arrays3testObject.canBalance(new int[] { 1, 1, 1, 2, 1 }));
+        assertFalse(arrays3testObject.canBalance(new int[] { 2, 1, 1, 2, 1 }));
+        assertTrue(arrays3testObject.canBalance(new int[] { 10, 10 }));
+        assertTrue(arrays3testObject.canBalance(new int[] { 10, 0, 1, -1, 10 }));
+        assertTrue(arrays3testObject.canBalance(new int[] { 1, 1, 1, 1, 4 }));
+        assertFalse(arrays3testObject.canBalance(new int[] { 2, 1, 1, 1, 4 }));
+        assertFalse(arrays3testObject.canBalance(new int[] { 2, 3, 4, 1, 2 }));
+        assertTrue(arrays3testObject.canBalance(new int[] { 1, 2, 3, 1, 0, 2, 3 }));
+        assertFalse(arrays3testObject.canBalance(new int[] { 1, 2, 3, 1, 0, 1, 3 }));
+        assertFalse(arrays3testObject.canBalance(new int[] { 1 }));
+        assertTrue(arrays3testObject.canBalance(new int[] { 1, 1, 1, 2, 1 }));
+    }
 }
