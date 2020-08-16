@@ -120,4 +120,15 @@ public class Arrays3Test {
         assertArrayEquals(new int[] { 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 1, 0, 0, 0, 3, 2, 1, 0, 0, 4, 3, 2, 1, 0, 5, 4,
                 3, 2, 1, 6, 5, 4, 3, 2, 1 }, arrays3testObject.squareUp(6));
     }
+
+    @Test
+    public void seriesUPTest() {
+        assertArrayEquals(new int[] { 1, 1, 2, 1, 2, 3 }, arrays3testObject.seriesUp(3));
+        assertArrayEquals(new int[] { 1, 1, 2, 1, 2, 3, 1, 2, 3, 4 }, arrays3testObject.seriesUp(4));
+        assertArrayEquals(new int[] { 1, 1, 2 }, arrays3testObject.seriesUp(2));
+        assertArrayEquals(new int[] { 1 }, arrays3testObject.seriesUp(1));
+        assertArrayEquals(new int[] {}, arrays3testObject.seriesUp(0));
+        assertArrayEquals(new int[] { 1, 1, 2, 1, 2, 3, 1, 2, 3, 4, 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6 },
+                arrays3testObject.seriesUp(6));
+    }
 }
