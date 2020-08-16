@@ -109,4 +109,15 @@ public class Arrays3Test {
         assertFalse(arrays3testObject.linearIn(new int[] { -1, 0, 3, 3, 3, 10, 12 }, new int[] { 0, 3, 12, 14 }));
         assertFalse(arrays3testObject.linearIn(new int[] { -1, 0, 3, 3, 3, 10, 12 }, new int[] { -1, 10, 11 }));
     }
+
+    @Test
+    public void squareUpTest() {
+        assertArrayEquals(new int[] { 0, 0, 1, 0, 2, 1, 3, 2, 1 }, arrays3testObject.squareUp(3));
+        assertArrayEquals(new int[] { 0, 1, 2, 1 }, arrays3testObject.squareUp(2));
+        assertArrayEquals(new int[] { 0, 0, 0, 1, 0, 0, 2, 1, 0, 3, 2, 1, 4, 3, 2, 1 }, arrays3testObject.squareUp(4));
+        assertArrayEquals(new int[] { 1 }, arrays3testObject.squareUp(1));
+        assertArrayEquals(new int[] {}, arrays3testObject.squareUp(0));
+        assertArrayEquals(new int[] { 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 1, 0, 0, 0, 3, 2, 1, 0, 0, 4, 3, 2, 1, 0, 5, 4,
+                3, 2, 1, 6, 5, 4, 3, 2, 1 }, arrays3testObject.squareUp(6));
+    }
 }
