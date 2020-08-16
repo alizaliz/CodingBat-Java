@@ -92,4 +92,21 @@ public class Arrays3Test {
         assertFalse(arrays3testObject.canBalance(new int[] { 1 }));
         assertTrue(arrays3testObject.canBalance(new int[] { 1, 1, 1, 2, 1 }));
     }
+
+    @Test
+    public void linearInTest() {
+        assertTrue(arrays3testObject.linearIn(new int[] { 1, 2, 4, 6 }, new int[] { 2, 4 }));
+        assertFalse(arrays3testObject.linearIn(new int[] { 1, 2, 4, 6 }, new int[] { 2, 3, 4 }));
+        assertTrue(arrays3testObject.linearIn(new int[] { 1, 2, 4, 4, 6 }, new int[] { 2, 4 }));
+        assertTrue(arrays3testObject.linearIn(new int[] { 2, 2, 4, 4, 6, 6 }, new int[] { 2, 4 }));
+        assertTrue(arrays3testObject.linearIn(new int[] { 2, 2, 2, 2, 2 }, new int[] { 2, 2 }));
+        assertFalse(arrays3testObject.linearIn(new int[] { 2, 2, 2, 2, 2 }, new int[] { 2, 4 }));
+        assertTrue(arrays3testObject.linearIn(new int[] { 2, 2, 2, 2, 4 }, new int[] { 2, 4 }));
+        assertTrue(arrays3testObject.linearIn(new int[] { 1, 2, 3 }, new int[] { 2 }));
+        assertFalse(arrays3testObject.linearIn(new int[] { 1, 2, 3 }, new int[] { -1 }));
+        assertTrue(arrays3testObject.linearIn(new int[] { 1, 2, 3 }, new int[] {}));
+        assertTrue(arrays3testObject.linearIn(new int[] { -1, 0, 3, 3, 3, 10, 12 }, new int[] { -1, 0, 3, 12 }));
+        assertFalse(arrays3testObject.linearIn(new int[] { -1, 0, 3, 3, 3, 10, 12 }, new int[] { 0, 3, 12, 14 }));
+        assertFalse(arrays3testObject.linearIn(new int[] { -1, 0, 3, 3, 3, 10, 12 }, new int[] { -1, 10, 11 }));
+    }
 }
