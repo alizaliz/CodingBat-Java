@@ -30,4 +30,17 @@ public class String2Test {
         assertEquals("aaaa", string2testObject.doubleChar("aa"));
     }
 
+    @Test
+    public void countHiTest() {
+        assertEquals(1, string2testObject.countHi("abc hi ho"));
+        assertEquals(2, string2testObject.countHi("ABChi hi"));
+        assertEquals(2, string2testObject.countHi("hihi"));
+        assertEquals(2, string2testObject.countHi("hiHIhi"));
+        assertEquals(0, string2testObject.countHi(""));
+        assertEquals(0, string2testObject.countHi("h"));
+        assertEquals(1, string2testObject.countHi("hi"));
+        assertEquals(0, string2testObject.countHi("Hi is no HI on ahI"));
+        assertEquals(2, string2testObject.countHi("hiho not HOHIhi"));
+    }
+
 }
