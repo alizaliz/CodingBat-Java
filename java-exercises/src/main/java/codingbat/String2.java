@@ -83,4 +83,51 @@ public class String2 {
         return cats == dogs;
     }
 
+    /**
+     * Return the number of times that the string "code" appears anywhere in the
+     * given string, except we'll accept any letter for the 'd', so "cope" and
+     * "cooe" count.
+     * 
+     * 
+     * countCode("aaacodebbb") → 1 countCode("codexxcode") → 2
+     * countCode("cozexxcope") → 2
+     */
+    public int countCode(String str) {
+        int count = 0;
+        int state = 0; // parsing state
+        for (int i = 0; i < str.length(); i++) {
+            switch (state) {
+                case 0: // Look for c
+                    if (str.charAt(i) == 'c') {
+                        state = 1; // move on
+                    }
+                    break;
+                case 1: // look for o
+                    if (str.charAt(i) == 'o') {
+                        state = 2; // move on
+                    } else if (str.charAt(i) == 'c') {
+                        state = 1; // new start
+                    } else {
+                        state = 0; // go back to start
+                    }
+                    break;
+                case 2: // see if theres a third
+                    state = 3; // Any char
+                    break;
+                case 3:
+                    if (str.charAt(i) == 'e') {
+                        count++; // succesful "code"
+                    } else if (str.charAt(i) == 'c') {
+                        state = 1; // new start
+                    } else {
+                        state = 0; // go back to start
+                    }
+                    break;
+
+            }
+
+        }
+        return count;
+    }
+
 }

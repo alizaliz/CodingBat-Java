@@ -60,4 +60,22 @@ public class String2Test {
         assertTrue(string2testObject.catDog(""));
     }
 
+    @Test
+    public void countCodeTest() {
+        assertEquals(1, string2testObject.countCode("aaacodebbb"));
+        assertEquals(2, string2testObject.countCode("codexxcode"));
+        assertEquals(2, string2testObject.countCode("cozexxcope"));
+        assertEquals(1, string2testObject.countCode("cozfxxcope"));
+        assertEquals(1, string2testObject.countCode("xxcozeyycop"));
+        assertEquals(0, string2testObject.countCode("cozcop"));
+        assertEquals(0, string2testObject.countCode("abcxyz"));
+        assertEquals(1, string2testObject.countCode("code"));
+        assertEquals(0, string2testObject.countCode("ode"));
+        assertEquals(0, string2testObject.countCode("c"));
+        assertEquals(0, string2testObject.countCode(""));
+        assertEquals(3, string2testObject.countCode("AAcodeBBcoleCCccoreDD"));
+        assertEquals(2, string2testObject.countCode("AAcodeBBcoleCCccorfDD"));
+        assertEquals(3, string2testObject.countCode("coAcodeBcoleccoreDD"));
+    }
+
 }
