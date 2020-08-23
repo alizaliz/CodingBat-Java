@@ -78,4 +78,22 @@ public class String2Test {
         assertEquals(3, string2testObject.countCode("coAcodeBcoleccoreDD"));
     }
 
+    @Test
+    public void endOtherTest() {
+        assertTrue(string2testObject.endOther("Hiabc", "abc"));
+        assertTrue(string2testObject.endOther("AbC", "HiaBc"));
+        assertTrue(string2testObject.endOther("abc", "abXabc"));
+        assertFalse(string2testObject.endOther("Hiabc", "abcd"));
+        assertTrue(string2testObject.endOther("Hiabc", "bc"));
+        assertFalse(string2testObject.endOther("Hiabcx", "bc"));
+        assertTrue(string2testObject.endOther("abc", "abc"));
+        assertTrue(string2testObject.endOther("xyz", "12xyz"));
+        assertFalse(string2testObject.endOther("yz", "12xz"));
+        assertTrue(string2testObject.endOther("Z", "12xz"));
+        assertTrue(string2testObject.endOther("12", "12"));
+        assertFalse(string2testObject.endOther("abcXYZ", "abcDEF"));
+        assertFalse(string2testObject.endOther("ab", "ab12"));
+        assertTrue(string2testObject.endOther("ab", "12ab"));
+    }
+
 }
