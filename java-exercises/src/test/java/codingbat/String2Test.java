@@ -43,4 +43,21 @@ public class String2Test {
         assertEquals(2, string2testObject.countHi("hiho not HOHIhi"));
     }
 
+    @Test
+    public void catDogTest() {
+        assertTrue(string2testObject.catDog("catdog"));
+        assertFalse(string2testObject.catDog("catcat"));
+        assertTrue(string2testObject.catDog("1cat1cadodog"));
+        assertFalse(string2testObject.catDog("catxxdogxxxdog"));
+        assertTrue(string2testObject.catDog("catxdogxdogxcat"));
+        assertFalse(string2testObject.catDog("catxdogxdogxca"));
+        assertFalse(string2testObject.catDog("dogdogcat"));
+        assertTrue(string2testObject.catDog("dogogcat"));
+        assertFalse(string2testObject.catDog("dog"));
+        assertFalse(string2testObject.catDog("cat"));
+        assertTrue(string2testObject.catDog("ca"));
+        assertTrue(string2testObject.catDog("c"));
+        assertTrue(string2testObject.catDog(""));
+    }
+
 }

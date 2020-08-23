@@ -52,4 +52,35 @@ public class String2 {
         return count;
     }
 
+    /**
+     * Return true if the string "cat" and "dog" appear the same number of times in
+     * the given string.
+     * 
+     * 
+     * catDog("catdog") → true catDog("catcat") → false catDog("1cat1cadodog") →
+     * true
+     */
+    public boolean catDog(String str) {
+        int cats = 0;
+        int dogs = 0;
+
+        if (str.length() >= 6) {
+            String tmp;
+            for (int i = 0; i < str.length() - 2; i++) {
+                tmp = str.substring(i, i + 3);
+                if (tmp.equals("cat")) {
+                    cats++;
+                } else if (tmp.equals("dog")) {
+                    dogs++;
+                }
+            }
+        } else {
+            if (str.contains("cat") || str.contains("dog")) {
+                return false;
+            }
+        }
+
+        return cats == dogs;
+    }
+
 }
