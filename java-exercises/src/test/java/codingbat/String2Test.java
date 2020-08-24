@@ -96,4 +96,22 @@ public class String2Test {
         assertTrue(string2testObject.endOther("ab", "12ab"));
     }
 
+    @Test
+    public void xyzThereTest() {
+        assertTrue(string2testObject.xyzThere("abcxyz"));
+        assertFalse(string2testObject.xyzThere("abc.xyz"));
+        assertTrue(string2testObject.xyzThere("xyz.abc"));
+        assertFalse(string2testObject.xyzThere("abcxy"));
+        assertTrue(string2testObject.xyzThere("xyz"));
+        assertFalse(string2testObject.xyzThere("xy"));
+        assertFalse(string2testObject.xyzThere("x"));
+        assertFalse(string2testObject.xyzThere(""));
+        assertTrue(string2testObject.xyzThere("abc.xyzxyz"));
+        assertTrue(string2testObject.xyzThere("abc.xxyz"));
+        assertFalse(string2testObject.xyzThere(".xyz"));
+        assertFalse(string2testObject.xyzThere("12.xyz"));
+        assertTrue(string2testObject.xyzThere("12xyz"));
+        assertFalse(string2testObject.xyzThere("1.xyz.xyz2.xyz"));
+    }
+
 }
