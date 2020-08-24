@@ -114,4 +114,21 @@ public class String2Test {
         assertFalse(string2testObject.xyzThere("1.xyz.xyz2.xyz"));
     }
 
+    @Test
+    public void bobThereTest() {
+        assertTrue(string2testObject.bobThere("abcbob"));
+        assertTrue(string2testObject.bobThere("b9b"));
+        assertFalse(string2testObject.bobThere("bac"));
+        assertTrue(string2testObject.bobThere("bbb"));
+        assertFalse(string2testObject.bobThere("abcdefb"));
+        assertTrue(string2testObject.bobThere("123abcbcdbabxyz"));
+        assertFalse(string2testObject.bobThere("b12"));
+        assertTrue(string2testObject.bobThere("b1b"));
+        assertTrue(string2testObject.bobThere("b12b1b"));
+        assertFalse(string2testObject.bobThere("bbc"));
+        assertTrue(string2testObject.bobThere("bbb"));
+        assertFalse(string2testObject.bobThere("bb"));
+        assertFalse(string2testObject.bobThere("b"));
+    }
+
 }
