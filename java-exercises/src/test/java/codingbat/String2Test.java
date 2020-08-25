@@ -131,4 +131,26 @@ public class String2Test {
         assertFalse(string2testObject.bobThere("b"));
     }
 
+    @Test
+    public void xyBalanceTest() {
+        assertTrue(string2testObject.xyBalance("aaxbby"));
+        assertFalse(string2testObject.xyBalance("aaxbb"));
+        assertFalse(string2testObject.xyBalance("yaaxbb"));
+        assertTrue(string2testObject.xyBalance("yaaxbby"));
+        assertTrue(string2testObject.xyBalance("xaxxbby"));
+        assertFalse(string2testObject.xyBalance("xaxxbbyx"));
+        assertTrue(string2testObject.xyBalance("xxbxy"));
+        assertFalse(string2testObject.xyBalance("xxbx"));
+        assertTrue(string2testObject.xyBalance("bbb"));
+        assertFalse(string2testObject.xyBalance("bxbb"));
+        assertTrue(string2testObject.xyBalance("bxyb"));
+        assertTrue(string2testObject.xyBalance("xy"));
+        assertTrue(string2testObject.xyBalance("y"));
+        assertFalse(string2testObject.xyBalance("x"));
+        assertTrue(string2testObject.xyBalance(""));
+        assertFalse(string2testObject.xyBalance("yxyxyxyx"));
+        assertTrue(string2testObject.xyBalance("yxyxyxyxy"));
+        assertTrue(string2testObject.xyBalance("12xabxxydxyxyzz"));
+    }
+
 }
