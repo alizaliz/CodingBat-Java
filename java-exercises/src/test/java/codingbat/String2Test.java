@@ -153,4 +153,21 @@ public class String2Test {
         assertTrue(string2testObject.xyBalance("12xabxxydxyxyzz"));
     }
 
+    @Test
+    public void mixStringTest() {
+        assertEquals("axbycz", string2testObject.mixString("abc", "xyz"));
+        assertEquals("HTihere", string2testObject.mixString("Hi", "There"));
+        assertEquals("xTxhxexre", string2testObject.mixString("xxxx", "There"));
+        assertEquals("xXxx", string2testObject.mixString("xxx", "X"));
+        assertEquals("22/7 around", string2testObject.mixString("2/", "27 around"));
+        assertEquals("Hello", string2testObject.mixString("", "Hello"));
+        assertEquals("Abc", string2testObject.mixString("Abc", ""));
+        assertEquals("", string2testObject.mixString("", ""));
+        assertEquals("ab", string2testObject.mixString("a", "b"));
+        assertEquals("abx", string2testObject.mixString("ax", "b"));
+        assertEquals("abx", string2testObject.mixString("a", "bx"));
+        assertEquals("SLoong", string2testObject.mixString("So", "Long"));
+        assertEquals("LSoong", string2testObject.mixString("Long", "So"));
+    }
+
 }
