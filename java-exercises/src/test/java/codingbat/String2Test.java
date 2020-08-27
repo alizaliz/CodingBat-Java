@@ -170,4 +170,16 @@ public class String2Test {
         assertEquals("LSoong", string2testObject.mixString("Long", "So"));
     }
 
+    @Test
+    public void repeatEndTest() {
+        assertEquals("llollollo", string2testObject.repeatEnd("Hello", 3));
+        assertEquals("lolo", string2testObject.repeatEnd("Hello", 2));
+        assertEquals("o", string2testObject.repeatEnd("Hello", 1));
+        assertEquals("", string2testObject.repeatEnd("Hello", 0));
+        assertEquals("abcabcabc", string2testObject.repeatEnd("abc", 3));
+        assertEquals("3434", string2testObject.repeatEnd("1234", 2));
+        assertEquals("234234234", string2testObject.repeatEnd("1234", 3));
+        assertEquals("", string2testObject.repeatEnd("", 0));
+    }
+
 }
