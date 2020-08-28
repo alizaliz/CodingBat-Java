@@ -182,4 +182,17 @@ public class String2Test {
         assertEquals("", string2testObject.repeatEnd("", 0));
     }
 
+    @Test
+    public void repeatFrontTest() {
+        assertEquals("ChocChoChC", string2testObject.repeatFront("Chocolate", 4));
+        assertEquals("ChoChC", string2testObject.repeatFront("Chocolate", 3));
+        assertEquals("IcI", string2testObject.repeatFront("Ice Cream", 2));
+        assertEquals("I", string2testObject.repeatFront("Ice Cream", 1));
+        assertEquals("", string2testObject.repeatFront("Ice Cream", 0));
+        assertEquals("xyzxyx", string2testObject.repeatFront("xyz", 3));
+        assertEquals("", string2testObject.repeatFront("", 0));
+        assertEquals("JavaJavJaJ", string2testObject.repeatFront("Java", 4));
+        assertEquals("J", string2testObject.repeatFront("Java", 1));
+    }
+
 }
