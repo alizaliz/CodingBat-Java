@@ -195,4 +195,19 @@ public class String2Test {
         assertEquals("J", string2testObject.repeatFront("Java", 1));
     }
 
+    @Test
+    public void repeatSpeparatorTest() {
+        assertEquals("WordXWordXWord", string2testObject.repeatSeparator("Word", "X", 3));
+        assertEquals("ThisAndThis", string2testObject.repeatSeparator("This", "And", 2));
+        assertEquals("This", string2testObject.repeatSeparator("This", "And", 1));
+        assertEquals("Hi-n-Hi", string2testObject.repeatSeparator("Hi", "-n-", 2));
+        assertEquals("AAA", string2testObject.repeatSeparator("AAA", "", 1));
+        assertEquals("", string2testObject.repeatSeparator("AAA", "", 0));
+        assertEquals("ABABABABA", string2testObject.repeatSeparator("A", "B", 5));
+        assertEquals("abcXXabcXXabc", string2testObject.repeatSeparator("abc", "XX", 3));
+        assertEquals("abcXXabc", string2testObject.repeatSeparator("abc", "XX", 2));
+        assertEquals("abc", string2testObject.repeatSeparator("abc", "XX", 1));
+        assertEquals("XYZaXYZ", string2testObject.repeatSeparator("XYZ", "a", 2));
+    }
+
 }
