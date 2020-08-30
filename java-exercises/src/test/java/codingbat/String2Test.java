@@ -210,4 +210,20 @@ public class String2Test {
         assertEquals("XYZaXYZ", string2testObject.repeatSeparator("XYZ", "a", 2));
     }
 
+    @Test
+    public void prefixAgainTest() {
+        assertTrue(string2testObject.prefixAgain("abXYabc", 1));
+        assertTrue(string2testObject.prefixAgain("abXYabc", 2));
+        assertFalse(string2testObject.prefixAgain("abXYabc", 3));
+        assertTrue(string2testObject.prefixAgain("xyzxyxyxy", 2));
+        assertFalse(string2testObject.prefixAgain("xyzxyxyxy", 3));
+        assertTrue(string2testObject.prefixAgain("Hi12345Hi6789Hi10", 1));
+        assertTrue(string2testObject.prefixAgain("Hi12345Hi6789Hi10", 2));
+        assertTrue(string2testObject.prefixAgain("Hi12345Hi6789Hi10", 3));
+        assertFalse(string2testObject.prefixAgain("Hi12345Hi6789Hi10", 4));
+        assertFalse(string2testObject.prefixAgain("a", 1));
+        assertTrue(string2testObject.prefixAgain("aa", 1));
+        assertFalse(string2testObject.prefixAgain("ab", 1));
+    }
+
 }
