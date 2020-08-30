@@ -267,4 +267,24 @@ public class String2Test {
         assertEquals("breadbread", string2testObject.getSandwich("breadbreadbreadbread"));
     }
 
+    @Test
+    public void sameStarCharTest() {
+        assertTrue(string2testObject.sameStarChar("xy*yzz"));
+        assertFalse(string2testObject.sameStarChar("xy*zzz"));
+        assertTrue(string2testObject.sameStarChar("*xa*az"));
+        assertFalse(string2testObject.sameStarChar("*xa*bz"));
+        assertTrue(string2testObject.sameStarChar("*xa*a*"));
+        assertTrue(string2testObject.sameStarChar(""));
+        assertTrue(string2testObject.sameStarChar("*xa*a*a"));
+        assertFalse(string2testObject.sameStarChar("*xa*a*b"));
+        assertTrue(string2testObject.sameStarChar("*12*2*2"));
+        assertFalse(string2testObject.sameStarChar("12*2*3*"));
+        assertTrue(string2testObject.sameStarChar("abcDEF"));
+        assertFalse(string2testObject.sameStarChar("XY*YYYY*Z*"));
+        assertTrue(string2testObject.sameStarChar("XY*YYYY*Y*"));
+        assertFalse(string2testObject.sameStarChar("12*2*3*"));
+        assertTrue(string2testObject.sameStarChar("*"));
+        assertTrue(string2testObject.sameStarChar("**"));
+    }
+
 }
