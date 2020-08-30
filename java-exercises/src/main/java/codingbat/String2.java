@@ -348,4 +348,40 @@ public class String2 {
         return Math.abs(str.length() - yPos - 1 - yPos) <= 1;
     }
 
+    /**
+     * A sandwich is two pieces of bread with something in between. Return the
+     * string that is between the first and last appearance of "bread" in the given
+     * string, or return the empty string "" if there are not two pieces of bread.
+     * 
+     * 
+     * getSandwich("breadjambread") → "jam" getSandwich("xxbreadjambreadyy") → "jam"
+     * getSandwich("xxbreadyy") → ""
+     */
+    public String getSandwich(String str) {
+
+        // Return empty if no slices found
+        if (!str.contains("bread"))
+            return "";
+
+        String tmp = "";
+        boolean firstSlice = false;
+        for (int i = 0; i < str.length(); i++) {
+            if (!firstSlice) {
+                tmp += str.charAt(i);
+                if (tmp.contains("bread")) {
+                    firstSlice = true;
+                    tmp = "";
+                }
+            } else {
+                if (str.substring(i + 1).contains("bread")) {
+                    tmp += str.charAt(i);
+                } else {
+                    break;
+                }
+            }
+        }
+
+        return tmp;
+    }
+
 }

@@ -251,4 +251,20 @@ public class String2Test {
         assertTrue(string2testObject.xyzMiddle("xyzz"));
     }
 
+    @Test
+    public void getSandwichTest() {
+        assertEquals("jam", string2testObject.getSandwich("breadjambread"));
+        assertEquals("jam", string2testObject.getSandwich("xxbreadjambreadyy"));
+        assertEquals("", string2testObject.getSandwich("xxbreadyy"));
+        assertEquals("breadjam", string2testObject.getSandwich("xxbreadbreadjambreadyy"));
+        assertEquals("A", string2testObject.getSandwich("breadAbread"));
+        assertEquals("", string2testObject.getSandwich("breadbread"));
+        assertEquals("", string2testObject.getSandwich("abcbreaz"));
+        assertEquals("", string2testObject.getSandwich("xyz"));
+        assertEquals("", string2testObject.getSandwich(""));
+        assertEquals("breax", string2testObject.getSandwich("breadbreaxbread"));
+        assertEquals("y", string2testObject.getSandwich("breaxbreadybread"));
+        assertEquals("breadbread", string2testObject.getSandwich("breadbreadbreadbread"));
+    }
+
 }
