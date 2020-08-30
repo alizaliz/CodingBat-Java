@@ -226,4 +226,29 @@ public class String2Test {
         assertFalse(string2testObject.prefixAgain("ab", 1));
     }
 
+    @Test
+    public void xyzMiddleTest() {
+        assertTrue(string2testObject.xyzMiddle("AAxyzBB"));
+        assertTrue(string2testObject.xyzMiddle("AxyzBB"));
+        assertFalse(string2testObject.xyzMiddle("AxyzBBB"));
+        assertFalse(string2testObject.xyzMiddle("AxyzBBBB"));
+        assertFalse(string2testObject.xyzMiddle("AAAxyzB"));
+        assertTrue(string2testObject.xyzMiddle("AAAxyzBB"));
+        assertFalse(string2testObject.xyzMiddle("AAAAxyzBB"));
+        assertFalse(string2testObject.xyzMiddle("AAAAAxyzBBB"));
+        assertTrue(string2testObject.xyzMiddle("1x345xyz12x4"));
+        assertTrue(string2testObject.xyzMiddle("xyzAxyzBBB"));
+        assertTrue(string2testObject.xyzMiddle("xyzAxyzBxyz"));
+        assertTrue(string2testObject.xyzMiddle("xyzxyzAxyzBxyzxyz"));
+        assertTrue(string2testObject.xyzMiddle("xyzxyzxyzBxyzxyz"));
+        assertTrue(string2testObject.xyzMiddle("xyzxyzAxyzxyzxyz"));
+        assertFalse(string2testObject.xyzMiddle("xyzxyzAxyzxyzxy"));
+        assertFalse(string2testObject.xyzMiddle("AxyzxyzBB"));
+        assertFalse(string2testObject.xyzMiddle(""));
+        assertFalse(string2testObject.xyzMiddle("x"));
+        assertFalse(string2testObject.xyzMiddle("xy"));
+        assertTrue(string2testObject.xyzMiddle("xyz"));
+        assertTrue(string2testObject.xyzMiddle("xyzz"));
+    }
+
 }
