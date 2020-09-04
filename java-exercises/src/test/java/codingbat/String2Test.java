@@ -310,4 +310,19 @@ public class String2Test {
                 string2testObject.oneTwo("abcdefghijklkmnopqrstuvwxyz12345678"));
     }
 
+    @Test
+    public void zipZapTest() {
+        assertEquals("zpXzp", string2testObject.zipZap("zipXzap"));
+        assertEquals("zpzp", string2testObject.zipZap("zopzop"));
+        assertEquals("zzzpzp", string2testObject.zipZap("zzzopzop"));
+        assertEquals("zibzp", string2testObject.zipZap("zibzap"));
+        assertEquals("zp", string2testObject.zipZap("zip"));
+        assertEquals("zi", string2testObject.zipZap("zi"));
+        assertEquals("z", string2testObject.zipZap("z"));
+        assertEquals("", string2testObject.zipZap(""));
+        assertEquals("zp", string2testObject.zipZap("zzp"));
+        assertEquals("abcppp", string2testObject.zipZap("abcppp"));
+        assertEquals("azbcppp", string2testObject.zipZap("azbcppp"));
+        assertEquals("azbcpzp", string2testObject.zipZap("azbcpzpp"));
+    }
 }
