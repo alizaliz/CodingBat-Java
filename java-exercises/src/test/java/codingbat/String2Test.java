@@ -287,4 +287,27 @@ public class String2Test {
         assertTrue(string2testObject.sameStarChar("**"));
     }
 
+    @Test
+    public void oneTwoTest() {
+        assertEquals("bca", string2testObject.oneTwo("abc"));
+        assertEquals("cat", string2testObject.oneTwo("tca"));
+        assertEquals("catdog", string2testObject.oneTwo("tcagdo"));
+        assertEquals("hocolctea", string2testObject.oneTwo("chocolate"));
+        assertEquals("231564897", string2testObject.oneTwo("1234567890"));
+        assertEquals("abxabxabxabxabxabxabx", string2testObject.oneTwo("xabxabxabxabxabxabxab"));
+        assertEquals("bcaefd", string2testObject.oneTwo("abcdefx"));
+        assertEquals("bcaefd", string2testObject.oneTwo("abcdefxy"));
+        assertEquals("bcaefdyzx", string2testObject.oneTwo("abcdefxyz"));
+        assertEquals("", string2testObject.oneTwo(""));
+        assertEquals("", string2testObject.oneTwo("x"));
+        assertEquals("", string2testObject.oneTwo("xy"));
+        assertEquals("yzx", string2testObject.oneTwo("xyz"));
+        assertEquals("bcaefdhigkljmnkpqostrvwuyzx231564897",
+                string2testObject.oneTwo("abcdefghijklkmnopqrstuvwxyz1234567890"));
+        assertEquals("bcaefdhigkljmnkpqostrvwuyzx231564897",
+                string2testObject.oneTwo("abcdefghijklkmnopqrstuvwxyz123456789"));
+        assertEquals("bcaefdhigkljmnkpqostrvwuyzx231564",
+                string2testObject.oneTwo("abcdefghijklkmnopqrstuvwxyz12345678"));
+    }
+
 }
