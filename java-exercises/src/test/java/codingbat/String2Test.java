@@ -325,4 +325,26 @@ public class String2Test {
         assertEquals("azbcppp", string2testObject.zipZap("azbcppp"));
         assertEquals("azbcpzp", string2testObject.zipZap("azbcpzpp"));
     }
+
+    @Test
+    public void starOutTest() {
+        assertEquals("ad", string2testObject.starOut("ab*cd"));
+        assertEquals("ad", string2testObject.starOut("ab**cd"));
+        assertEquals("silly", string2testObject.starOut("sm*eilly"));
+        assertEquals("siy", string2testObject.starOut("sm*eil*ly"));
+        assertEquals("siy", string2testObject.starOut("sm**eil*ly"));
+        assertEquals("siy", string2testObject.starOut("sm***eil*ly"));
+        assertEquals("string", string2testObject.starOut("stringy*"));
+        assertEquals("tringy", string2testObject.starOut("*stringy"));
+        assertEquals("ty", string2testObject.starOut("*str*in*gy"));
+        assertEquals("abc", string2testObject.starOut("abc"));
+        assertEquals("c", string2testObject.starOut("a*bc"));
+        assertEquals("ab", string2testObject.starOut("ab"));
+        assertEquals("", string2testObject.starOut("a*b"));
+        assertEquals("a", string2testObject.starOut("a"));
+        assertEquals("", string2testObject.starOut("a*"));
+        assertEquals("", string2testObject.starOut("*a"));
+        assertEquals("", string2testObject.starOut("*"));
+        assertEquals("", string2testObject.starOut(""));
+    }
 }

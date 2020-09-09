@@ -457,4 +457,37 @@ public class String2 {
         return ret;
     }
 
+    /**
+     * Return a version of the given string, where for every star (*) in the string
+     * the star and the chars immediately to its left and right are gone. So "ab*cd"
+     * yields "ad" and "ab**cd" also yields "ad".
+     * 
+     * 
+     * starOut("ab*cd") → "ad" starOut("ab**cd") → "ad" starOut("sm*eilly") →
+     * "silly"
+     */
+    public String starOut(String str) {
+
+        String ret = "";
+        boolean skipFlag = false;
+
+        for (int i = 0; i < str.length(); i++) {
+            if (skipFlag) {
+                skipFlag = false;
+                continue;
+            }
+            if (i + 1 < str.length() && str.charAt(i + 1) != '*') {
+                if (str.charAt(i) == '*') {
+                    skipFlag = true;
+                } else {
+                    ret += str.charAt(i);
+                }
+            } else if (i + 1 == str.length() && str.charAt(i) != '*') {
+                ret += str.charAt(i);
+            }
+        }
+
+        return ret;
+    }
+
 }
