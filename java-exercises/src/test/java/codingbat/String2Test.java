@@ -347,4 +347,18 @@ public class String2Test {
         assertEquals("", string2testObject.starOut("*"));
         assertEquals("", string2testObject.starOut(""));
     }
+
+    @Test
+    public void plusOutTest() {
+        assertEquals("++xy++", string2testObject.plusOut("12xy34", "xy"));
+        assertEquals("1+++++", string2testObject.plusOut("12xy34", "1"));
+        assertEquals("++xy++xy+++xy", string2testObject.plusOut("12xy34xyabcxy", "xy"));
+        assertEquals("ab++ab++++", string2testObject.plusOut("abXYabcXYZ", "ab"));
+        assertEquals("++++abc+++", string2testObject.plusOut("abXYabcXYZ", "abc"));
+        assertEquals("++XY+++XY+", string2testObject.plusOut("abXYabcXYZ", "XY"));
+        assertEquals("+++++++XYZ", string2testObject.plusOut("abXYxyzXYZ", "XYZ"));
+        assertEquals("++++++", string2testObject.plusOut("--++ab", "++"));
+        assertEquals("++xxxx++", string2testObject.plusOut("aaxxxxbb", "xx"));
+        assertEquals("++3++3", string2testObject.plusOut("123123", "3"));
+    }
 }
