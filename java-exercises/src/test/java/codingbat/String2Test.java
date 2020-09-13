@@ -361,4 +361,21 @@ public class String2Test {
         assertEquals("++xxxx++", string2testObject.plusOut("aaxxxxbb", "xx"));
         assertEquals("++3++3", string2testObject.plusOut("123123", "3"));
     }
+
+    @Test
+    public void wordEndsTest() {
+        assertEquals("c13i", string2testObject.wordEnds("abcXY123XYijk", "XY"));
+        assertEquals("13", string2testObject.wordEnds("XY123XY", "XY"));
+        assertEquals("11", string2testObject.wordEnds("XY1XY", "XY"));
+        assertEquals("XY", string2testObject.wordEnds("XYXY", "XY"));
+        assertEquals("", string2testObject.wordEnds("XY", "XY"));
+        assertEquals("", string2testObject.wordEnds("Hi", "XY"));
+        assertEquals("", string2testObject.wordEnds("", "XY"));
+        assertEquals("cxziij", string2testObject.wordEnds("abc1xyz1i1j", "1"));
+        assertEquals("cxz", string2testObject.wordEnds("abc1xyz1", "1"));
+        assertEquals("cxz11", string2testObject.wordEnds("abc1xyz11", "1"));
+        assertEquals("11", string2testObject.wordEnds("abc1xyz1abc", "abc"));
+        assertEquals("acac", string2testObject.wordEnds("abc1xyz1abc", "b"));
+        assertEquals("1111", string2testObject.wordEnds("abc1abc1abc", "abc"));
+    }
 }
