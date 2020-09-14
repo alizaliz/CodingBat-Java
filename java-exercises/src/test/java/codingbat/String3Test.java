@@ -27,4 +27,28 @@ public class String3Test {
         assertEquals(2, string3testObject.countYZ("y2bz"));
         assertEquals(0, string3testObject.countYZ("zxyx"));
     }
+
+    @Test
+    public void withoutStringTest()
+    {
+        assertEquals("He there"	"He there", string3testObject.withoutString("Hello there", "llo"));
+        assertEquals("Hllo thr", string3testObject.withoutString("Hello there", "e") );
+        assertEquals("Hello there", string3testObject.withoutString("Hello there", "x"));
+        assertEquals("Th a FH", string3testObject.withoutString("This is a FISH", "IS"));
+        assertEquals("TH a FH", string3testObject.withoutString("THIS is a FISH", "is"));
+        assertEquals("TH a FH", string3testObject.withoutString("THIS is a FISH", "iS"));
+        assertEquals("abab", string3testObject.withoutString("abxxxxab", "xx"));
+        assertEquals("abxab", string3testObject.withoutString("abxxxab", "xx"));
+        assertEquals("abab", string3testObject.withoutString("abxxxab", "x"));
+        assertEquals("", string3testObject.withoutString("xxx", "x"));
+        assertEquals("x", string3testObject.withoutString("xxx", "xx"));
+        assertEquals("xzz", string3testObject.withoutString("xyzzy", "Y"));
+        assertEquals("", string3testObject.withoutString("", "x") );
+        assertEquals("acac", string3testObject.withoutString("abcabc", "b"));
+        assertEquals("AAbb", string3testObject.withoutString("AA22bb", "2") );
+        assertEquals("", string3testObject.withoutString("1111", "1") );
+        assertEquals("", string3testObject.withoutString("1111", "11") );
+        assertEquals("jtx", string3testObject.withoutString("MkjtMkx", "Mk"));
+        assertEquals("Hi", string3testObject.withoutString("Hi HoHo", "Ho") );
+    }
 }
