@@ -80,4 +80,20 @@ public class String3Test {
         assertTrue(string3testObject.gHappy("mggm"));
         assertTrue(string3testObject.gHappy("yyygggxyy"));
     }
+
+    @Test
+    public void countTripleTest() {
+        assertEquals(1, string3testObject.countTriple("abcXXXabc"));
+        assertEquals(3, string3testObject.countTriple("xxxabyyyycd"));
+        assertEquals(0, string3testObject.countTriple("a"));
+        assertEquals(0, string3testObject.countTriple(""));
+        assertEquals(1, string3testObject.countTriple("XXXabc"));
+        assertEquals(2, string3testObject.countTriple("XXXXabc"));
+        assertEquals(3, string3testObject.countTriple("XXXXXabc"));
+        assertEquals(3, string3testObject.countTriple("222abyyycdXXX"));
+        assertEquals(4, string3testObject.countTriple("abYYYabXXXXXab"));
+        assertEquals(0, string3testObject.countTriple("abYYXabXXYXXab"));
+        assertEquals(0, string3testObject.countTriple("abYYXabXXYXXab"));
+        assertEquals(1, string3testObject.countTriple("122abhhh2"));
+    }
 }
