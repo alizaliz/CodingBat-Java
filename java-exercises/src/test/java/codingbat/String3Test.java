@@ -29,10 +29,9 @@ public class String3Test {
     }
 
     @Test
-    public void withoutStringTest()
-    {
-        assertEquals("He there"	"He there", string3testObject.withoutString("Hello there", "llo"));
-        assertEquals("Hllo thr", string3testObject.withoutString("Hello there", "e") );
+    public void withoutStringTest() {
+        assertEquals("He there", string3testObject.withoutString("Hello there", "llo"));
+        assertEquals("Hllo thr", string3testObject.withoutString("Hello there", "e"));
         assertEquals("Hello there", string3testObject.withoutString("Hello there", "x"));
         assertEquals("Th a FH", string3testObject.withoutString("This is a FISH", "IS"));
         assertEquals("TH a FH", string3testObject.withoutString("THIS is a FISH", "is"));
@@ -43,12 +42,42 @@ public class String3Test {
         assertEquals("", string3testObject.withoutString("xxx", "x"));
         assertEquals("x", string3testObject.withoutString("xxx", "xx"));
         assertEquals("xzz", string3testObject.withoutString("xyzzy", "Y"));
-        assertEquals("", string3testObject.withoutString("", "x") );
+        assertEquals("", string3testObject.withoutString("", "x"));
         assertEquals("acac", string3testObject.withoutString("abcabc", "b"));
-        assertEquals("AAbb", string3testObject.withoutString("AA22bb", "2") );
-        assertEquals("", string3testObject.withoutString("1111", "1") );
-        assertEquals("", string3testObject.withoutString("1111", "11") );
+        assertEquals("AAbb", string3testObject.withoutString("AA22bb", "2"));
+        assertEquals("", string3testObject.withoutString("1111", "1"));
+        assertEquals("", string3testObject.withoutString("1111", "11"));
         assertEquals("jtx", string3testObject.withoutString("MkjtMkx", "Mk"));
-        assertEquals("Hi", string3testObject.withoutString("Hi HoHo", "Ho") );
+        assertEquals("Hi", string3testObject.withoutString("Hi HoHo", "Ho"));
+    }
+
+    @Test
+    public void equalIsNotTest() {
+        assertFalse(string3testObject.equalIsNot("This is not"));
+        assertTrue(string3testObject.equalIsNot("This is notnot"));
+        assertTrue(string3testObject.equalIsNot("noisxxnotyynotxisi"));
+        assertFalse(string3testObject.equalIsNot("noisxxnotyynotxsi"));
+        assertTrue(string3testObject.equalIsNot("xxxyyyzzzintint"));
+        assertTrue(string3testObject.equalIsNot(""));
+        assertTrue(string3testObject.equalIsNot("isisnotnot"));
+        assertFalse(string3testObject.equalIsNot("isisnotno7Not"));
+        assertFalse(string3testObject.equalIsNot("isnotis"));
+        assertFalse(string3testObject.equalIsNot("mis3notpotbotis"));
+    }
+
+    @Test
+    public void gHappyTest() {
+        assertTrue(string3testObject.gHappy("xxggxx"));
+        assertFalse(string3testObject.gHappy("xxgxx"));
+        assertFalse(string3testObject.gHappy("xxggyygxx"));
+        assertFalse(string3testObject.gHappy("g"));
+        assertTrue(string3testObject.gHappy("gg"));
+        assertTrue(string3testObject.gHappy(""));
+        assertTrue(string3testObject.gHappy("xxgggxyz"));
+        assertFalse(string3testObject.gHappy("xxgggxyg"));
+        assertTrue(string3testObject.gHappy("xxgggxygg"));
+        assertFalse(string3testObject.gHappy("mgm"));
+        assertTrue(string3testObject.gHappy("mggm"));
+        assertTrue(string3testObject.gHappy("yyygggxyy"));
     }
 }
